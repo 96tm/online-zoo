@@ -5,146 +5,140 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wildlife</title>
-    <link rel="stylesheet" href="./assets/css/normalize.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <div class="header-survival-container">
+    <div class="top-wrapper">
       <header class="header">
-        <div class="header__content content">
-          <section class="logo-container">
-            <img class="logo-container__logo" src="./assets/img/logo.svg" />
-            <h1 class="logo-container__header">Wildlife</h1>
-          </section>
-          <nav class="navigation">
-            <ul class="navigation__list">
-              <li class="navigation__item navigation__blog">
-                <a class="navigation__link link" href="">Blog</a>
-              </li>
-              <li class="navigation__item navigation__contacts">
-                <a class="navigation__link link" href="">Contacts</a>
-              </li>
-              <li class="navigation__item navigation__search">
-                <button
-                  class="navigation__button navigation__button-search button transparent"
-                ></button>
-              </li>
-              <li class="navigation__item navigation__register">
-                <button
-                  class="navigation__button navigation__button-register button"
-                >
-                  Sign in
-                </button>
-              </li>
-            </ul>
-          </nav>
+        <div class="logo">
+          <a class="logo__link" href="">
+            <h1 class="logo__header">Wildlife</h1>
+          </a>
         </div>
+        <nav class="navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item navigation-blog">
+              <a class="navigation__link" href="">Blog</a>
+            </li>
+            <li class="navigation__item navigation-contacts">
+              <a class="navigation__link" href="">Contacts</a>
+            </li>
+            <li class="navigation__item navigation-search">
+              <button class="navigation-search__button"></button>
+            </li>
+            <li class="navigation__item navigation-register">
+              <button class="navigation-register__button">Sign in</button>
+            </li>
+          </ul>
+        </nav>
       </header>
       <section class="survival">
-        <div class="content">
-          <div class="survival__content">
-            <h2 class="survival__header">Survival</h2>
-            <p class="survival__text">
-              What this means is that we exist to help protect our environment
-              and do in numbers of ways. You can save the planet by donation.
-            </p>
-            <button class="survival__button button">Donate</button>
-          </div>
+        <div class="survival__content">
+          <h2 class="survival__header">Survival</h2>
+          <p class="survival__text">
+            What this means is that we exist to help protect our environment and
+            do in numbers of ways. You can save the planet by donation.
+          </p>
+          <button class="survival__button">Donate</button>
         </div>
       </section>
     </div>
-    <section class="articles">
-      <div class="content">
-        <article class="latest-articles">
+    <main class="articles">
+      <section class="latest-articles">
+        <div class="latest-articles__content">
           <h3 class="latest-articles__header">Latest articles</h3>
-          <p class="latest-articles__description">
-            Breaking news from the wild
-          </p>
-          <div class="slider">
-            <button
-              class="slider__arrow slider__arrow-left transparent no-border"
-            >
-              <img src="./assets/img/arrow-left.svg" />
-            </button>
-            <div class="slider__images">
-              <div class="slider-image-wrapper">
-                <img
-                  class="slider__image image-0"
-                  src="./assets/img/slider-image0.jpg"
-                  alt="Slider image 0"
-                />
-              </div>
-              <div class="slider-image-wrapper">
-                <img
-                  class="slider__image image-1"
-                  src="./assets/img/slider-image1.jpg"
-                  alt="Slider image 1"
-                />
-              </div>
-              <div class="slider-image-wrapper">
-                <img
-                  class="slider__image image-2"
-                  src="./assets/img/slider-image2.jpg"
-                  alt="Slider image 2"
-                />
+          <p class="latest-articles__text">Breaking news from the wild</p>
+        </div>
+        <article class="slider">
+          <button class="slider__arrow slider__arrow--left">
+            <img src="./assets/img/arrow-left.svg" />
+          </button>
+          <div class="slider__images">
+            <div class="slider__image-wrapper image-wrapper--1">
+              <img
+                class="slider__image slider__image--0"
+                src="./assets/img/slider-image0.jpg"
+                alt="First slider picture"
+              />
+              <div class="image-caption image-caption--0">
+                <h4 class="image-caption__header">Deer</h4>
+                <p class="image-caption__text">Naturalist investigation</p>
               </div>
             </div>
-            <button
-              class="slider__arrow slider__arrow-right transparent no-border"
-            >
-              <img src="./assets/img/arrow-right.svg" />
-            </button>
+            <div class="slider__image-wrapper image-wrapper--2">
+              <img
+                class="slider__image slider__image--1"
+                src="./assets/img/slider-image1.jpg"
+                alt="Second slider picture"
+              />
+              <div class="image-caption image-caption--1">
+                <h4 class="image-caption__header">Squirrel</h4>
+                <p class="image-caption__text">Kamikaze squirrels</p>
+              </div>
+            </div>
+            <div class="slider__image-wrapper image-wrapper--2">
+              <img
+                class="slider__image slider__image--2"
+                src="./assets/img/slider-image2.jpg"
+                alt="Third slider picture"
+              />
+              <div class="image-caption image-caption--2">
+                <h4 class="image-caption__header">Bird</h4>
+                <p class="image-caption__text">Birds Fight club</p>
+              </div>
+            </div>
           </div>
+          <button class="slider__arrow slider__arrow-right">
+            <img src="./assets/img/arrow-right.svg" />
+          </button>
         </article>
-        <article class="get-notified">
-          <h4 class="get-notified__header">
-            Get notified about new amazing articles
-          </h4>
-          <form class="notification-form">
-            <input
-              class="notification-form__input"
-              type="email"
-              placeholder="Email"
-            />
-            <input
-              class="notification-form__submit button"
-              type="submit"
-              value="Send"
-            />
-          </form>
-        </article>
-      </div>
-    </section>
+      </section>
+      <section class="get-notified">
+        <h4 class="get-notified__header">
+          Get notified about new amazing articles
+        </h4>
+        <form class="notification-form">
+          <input
+            class="notification-form__input"
+            type="email"
+            placeholder="Email"
+          />
+          <input class="notification-form__submit" type="submit" value="Send" />
+        </form>
+      </section>
+    </main>
     <footer class="footer">
-      <div class="footer__content content">
-        <section class="logo-container">
-          <img class="logo-container__logo" src="./assets/img/logo.svg" />
-          <h1 class="logo-container__header">Wildlife</h1>
-        </section>
+      <div class="footer__wrapper">
+        <div class="logo">
+          <a class="logo__link" href="">
+            <h1 class="logo__header">Wildlife</h1>
+          </a>
+        </div>
         <nav class="navigation">
           <ul class="navigation__list">
-            <li class="navigation__item navigation__articles">
-              <a class="navigation__link link" src="">Articles</a>
+            <li class="navigation__item navigation-articles">
+              <a class="navigation__link" href="">Articles</a>
             </li>
-            <li class="navigation__item navigation__about">
-              <a class="navigation__link link" src="">About us</a>
+            <li class="navigation__item navigation-about">
+              <a class="navigation__link" href="">About us</a>
             </li>
-            <li class="navigation__item navigation__more">
-              <a class="navigation__link link" src="">Learn more</a>
+            <li class="navigation__item navigation-more">
+              <a class="navigation__link" href="">Learn more</a>
             </li>
           </ul>
         </nav>
         <address class="social">
           <ul class="social__list">
-            <li class="social__item social__facebook">
-              <a class="social__item" href="">
+            <li class="social__item social-facebook">
+              <a class="social__link" href="">
                 <img
                   class="social__icon"
                   src="./assets/img/facebook.svg"
                   alt="Facebook link"
               /></a>
             </li>
-            <li class="social__item social__instagram">
+            <li class="social__item social-instagram">
               <a class="social__link" href=""
                 ><img
                   class="social__icon"
@@ -152,7 +146,7 @@
                   alt="Instagram link"
               /></a>
             </li>
-            <li class="social__item social__pinterest">
+            <li class="social__item social-pinterest">
               <a class="social__link" href=""
                 ><img
                   class="social__icon"
@@ -160,7 +154,7 @@
                   alt="Pinterest link"
               /></a>
             </li>
-            <li class="social__item social__youtube">
+            <li class="social__item social-youtube">
               <a class="social__link" href=""
                 ><img
                   class="social__icon"
