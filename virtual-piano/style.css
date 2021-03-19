@@ -183,7 +183,9 @@ body {
 .piano-key-active::after,
 .piano-key-active::before,
 .piano-key-active:active::after,
-.piano-key-active:active::before {
+.piano-key-active:active::before,
+.piano-key-active:hover::after,
+.piano-key-active:hover::before {
   color: #00b4a4;
 }
 

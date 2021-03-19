@@ -1,6 +1,7 @@
 const piano = document.querySelector(".piano");
 const btnLetters = document.querySelector(".btn-letters");
 const btnNotes = document.querySelector(".btn-notes");
+const btnFullscreen = document.querySelector(".fullscreen");
 let mouseDown = false;
 
 const keysToNotes = new Map([
@@ -35,6 +36,16 @@ window.addEventListener("click", (event) => {
     btnNotes.classList.toggle("btn-active");
     for (key of piano.querySelectorAll(".piano-key")) {
       key.classList.toggle("piano-key-letter");
+    }
+  } else if (event.target === btnFullscreen) {
+    if (
+      document.fullscreenElement ||
+      document.mozFullScreenElement ||
+      document.webkitFullscreenElement
+    ) {
+      deactivateFullscreen();
+    } else {
+      activateFullscreen(document.body);
     }
   }
 });
@@ -132,4 +143,25 @@ function playNote(note) {
   const audio = new Audio((src = `./assets/audio/${note}.mp3`));
   audio.currentTime = 0;
   audio.play();
+}
+
+function activateFullscreen(element) {
+  if (element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if (element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  } else if (element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+  }
+}
+function deactivateFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  }
 }
