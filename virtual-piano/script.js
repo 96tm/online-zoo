@@ -1,6 +1,7 @@
 const piano = document.querySelector(".piano");
 const btnLetters = document.querySelector(".btn-letters");
 const btnNotes = document.querySelector(".btn-notes");
+let mouseDown = false;
 
 const keysToNotes = new Map([
   ["D", "c"],
@@ -19,7 +20,7 @@ const keysToNotes = new Map([
 
 let pressedKeys = {};
 [...keysToNotes.keys()].forEach((value) => {
-  pressedKeys[value] = { pressed: false };
+  pressedKeys[value] = { pressed: false, mousePressed: false };
 });
 
 window.addEventListener("click", (event) => {
@@ -27,13 +28,13 @@ window.addEventListener("click", (event) => {
     btnLetters.classList.toggle("btn-active");
     btnNotes.classList.toggle("btn-active");
     for (key of piano.querySelectorAll(".piano-key")) {
-      key.classList.add("piano-key-letter");
+      key.classList.toggle("piano-key-letter");
     }
   } else if (event.target === btnNotes) {
     btnLetters.classList.toggle("btn-active");
     btnNotes.classList.toggle("btn-active");
     for (key of piano.querySelectorAll(".piano-key")) {
-      key.classList.remove("piano-key-letter");
+      key.classList.toggle("piano-key-letter");
     }
   }
 });
@@ -42,32 +43,89 @@ window.addEventListener("keydown", (event) => {
   const keyboardKey = keyCode[keyCode.length - 1];
   const note = keysToNotes.get(keyboardKey);
   if (note && !pressedKeys[keyboardKey]?.pressed) {
-    playNote(note);
     pressedKeys[keyboardKey].pressed = true;
-    const pianoKey = document.querySelector(
-      `.piano-key[data-letter=${keyboardKey}]`
-    );
-    pianoKey.classList.toggle("piano-key-active");
+    if (!pressedKeys[keyboardKey]?.mousePressed) {
+      playNote(note);
+      const pianoKey = document.querySelector(
+        `.piano-key[data-letter=${keyboardKey}]`
+      );
+      pianoKey.classList.toggle("piano-key-active");
+    }
   }
 });
 window.addEventListener("keyup", (event) => {
   const keyCode = event.code;
   const keyboardKey = keyCode[keyCode.length - 1];
-  if (keyboardKey !== undefined && pressedKeys[keyboardKey]?.pressed) {
+  if (pressedKeys[keyboardKey]) {
     pressedKeys[keyboardKey].pressed = false;
-    const pianoKey = document.querySelector(
-      `.piano-key[data-letter=${keyboardKey}]`
-    );
-    pianoKey.classList.toggle("piano-key-active");
+    if (!pressedKeys[keyboardKey].mousePressed) {
+      const pianoKey = document.querySelector(
+        `.piano-key[data-letter=${keyboardKey}]`
+      );
+      pianoKey.classList.remove("piano-key-active");
+    }
   }
 });
 
 piano.addEventListener("mousedown", (event) => {
-  if (event.target.classList.contains("piano-key")) {
-    const key = event.target;
-    const note = key.dataset.note;
-    playNote(note);
+  if (event.button === 0) {
+    const target = event.target;
+    if (target.classList.contains("piano-key")) {
+      mouseDown = true;
+      const note = target.dataset.note;
+      const letter = target.dataset.letter;
+      pressedKeys[letter].mousePressed = true;
+      if (!pressedKeys[letter].pressed) {
+        target.classList.toggle("piano-key-active");
+        playNote(note);
+      }
+    }
   }
+});
+window.addEventListener("mouseup", (event) => {
+  if (event.button === 0) {
+    mouseDown = false;
+    const target = event.target;
+    Object.keys(pressedKeys).forEach((value) => {
+      pressedKeys[value].mousePressed = false;
+    });
+    if (target.classList.contains("piano-key")) {
+      const letter = target.dataset.letter;
+      if (!pressedKeys[letter].pressed) {
+        target.classList.remove("piano-key-active");
+      }
+    }
+  }
+});
+window.addEventListener("mouseover", (event) => {
+  target = event.target;
+  if (mouseDown && target.classList.contains("piano-key")) {
+    target.dispatchEvent(
+      new MouseEvent("mousedown", {
+        button: 0,
+        bubbles: true,
+      })
+    );
+  }
+});
+piano.addEventListener("mouseout", (event) => {
+  target = event.target;
+  if (mouseDown && target.classList.contains("piano-key")) {
+    pressedKeys[target.dataset.letter].mousePressed = false;
+    if (!pressedKeys[target.dataset.letter].pressed) {
+      target.classList.remove("piano-key-active");
+    }
+  }
+});
+window.addEventListener("contextmenu", (event) => {
+  Object.keys(pressedKeys).forEach((value) => {
+    pressedKeys[value].mousePressed = false;
+    pressedKeys[value].pressed = false;
+  });
+  document.querySelectorAll(".piano-key").forEach((pianoKey) => {
+    pianoKey.classList.remove("piano-key-active");
+  });
+  mouseDown = false;
 });
 
 function playNote(note) {
