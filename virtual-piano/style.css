@@ -154,7 +154,7 @@ body {
 }
 .piano-key:hover::before,
 .piano-key:hover::after {
-  color: #00b4a4;
+  color: #fff;
 }
 
 .sharp:active {
@@ -239,9 +239,28 @@ body {
   font-family: "Open Sans", sans-serif;
   transition: 0.3s;
 }
-.github:hover {
+.github:hover,
+.youtube:hover {
   color: #fff;
+  transform: scale(1.1);
+  transition: all 0.2s;
 }
+.youtube {
+  display: block;
+  width: 120px;
+  height: 45px;
+  padding-left: 45px;
+  background-image: url("assets/svg/youtube.svg");
+  background-size: 35px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  line-height: 45px;
+  color: #cbd5de;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  transition: 0.3s;
+}
+
 .rss {
   display: block;
   position: relative;
