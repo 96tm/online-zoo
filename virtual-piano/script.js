@@ -100,10 +100,11 @@ window.addEventListener("mouseup", (event) => {
     Object.keys(pressedKeys).forEach((value) => {
       pressedKeys[value].mousePressed = false;
     });
-    if (target.classList.contains("piano-key")) {
-      const letter = target.dataset.letter;
-      if (!pressedKeys[letter].pressed) {
-        target.classList.remove("piano-key-active");
+    const keys = document.querySelectorAll(".piano-key");
+    for (key of keys) {
+      const letter = key.dataset.letter;
+      if (!pressedKeys[letter]?.pressed) {
+        key.classList.remove("piano-key-active");
       }
     }
   }
