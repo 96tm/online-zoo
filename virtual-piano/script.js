@@ -166,3 +166,6 @@ function deactivateFullscreen() {
     document.webkitExitFullscreen();
   }
 }
+document.addEventListener("fullscreenchange", (event) => {
+  btnFullscreen.classList.toggle("exitfullscreen");
+});
