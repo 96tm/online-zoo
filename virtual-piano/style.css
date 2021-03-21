@@ -207,9 +207,15 @@ body {
 .fullscreen:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
+
 :-webkit-full-screen .fullscreen {
   background-image: url("assets/svg/fullscreen-exit.svg");
 }
+
+.exitfullscreen {
+  background-image: url("assets/svg/fullscreen-exit.svg");
+}
+
 .footer {
   border-top: 1px solid;
   border-image-slice: 1;
