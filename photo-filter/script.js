@@ -21,9 +21,8 @@ filters.addEventListener('input', event => {
   if (target.matches('input') && filterList.includes(target.name)) {
     const output = target.closest('label').querySelector('output');
     output.value = target.value;
-    const html = document.querySelector('html');
     const value = output.value + units.get(target.name);
-    html.style.setProperty(`--${target.name}`, value);
+    image.style.setProperty(`--${target.name}`, value);
   }
 });
 
