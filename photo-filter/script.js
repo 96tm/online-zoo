@@ -1,8 +1,18 @@
 const btnFullscreen = document.querySelector('.fullscreen');
+const filters = document.querySelector('.filters');
+const filterList = ['blur', 'invert', 'sepia', 'saturate', 'hue', ]
 
 window.addEventListener('click', event => {
   if (event.target === btnFullscreen) {
     toggleFullscreen();
+  }
+});
+
+filters.addEventListener('input', event => {
+  const target = event.target;
+  if (target.matches('input') && filterList.includes(target.name)) {
+    const output = target.closest('label').querySelector('output');
+    output.value = target.value;
   }
 });
 
