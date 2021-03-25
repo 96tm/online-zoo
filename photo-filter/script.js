@@ -1,6 +1,8 @@
 const btnFullscreen = document.querySelector('.fullscreen');
+const btnLoad = document.querySelector('.btn-load--input');
 const filters = document.querySelector('.filters');
-const filterList = ['blur', 'invert', 'sepia', 'saturate', 'hue', ]
+const filterList = ['blur', 'invert', 'sepia', 'saturate', 'hue', ];
+const image = document.querySelector('img');
 
 window.addEventListener('click', event => {
   if (event.target === btnFullscreen) {
@@ -13,6 +15,16 @@ filters.addEventListener('input', event => {
   if (target.matches('input') && filterList.includes(target.name)) {
     const output = target.closest('label').querySelector('output');
     output.value = target.value;
+  }
+});
+
+btnLoad.addEventListener('input', event => {
+  const files = btnInput.files;
+  let file = null;
+  if (files.length && (file = files[0])) {
+    if (["image/png", "image/jpeg"].includes(file.type)) {
+      image.src = URL.createObjectURL(file);
+    }
   }
 });
 
