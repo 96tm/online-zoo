@@ -198,6 +198,9 @@ img {
 :-webkit-full-screen .fullscreen {
   background-image: url('assets/svg/fullscreen-exit.svg');
 }
+:fullscreen .fullscreen {
+  background-image: url('assets/svg/fullscreen-exit.svg');
+}
 .footer {
   border-top: 1px solid;
   border-image-slice: 1;
