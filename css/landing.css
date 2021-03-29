@@ -105,21 +105,25 @@ body {
   background-repeat: no-repeat;
   margin: 0 auto 8.75%;
   color: #fff;
-  padding-top: 1%;
+  padding-top: 86px;
   padding-bottom: 15.3%;
-  /* padding-right: 13.6%; */
+}
+
+.watch-online__wrap {
+  position: relative;
 }
 
 .watch-online__description {
-  height: 465px;
-  width: 465px;
-  background-image: url("../assets/ico/ellipse.svg");
-  background-size: cover;
+  position: relative;
+}
+
+.watch-online__image {
+  display: block;
+  position: absolute;
+  transform: translate(-99px,-74px);
 }
 
 .watch-online__text {
-  width: 107.5%;
-  transform: translate(14.5%, 14.5%);
   line-height: 75%;
   font-size: 106.5px;
   font-weight: 700;
