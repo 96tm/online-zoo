@@ -103,11 +103,11 @@ body {
   background-position-y: calc(var(--guides-width) * -0.06);
   background-size: 100% auto;
   background-repeat: no-repeat;
-  margin: 0 auto;
+  margin: 0 auto 8.75%;
   color: #fff;
   padding-top: 1%;
   padding-bottom: 15.3%;
-  padding-right: 13.6%;
+  /* padding-right: 13.6%; */
 }
 
 .watch-online__description {
@@ -142,6 +142,29 @@ body {
 .backstage {
   display: flex;
   justify-content: space-evenly;
+}
+
+.description__header {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  margin-bottom: 3.62%;
+}
+
+.description__short {
+  font-size: 16px;
+  line-height: 130%;
+  margin-bottom: 9.77%;
+}
+
+.description__subheader {
+  font-size: 24px;
+  margin-bottom: 6.15%;
+  line-height: 120%;
+}
+
+.description__long {
+  line-height: 140%;
 }
 
 /* utility */
