@@ -31,6 +31,11 @@ body {
 }
 
 /* utility start */
+.underline-orange {
+  padding-bottom: 1px;
+  border-bottom: 1px solid #fe9013;
+}
+
 .link {
   text-decoration: none;
   color: inherit;
@@ -355,4 +360,124 @@ body {
 .pets__link {
   text-decoration: none;
   color: inherit;
+}
+
+.friend {
+  background: linear-gradient(#fed290, #febdab, #fed290);
+  padding-top: 69px;
+  padding-bottom: 100px;
+  color: #333B41;
+}
+
+.friend__pick {
+  /* background: linear-gradient(#febdab, #f3a9f8, #e0d8f0, #eaf7fe); */
+  background-color: rgba(253, 253, 255, 0.52);
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 41px 54px 59px 99px;
+  text-align: center;
+}
+
+.friend__description {
+  margin-bottom: 60px;
+}
+
+.friend__header {
+  color: #fe9013;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.friend__description {
+  text-align: left;
+}
+
+.friend-text__header {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  margin-bottom: 40px;
+}
+
+.friend-text__subheader {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: #333b41;
+  margin-bottom: 10px;
+}
+
+.friend-text__body {
+  max-width: 863px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #333b41;
+}
+
+.friend-donation__header {
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+}
+
+.friend-donation__cards {
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.friend__donation-card {
+  width: 168px;
+}
+
+.friend-donation-card__image-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 168px;
+  margin-bottom: 30px;
+  border: 1px solid var(--orange);
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.friend-donation-card__image {
+  border-radius: 5px;
+}
+
+.friend-donation-card__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333b41;
+  text-align: left;
+}
+
+.friend-donation-card__arrow-wrap {
+  display: flex;
+  align-items: center;
+  height: 168px;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.friend__button {
+  width: 298px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 140%;
+  font-weight: 500;
+}
+
+.testimonials {
+  padding-top: 140px;
+}
+
+.testimonials__header {
+  margin-bottom: 47px;
 }
