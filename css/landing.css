@@ -336,3 +336,8 @@ body {
   margin: 0 auto;
   display: block;
 }
+
+.pets__link {
+  text-decoration: none;
+  color: inherit;
+}
