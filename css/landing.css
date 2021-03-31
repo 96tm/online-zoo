@@ -50,6 +50,7 @@ body {
   font-family: inherit;
   font-weight: 500;
   text-transform: uppercase;
+  transition: all .5s;
 }
 
 .button:hover {
@@ -125,6 +126,7 @@ body {
 
 .nav__item {
   cursor: pointer;
+  transition: all .5s;
 }
 
 .nav__item:hover {
@@ -263,6 +265,7 @@ body {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  transition: all .5s;
 }
 
 .pets__arrow:hover {
@@ -272,12 +275,24 @@ body {
 .pet-card {
   border: 1px solid #fe9013;
   border-radius: 5px;
+  overflow: hidden;
+}
+
+.pet-card__image-wrap {
+  overflow: hidden;
+  margin-bottom: 8px;
 }
 
 .pet-card__image {
-  margin-bottom: 8px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  vertical-align: bottom;
+  transition: all .5s;
+}
+
+.pet-card__image:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 .pet-card__footer {
