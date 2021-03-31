@@ -69,13 +69,17 @@
         </section>
       <img src="../assets/img/flower.png" alt="Flower" class="backstage__image-flower">
     </div>
-    <section class="pets">
+    <section class="pets relative">
+      <!-- <img src="../assets/img/palm.png"
+           alt="Palm leaves"
+           class="pets__image pets__image--palm"> -->
       <div class="pets__gallery">
-        <button class="pets__arrow pets-arrow">
-          <img src="../assets/ico/arrow-left.svg"
-               alt="Left arrow"
-               class="pets-arrow__left">
-        </button>
+        <div class="pets__panel-left">
+          <button class="pets__arrow pets__arrow--left">
+            <img src="../assets/ico/arrow-left.svg"
+                alt="Left arrow">
+          </button>
+        </div>
         <div class="pets__grid wrap-1160">
           <div class="pet-card pet-card-1-1">
             <img src="../assets/img/card-panda.png" 
@@ -144,17 +148,24 @@
             </div>
           </div>
         </div>
-        <button class="pets__arrow pets-arrow">
-          <img src="../assets/ico/arrow-right.svg"
-               alt="Right arrow"
-               class="pets-arrow__right">
-        </button>
+        <div class="pets__panel-right">
+          <button class="pets__arrow pets__arrow--right">
+            <img src="../assets/ico/arrow-right.svg"
+                alt="Right arrow">
+          </button>
+        </div>
       </div>
-      <!-- <img src="../assets/img/palm.png" alt="Palm leaves" class="pets__image-palm"> -->
-      <button class="pets__button button">
-        Choose your favorite
-      </button>
-      <!-- <img src="../assets/img/strelitzia.png" alt="Strelitzia" class="pets__image-strelitzia">   -->
+      <footer class="pets__footer relative">
+        <img src="../assets/img/palm.png"
+             alt="Palm leaves"
+             class="pets__image pets__image--palm">
+        <button class="pets__button button">
+          Choose your favorite
+        </button>
+        <img src="../assets/img/strelitzia.png"
+             alt="Strelitzia"
+             class="pets__image pets__image--strelitzia">
+      </footer>
     </section>
   </main>
 </body>

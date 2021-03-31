@@ -79,7 +79,6 @@ body {
 .yellow {
   color: var(--yellow);
 }
-
 /* utility end */
 
 .header {
@@ -157,7 +156,6 @@ body {
   margin: 0 auto 140px;
   color: #fff;
   padding-top: 86px;
-  /* padding-bottom: 15.3%; */
   padding-bottom: 11.35%;
 }
 
@@ -246,6 +244,14 @@ body {
   margin-bottom: 80px;
 }
 
+.pets__arrow--left {
+  padding-right: 15px;
+}
+
+.pets__arrow--right {
+  padding-left: 20px;
+}
+
 .pets__grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -257,7 +263,6 @@ body {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  padding: 20px;
 }
 
 .pets__arrow:hover {
@@ -304,15 +309,21 @@ body {
   line-height: 120%;
 }
 
+.pets__footer {
+  padding-bottom: 80px;
+}
+
+.pets__image {
+  position: absolute;
+}
+
+
 .pets__button {
-  /* width: 27.7%; */
   width: 298px;
   color: #fff;
   line-height: 140%;
   font-weight: 500;
   font-size: 16px;
-  text-align: center;
   margin: 0 auto;
-  margin-bottom: 100px;
   display: block;
 }
