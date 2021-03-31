@@ -317,6 +317,15 @@ body {
   position: absolute;
 }
 
+.pets__image--palm {
+  bottom: 0;
+}
+
+.pets__image--strelitzia {
+  right: 0;
+  bottom: 0;
+}
+
 
 .pets__button {
   width: 298px;
