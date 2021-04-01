@@ -37,6 +37,29 @@ body {
   border-bottom: 1px solid #fe9013;
 }
 
+.submit {
+  padding: 10px 39px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 140%;
+  background-color: var(--gray-light);
+  height: 42px;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.submit:hover {
+  transform: scale(1.1);
+}
+
+.submit-mistake {
+  background-color: var(--gray-light);
+  color: var(--red);
+  border: 1px solid var(--red);
+  
+}
+
 .link {
   text-decoration: none;
   color: inherit;
@@ -106,6 +129,7 @@ body {
 }
 
 .logo__title {
+  color: #fff;
   padding: 4px;
   font-weight: 400;
   font-size: 19px;
@@ -297,6 +321,10 @@ body {
   transition: all .5s;
 }
 
+.pet-card:hover {
+  background-color: var(--gray-light);
+}
+
 .pet-card:hover .pet-card__image {
   cursor: pointer;
   transform: scale(1.1);
@@ -306,10 +334,10 @@ body {
   position: absolute;
   left: 0;
   right: 0;
+  height: 150px;
   transform: translateY(-150px);
   transition: all 1.5s;
-  background-color: var(--gray-smoky);
-  opacity: .8;
+  background-color: var(--gray-light);
 }
 
 .pet-card__footer {
@@ -586,7 +614,7 @@ body {
   transform: scaleY(1.5);
 }
 
-.testimonials__button {
+.testimonials__button-feedback {
   background-color: var(--orange);
   width: 298px;
   color: #fff;
@@ -602,6 +630,178 @@ body {
   border: none;
 }
 
-.testimonials__button:hover {
+.testimonials__button-feedback:hover {
   transform: scale(1.1)
+}
+
+.footer {
+  padding-top: 41px;
+  padding-bottom: 50px;
+  background-color: #111115;
+  color: #fff;
+}
+
+.footer__column-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__logo {
+  align-self: flex-start;
+  margin-bottom: 68px;
+  padding-bottom: 6.5px;
+}
+
+.footer__donate {
+  background-color: var(--orange);
+  width: 298px;
+  margin-bottom: 64px;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  transition: all .5s;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+}
+
+.footer__social-media-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__social-media-item {
+  list-style-type: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+  width: 40%;
+}
+
+.footer__social-media-icon {
+  margin-right: 12px;
+  border-radius: 50%;
+}
+
+.footer__social-media-item:hover {
+  color: var(--green);
+}
+
+.footer__social-media-item:hover .footer__social-media-icon {
+  background-color: var(--green);
+}
+
+.footer__social-media-link {
+  display: flex;
+  align-items: flex-end;
+  font-size: 16px;
+  line-height: 140%;
+  text-decoration: none;
+  color: inherit;
+  /* margin-left: 12px; */
+}
+
+.footer__column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 100px;
+}
+
+.footer__nav-list {
+  display: flex;
+  list-style-type: none;
+}
+
+.footer__nav-item {
+  margin-left: 58px;
+  transition: all .5s;
+  cursor: pointer;
+}
+
+.footer__nav-item:hover {
+  transform: scale(1.5);
+  color: var(--orange);
+}
+
+.footer__nav-item:first-child {
+  margin-left: 0;
+}
+
+.footer__nav-link {
+  font-size: 16px;
+  line-height: 140%;
+  text-decoration: none;
+  color: inherit;
+  cursor: inherit;
+}
+
+.footer__column-right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 32px;
+}
+
+.subscribe-header {
+  font-size: 24px;
+  line-height: 120%;
+  margin-bottom: 14px;
+}
+
+.subscribe__form {
+  display: flex;
+}
+
+.subscribe__email {
+  height: 42px;
+  background-color: transparent;
+  border: 1px solid var(--orange);
+  border-radius: 2px;
+  padding: 10px 7px 10px 10px;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.email::placeholder {
+  color: #bdbdbd;
+}
+
+.footer__copyright {
+  display: block;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.footer__copyright-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer__copyright-link:active,
+.footer__copyright-link:hover {
+  color: var(--green);
+}
+
+.footer__copyright-link:active .footer__copyright-line,
+.footer__copyright-link:hover .footer__copyright-line {
+  border-bottom: 1px solid var(--green);
+}
+
+.footer__copyright-line {
+  line-height: 130%;
+  font-weight: 100;
+  font-size: 16px;
+}
+
+.footer__copyright-line:first-child {
+  margin-bottom: 10px;
+}
+
+.footer__nav-item.nav__item--selected {
+  color: #f9804b;
+  transform: none;
+  cursor: default;
 }
