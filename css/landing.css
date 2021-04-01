@@ -37,6 +37,25 @@ body {
   border-bottom: 1px solid #fe9013;
 }
 
+.link-button {
+  background-color: var(--orange);
+  width: 298px;
+  height: 54px;
+  display: inline-block;
+  font-size: 16px;
+  text-decoration: none;
+  color: inherit;
+  padding: 16px 1px 16px 5px;
+  text-align: center;
+  border-radius: 25px;
+  border: none;
+  font-weight: 500;
+  font-family: inherit;
+  line-height: 140%;
+  text-transform: uppercase;
+  transition: all .5s;
+}
+
 .submit {
   padding: 10px 39px;
   border: none;
@@ -65,8 +84,15 @@ body {
   color: inherit;
 }
 
-.link:active,
-.link:hover {
+.link:hover .link-text,
+.link:active .link-text,
+.link-text:hover {
+  border-bottom: 1px solid var(--green);
+  color: var(--green);
+}
+
+.nav-link:active,
+.nav-link:hover {
   color: #f9804b;
 }
 
@@ -188,7 +214,7 @@ body {
   margin: 0 auto 140px;
   color: #fff;
   padding-top: 86px;
-  padding-bottom: 11.35%;
+  padding-bottom: 100px;
 }
 
 .watch-online__wrap {
@@ -197,6 +223,7 @@ body {
 
 .watch-online__description {
   position: relative;
+  text-align: center;
 }
 
 .watch-online__image {
@@ -209,23 +236,20 @@ body {
   line-height: 75%;
   font-size: 106.5px;
   font-weight: 700;
+  margin-bottom: 60px;
   text-transform: uppercase;
-  text-align: center;
 }
 
-.watch-online__button {
-  width: 64%;
-  background-color: var(--orange);
-  border: none;
-  border-radius: 25px;
-  padding: 16px 1px 16px 5px;
-  color: inherit;
-  font-family: inherit;
-  font-weight: 500;
-  text-transform: uppercase;
+.watch-online__link:hover {
+  transform: scale(1.1);
 }
+
 .main {
   position: relative;
+  background-image: url("../assets/img/leaf.png");
+  background-repeat: no-repeat;
+  background-position: right 20px bottom 10px;
+  background-size: cover;
 }
 
 .backstage__image-flower {
@@ -276,12 +300,33 @@ body {
   margin-bottom: 80px;
 }
 
+.pets__arrow {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.pets__arrow:hover {
+  transform: scale(1.5);
+}
+
 .pets__arrow--left {
-  padding-right: 15px;
+  background: url("../assets/ico/arrow-left-orange.svg") no-repeat, linear-gradient(#f9804b, #fe9013);
+}
+
+.pets__arrow--left:hover {
+  background: url("../assets/ico/arrow-left-orange.svg") no-repeat, var(--green);
 }
 
 .pets__arrow--right {
-  padding-left: 20px;
+  background: url("../assets/ico/arrow-right-orange.svg") no-repeat, linear-gradient(#f9804b, #fe9013);
+}
+
+.pets__arrow--right:hover {
+  background: url("../assets/ico/arrow-right-orange.svg") no-repeat, var(--green);
 }
 
 .pets__grid {
@@ -289,17 +334,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 30px;
   row-gap: 20px;
-}
-
-.pets__arrow {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  transition: all .5s;
-}
-
-.pets__arrow:hover {
-  transform: scale(1.1);
+  margin: 0 20px;
 }
 
 .pet-card {
@@ -371,6 +406,7 @@ body {
 
 .pets__footer {
   padding-bottom: 80px;
+  text-align: center;
 }
 
 .pets__image {
@@ -379,6 +415,7 @@ body {
 
 .pets__image--palm {
   bottom: 0;
+  left: 0;
 }
 
 .pets__image--strelitzia {
@@ -386,20 +423,12 @@ body {
   bottom: 0;
 }
 
-
-.pets__button {
-  width: 298px;
+.pets__link {
   color: #fff;
-  line-height: 140%;
-  font-weight: 500;
-  font-size: 16px;
-  margin: 0 auto;
-  display: block;
 }
 
-.pets__link {
-  text-decoration: none;
-  color: inherit;
+.pets__link:hover {
+  transform: scale(1.1);
 }
 
 .friend {
@@ -652,21 +681,15 @@ body {
   padding-bottom: 6.5px;
 }
 
-.footer__donate {
-  background-color: var(--orange);
-  width: 298px;
+.footer__donate-link {
   margin-bottom: 64px;
   color: #fff;
   border-radius: 5px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 140%;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  transition: all .5s;
   cursor: pointer;
-  border: none;
-  text-transform: uppercase;
+}
+
+.footer__donate-link:hover {
+  transform: scale(1.1);
 }
 
 .footer__social-media-list {
@@ -773,21 +796,6 @@ body {
   display: block;
   align-self: flex-end;
   margin-top: auto;
-}
-
-.footer__copyright-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.footer__copyright-link:active,
-.footer__copyright-link:hover {
-  color: var(--green);
-}
-
-.footer__copyright-link:active .footer__copyright-line,
-.footer__copyright-link:hover .footer__copyright-line {
-  border-bottom: 1px solid var(--green);
 }
 
 .footer__copyright-line {
