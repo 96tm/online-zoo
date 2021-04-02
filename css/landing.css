@@ -8,7 +8,6 @@
   --gray-smoky: #ababab;
   --gray-light: #f1f3f2;
   --white-frosted-glass: #fdfdff;
-  --testimonials-card-max-lines: 17;
 }
 
 body {
@@ -105,27 +104,24 @@ body {
   display: flex;
 }
 
-.flex-end {
-  justify-content: flex-end;
-}
-
-.flex-center-y {
-  align-items: center;
-}
-
 .yellow {
   color: var(--yellow);
 }
+
+.wrap-1160 {
+  width: 1160px;
+}
 /* utility end */
 
+/* Header start */
 .header {
   background-color: #000;
   color: #fff;
   padding: 14px 0;
 }
 
-.wrap-1160 {
-  width: 1160px;
+.header__wrap {
+  align-items: center;
 }
 
 .logo {
@@ -185,7 +181,9 @@ body {
   color: inherit;
   cursor: inherit;
 }
+/* Header end */
 
+/* 'Watch online' start */
 .watch-online {
   height: 890px;
   background-image: url("../assets/img/panda-header.png");
@@ -195,6 +193,10 @@ body {
   margin: 0 auto 70px;
   color: #fff;
   padding-top: 86px;
+}
+
+.watch-online__wrap {
+  justify-content: flex-end;
 }
 
 .watch-online__description {
@@ -214,11 +216,9 @@ body {
   margin-bottom: 60px;
   text-transform: uppercase;
 }
+/* 'Watch online' start */
 
-.main {
-  position: relative;
-}
-
+/* 'Backstage' start */
 .backstage__image-flower {
   display: inline-block;
   position: absolute;
@@ -259,7 +259,9 @@ body {
 .description__long {
   line-height: 140%;
 }
+/* 'Backstage' end */
 
+/* 'Pets' start */
 .pets__gallery {
   display: flex;
   align-items: center;
@@ -393,7 +395,9 @@ body {
 .pets__link {
   color: #fff;
 }
+/* 'Pets' end */
 
+/* 'Friend' start */
 .friend {
   background: linear-gradient(#fed290, #febdab, #fed290);
   padding-top: 69px;
@@ -505,7 +509,9 @@ body {
   line-height: 140%;
   font-weight: 500;
 }
+/* 'Friend' start */
 
+/* 'Testimonials' start */
 .testimonials {
   padding-top: 140px;
   padding-bottom: 180px;
@@ -533,7 +539,6 @@ body {
   background: linear-gradient(#febdab, #f3a9f8, #e0d8f0, #febdab);
   padding: 1px;
   border-radius: 20px;
-  /* max-height: 309px; */
   height: 392px;
   width: 268px;
 }
@@ -581,7 +586,6 @@ body {
 }
 
 .testimonials__scroll {
-  position: relative;
   height: 8px;
   width: 600px;
   margin: 0 auto 31px auto;
@@ -623,7 +627,9 @@ body {
   cursor: pointer;
   border: none;
 }
+/* 'Testimonials' start */
 
+/* Footer start */
 .footer {
   padding-top: 41px;
   padding-bottom: 50px;
@@ -681,7 +687,6 @@ body {
   line-height: 140%;
   text-decoration: none;
   color: inherit;
-  /* margin-left: 12px; */
 }
 
 .footer__column-center {
@@ -770,3 +775,4 @@ body {
   transform: none;
   cursor: default;
 }
+/* Footer end */
