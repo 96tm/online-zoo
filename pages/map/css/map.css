@@ -1,8 +1,48 @@
 .main {
   background-color: #eaf7fe;
   text-align: center;
+  position: relative;
 }
 
 .map {
   width: 1085px;
+}
+
+.zoom {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+}
+
+.zoom__button {
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  width: 54px;
+  height: 54px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.zoom__button:hover {
+  border: 1px solid #4b9200;
+}
+
+.zoom__button-in {
+  background: url("../../../assets/icons/zoom-in-inactive.svg") no-repeat;
+}
+
+.zoom__button-in:hover {
+  background: url("../../../assets/icons/zoom-in-active.svg") no-repeat;
+}
+
+.zoom__button-out {
+  margin-top: 10px;
+  background: url("../../../assets/icons/zoom-out-inactive.svg") no-repeat;
+}
+
+.zoom__button-out:hover {
+  background: url("../../../assets/icons/zoom-out-active.svg") no-repeat;
 }
