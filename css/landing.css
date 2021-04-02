@@ -1,5 +1,4 @@
 :root {
-  --guides-width: 1160px;
   --orange: #fb853a;
   --green: #4b9200;
   --yellow: #ffee2e;
@@ -10,11 +9,6 @@
   --gray-light: #f1f3f2;
   --white-frosted-glass: #fdfdff;
   --testimonials-card-max-lines: 17;
-}
-
-html {
-  height: 100%;
-  box-sizing: border-box;
 }
 
 body {
@@ -54,6 +48,11 @@ body {
   line-height: 140%;
   text-transform: uppercase;
   transition: all .5s;
+  cursor: pointer;
+}
+
+.link-button:hover {
+  background-color: var(--green);
 }
 
 .submit {
@@ -96,22 +95,6 @@ body {
   color: #f9804b;
 }
 
-.button {
-  cursor: pointer;
-  background-color: var(--orange);
-  border: none;
-  border-radius: 25px;
-  padding: 16px 1px 16px 5px;
-  font-family: inherit;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: all .5s;
-}
-
-.button:hover {
-  transform: scale(1.1);
-}
-
 .center {
   margin: 0 auto;
 }
@@ -144,7 +127,6 @@ body {
 }
 
 .wrap-1160 {
-  height: 100%;
   width: 1160px;
 }
 
@@ -207,14 +189,14 @@ body {
 }
 
 .watch-online {
+  height: 890px;
   background-image: url("../assets/img/panda-header.png");
-  background-position-y: calc(var(--guides-width) * -0.06);
-  background-size: 100% auto;
+  background-position-y: -70px;
+  background-size: cover;
   background-repeat: no-repeat;
-  margin: 0 auto 140px;
+  margin: 0 auto 70px;
   color: #fff;
   padding-top: 86px;
-  padding-bottom: 100px;
 }
 
 .watch-online__wrap {
@@ -240,16 +222,8 @@ body {
   text-transform: uppercase;
 }
 
-.watch-online__link:hover {
-  transform: scale(1.1);
-}
-
 .main {
   position: relative;
-  background-image: url("../assets/img/leaf.png");
-  background-repeat: no-repeat;
-  background-position: right 20px bottom 10px;
-  background-size: cover;
 }
 
 .backstage__image-flower {
@@ -427,10 +401,6 @@ body {
   color: #fff;
 }
 
-.pets__link:hover {
-  transform: scale(1.1);
-}
-
 .friend {
   background: linear-gradient(#fed290, #febdab, #fed290);
   padding-top: 69px;
@@ -545,7 +515,8 @@ body {
 
 .testimonials {
   padding-top: 140px;
-  margin: 0 auto 180px auto;
+  padding-bottom: 180px;
+  background: url("../assets/img/leaf.png") no-repeat bottom -130px right;
 }
 
 .testimonials__header {
@@ -641,6 +612,7 @@ body {
 
 .testimonials-scroll__active:hover {
   transform: scaleY(1.5);
+  background-color: var(--green);
 }
 
 .testimonials__button-feedback {
@@ -657,10 +629,6 @@ body {
   transition: all .5s;
   cursor: pointer;
   border: none;
-}
-
-.testimonials__button-feedback:hover {
-  transform: scale(1.1)
 }
 
 .footer {
@@ -686,10 +654,6 @@ body {
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.footer__donate-link:hover {
-  transform: scale(1.1);
 }
 
 .footer__social-media-list {
