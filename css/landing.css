@@ -197,12 +197,7 @@ body {
   padding-top: 86px;
 }
 
-.watch-online__wrap {
-  position: relative;
-}
-
 .watch-online__description {
-  position: relative;
   text-align: center;
 }
 
@@ -246,18 +241,18 @@ body {
   font-weight: 400;
   font-size: 48px;
   line-height: 120%;
-  margin-bottom: 3.62%;
+  margin-bottom: 20px;
 }
 
 .description__short {
   font-size: 16px;
   line-height: 130%;
-  margin-bottom: 9.77%;
+  margin-bottom: 54px;
 }
 
 .description__subheader {
   font-size: 24px;
-  margin-bottom: 6.15%;
+  margin-bottom: 35px;
   line-height: 120%;
 }
 
