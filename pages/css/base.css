@@ -136,7 +136,7 @@ body {
   font-weight: 400;
   font-size: 19px;
   text-align: center;
-  background-image: url("../assets/ico/bamboo.svg");
+  background-image: url("../../assets/icons/bamboo.svg");
   background-repeat: no-repeat;
   background-position-x: 13.5%;
   background-position-y: 75%;
@@ -185,12 +185,12 @@ body {
 
 /* 'Watch online' start */
 .watch-online {
-  height: 890px;
-  background-image: url("../assets/img/panda-header.png");
+  height: 1000px;
+  background-image: url("../../assets/images/panda-bg.jpg");
   background-position-y: -70px;
   background-size: cover;
   background-repeat: no-repeat;
-  margin: 0 auto 70px;
+  margin: 0 auto 140px;
   color: #fff;
   padding-top: 86px;
 }
@@ -283,19 +283,19 @@ body {
 }
 
 .pets__arrow--left {
-  background: url("../assets/ico/arrow-left-orange.svg") no-repeat, linear-gradient(#f9804b, #fe9013);
+  background: url("../../assets/icons/arrow-left-orange.svg") no-repeat, linear-gradient(#f9804b, #fe9013);
 }
 
 .pets__arrow--left:hover {
-  background: url("../assets/ico/arrow-left-orange.svg") no-repeat, var(--green);
+  background: url("../../assets/icons/arrow-left-orange.svg") no-repeat, var(--green);
 }
 
 .pets__arrow--right {
-  background: url("../assets/ico/arrow-right-orange.svg") no-repeat, linear-gradient(#f9804b, #fe9013);
+  background: url("../../assets/icons/arrow-right-orange.svg") no-repeat, linear-gradient(#f9804b, #fe9013);
 }
 
 .pets__arrow--right:hover {
-  background: url("../assets/ico/arrow-right-orange.svg") no-repeat, var(--green);
+  background: url("../../assets/icons/arrow-right-orange.svg") no-repeat, var(--green);
 }
 
 .pets__grid {
@@ -349,13 +349,13 @@ body {
 }
 
 .pet-card-footer__wrap-banana {
-  background-image: url("../assets/ico/banana-bamboo.svg");
+  background-image: url("../../assets/icons/banana-bamboo.svg");
   background-repeat: no-repeat;
   background-position-x: right;
 }
 
 .pet-card-footer__wrap-flesh {
-  background-image: url("../assets/ico/flesh.svg");
+  background-image: url("../../assets/icons/flesh.svg");
   background-repeat: no-repeat;
   background-position-x: right;
 }
