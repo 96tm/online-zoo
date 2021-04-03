@@ -13,7 +13,7 @@
    fill="none"
    version="1.1"
    id="svg4"
-   sodipodi:docname="Ellipse 17 (another copy).svg"
+   sodipodi:docname="youtube.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <metadata
      id="metadata10">
@@ -42,8 +42,8 @@
      id="namedview6"
      showgrid="false"
      inkscape:zoom="9.0769231"
-     inkscape:cx="-6.940678"
-     inkscape:cy="13"
+     inkscape:cx="-27.101695"
+     inkscape:cy="12.614407"
      inkscape:window-x="72"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -54,7 +54,8 @@
      r="13"
      fill="#C4C4C4"
      fill-opacity="0.5"
-     id="circle2" />
+     id="circle2"
+     style="fill:#c4c4c4;fill-opacity:0" />
   <path
      inkscape:connector-curvature="0"
      style="clip-rule:evenodd;fill:#ffffff;fill-rule:evenodd"

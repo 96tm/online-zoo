@@ -670,9 +670,9 @@ input {
 .footer__social-media-icon {
   margin-right: 12px;
   border-radius: 50%;
-  
+  background: rgba(196, 196, 196, 0.5);
 }
-/* ! */
+
 .footer__social-media-item:hover {
   color: var(--green);
 }
