@@ -8,6 +8,10 @@
   width: 1085px;
 }
 
+#china:hover {
+  fill: aqua;
+}
+
 .zoom {
   display: flex;
   flex-direction: column;
