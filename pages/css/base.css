@@ -16,6 +16,10 @@ body {
   background-color: #fff;
 }
 
+input {
+  outline: none;
+}
+
 *,
 *::before,
 *::after {
@@ -54,7 +58,7 @@ body {
 
 .submit {
   padding: 10px 39px;
-  border: none;
+  border: 1px solid var(--black-blue);
   border-radius: 5px;
   font-size: 16px;
   line-height: 140%;
@@ -64,15 +68,11 @@ body {
   transition: all .5s;
 }
 
-.submit:hover {
-  transform: scale(1.1);
-}
-
-.submit-mistake {
-  background-color: var(--gray-light);
-  color: var(--red);
-  border: 1px solid var(--red);
-  
+.submit:hover,
+.submit:active,
+.submit:focus {
+  border: 1px solid var(--green);
+  color: var(--green);
 }
 
 .link {
@@ -670,8 +670,9 @@ body {
 .footer__social-media-icon {
   margin-right: 12px;
   border-radius: 50%;
+  
 }
-
+/* ! */
 .footer__social-media-item:hover {
   color: var(--green);
 }
@@ -730,17 +731,36 @@ body {
   margin-left: 32px;
 }
 
-.subscribe-header {
+.footer-form__row {
+  display: flex;
+}
+
+.footer-form__email {
+  border: .7px solid var(--orange);
+}
+
+.footer-form__email:active,
+.footer-form__email:focus {
+  border: .7px solid var(--green);
+}
+
+.footer__form:invalid .footer-form__email {
+  border: .7px solid var(--red);
+  color: var(--red);
+}
+
+.footer__form:invalid .footer-form__submit {
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+
+.footer-form__header {
   font-size: 24px;
   line-height: 120%;
   margin-bottom: 14px;
 }
 
-.subscribe__form {
-  display: flex;
-}
-
-.subscribe__email {
+.footer-form__email {
   height: 42px;
   background-color: transparent;
   border: 1px solid var(--orange);
@@ -750,7 +770,7 @@ body {
   margin-right: 10px;
 }
 
-.email::placeholder {
+.footer-form__email::placeholder {
   color: #bdbdbd;
 }
 

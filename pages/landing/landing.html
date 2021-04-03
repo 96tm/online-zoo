@@ -462,19 +462,22 @@
         </div>
         <div class="footer__column-right">
           <section class="footer__subscribe">
-            <h3 class="subscribe-header">
-              Subscribe to our news
-            </h3>
-            <div class="subscribe__form">
-              <input type="email"
-                    placeholder="Enter your email"
-                    class="subscribe__email"><!--
-              --><input type="submit" value="Submit" class="subscribe__submit submit submit-mistake">
-            </div>
+            <form action="#" class="footer__form footer-form">
+              <h3 class="footer-form__header">
+                Subscribe to our news
+              </h3>
+              <div class="footer-form__row">
+                <input type="email"
+                       placeholder="Enter your email"
+                       pattern="^[a-zA-Z0-9-_/.]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
+                       class="footer-form__email"><!--
+                --><input type="submit" value="Submit" class="footer-form__submit submit">
+              </div>
+            </form>
           </section>
           <small class="footer__copyright">
             <a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online"
-              class="footer__copyright-link link">
+               class="footer__copyright-link link">
                 <p class="footer__copyright-line link-text">Designed by Alisa Samborskaya</p>
                 <p class="footer__copyright-line link-text">©RSSchool & ©Yem Digital 2021</p>
             </a>
