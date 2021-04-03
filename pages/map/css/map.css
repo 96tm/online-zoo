@@ -1,3 +1,74 @@
+:root {
+  --orange: #fb853a;
+  --gray-light: #f1f3f2;
+  --green: #4b9200;
+}
+
+.tooltip {
+  top: 50px;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  width: 158px;
+  height: 109px;
+  padding: 7px 11px 15px 11px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: left;
+}
+
+.tooltip::before {
+  content: '';
+  width: 12px;
+  height: 10.12px;
+  z-index: 2;
+  background-color: #fff;
+  overflow: hidden;
+  position: absolute;
+  border: none;
+  top: 0;
+  left: 43.45px;
+}
+
+.tooltip::after {
+  content: '';
+  width: 9.57px;
+  height: 10.12px;
+  transform: rotate(45deg) skew(17deg, 17deg);
+  background-color: #fff;
+  overflow: hidden;
+  position: absolute;
+  border: 1px solid #000;
+  top: -4px;
+  left: 44.7px;
+} 
+
+.tooltip__animal,
+.tooltip__location {
+  line-height: 140%;
+}
+
+.tooltip__button {
+  text-align: center;
+  vertical-align: bottom;
+  display: inline-block;
+  width: 135px;
+  height: 31px;
+  color: var(--green);
+  background-color: var(--gray-light);
+  border-radius: 5px;
+  border: none;
+  margin-top: 11px;
+  cursor: pointer;
+}
+
+#eagle:hover {
+  fill: red;
+}
+
 .main {
   background-color: #eaf7fe;
   text-align: center;
@@ -8,8 +79,9 @@
   width: 1085px;
 }
 
-#china:hover {
-  fill: aqua;
+.map__mark:hover {
+  fill: var(--orange);
+  cursor: pointer;
 }
 
 .zoom {
