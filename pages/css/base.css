@@ -33,7 +33,7 @@ input {
 }
 
 .link-button {
-  background-color: var(--orange);
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   width: 298px;
   height: 54px;
   display: inline-block;
@@ -55,7 +55,7 @@ input {
 .link-button:hover,
 .link-button:active,
 .link-button:focus {
-  background-color: var(--green);
+  background: var(--green);
 }
 
 .submit {
@@ -64,7 +64,7 @@ input {
   border-radius: 5px;
   font-size: 16px;
   line-height: 140%;
-  background-color: var(--gray-light);
+  background: var(--gray-light);
   height: 42px;
   cursor: pointer;
   transition: all .5s;
@@ -696,7 +696,7 @@ input {
 
 .footer__social-media-item:hover .footer__social-media-icon,
 .footer__social-media-link:focus .footer__social-media-icon {
-  background-color: var(--green);
+  background: var(--green);
 }
 
 .footer__social-media-link {
