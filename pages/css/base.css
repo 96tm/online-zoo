@@ -531,7 +531,7 @@ input {
 .testimonials {
   padding-top: 140px;
   padding-bottom: 180px;
-  background: url("../assets/img/leaf.png") no-repeat bottom -130px right;
+  background: url("../../assets/images/leaf.png") no-repeat bottom -130px right;
 }
 
 .testimonials__header {
