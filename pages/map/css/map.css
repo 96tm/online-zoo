@@ -63,6 +63,10 @@
   cursor: pointer;
 }
 
+.animal-figure {
+  cursor: pointer;
+}
+
 .tooltip__button:hover,
 .tooltip__button:active {
   color: var(--green);
