@@ -16,7 +16,7 @@
       <div class="header__wrap wrap-1160 center flex">
         <article class="logo">
           <h1 class="logo__title">
-            <a href="./landing.html" class="nav-link">
+            <a href="../landing/landing.html" class="nav-link">
               PetStory
               <br>
               online
@@ -26,7 +26,7 @@
         <nav class="nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="./landing.html" 
+              <a href="../landing/landing.html" 
                  class="nav__link">
                   About
               </a>
@@ -52,9 +52,9 @@
     <section class="background-panda"></section>
     <main class="main relative">
       <section class="friend">
-        <div class="donation-info wrap-1160">
+        <div class="donation-info wrap-1160 center">
           <h2 class="donation-info__header">
-            The zoo has oficially reopened but we still need your help
+            The zoo has oficially reopened but we still need your help!
           </h2>
           <p class="donation-info__body">
             Even though the Zoo has been able to reopen,
@@ -74,67 +74,77 @@
           <h3 class="friend__header">Pick and feed a friend</h3>
           <div class="friend__pick">
             <div class="friend__description">
-              <div class="friend__text friend-text">
                 <p class="friend-text__header">
                   We know the animals bring you joy,
                   and in these extraordinary times, we’re glad.
                 </p>
-                <p class="friend-text__subheader">
-                  During a time when the COVID-19 epidemic is touching all of our lives,
-                  we’re proud and glad that people around the world find joy in PetStory.
-                </p>
-                <p class="friend-text__body">
-                  Even though the zoo has reopened,
-                  we need you now more than ever to help us deal with these problems.
-                  Please consider a gift to our 
-                  <a href="../donate/donate.html"
-                    target="_blank"
-                    class="link link-text underline-orange">
-                      Emergency Support Fund.
-                  </a>
+            </div>
+            <div class="friend__figure friend-figure">
+              <div class="friend-figure__diet">
+                <p class="friend-figure__number">4</p>
+                <p class="friend-figure__label">
+                  Panda diet for the day
                 </p>
               </div>
+              <img src="../../assets/icons/x-icon.svg"
+                   alt="X icon"
+                   class="friend-figure__x-icon">
+              <img src="../../assets/icons/panda-icon.svg"
+                   alt="Panda"
+                   class="friend-figure__image">
             </div>
-            <div class="friend__donation friend-donation">
-              <h4 class="friend-donation__header">How it works</h4>
-              <div class="friend-donation__cards friend-donation-cards">
-                <div class="friend__donation-card friend-donation-card">
-                  <div class="friend-donation-card__image-wrap">
-                    <img src="../../assets/icons/credit-card.svg"
-                        alt="Hand holding a credit card"
-                        class="friend-donation-card__image">
-                  </div>
-                  <p class="friend-donation-card__text">Pay with a card</p>
-                </div>
-                <div class="friend-donation-card__arrow-wrap">
-                  <img src="../../assets/icons/arrow-right-hollow.svg"
-                      alt="Right arrow">
-                </div>
-                <div class="friend__donation-card friend-donation-card">
-                  <div class="friend-donation-card__image-wrap">
-                    <img src="../../assets/icons/money-tree.svg"
-                          alt="Tree growing from a hand"
-                          class="friend-donation-card__image">
-                  </div>
-                  <p class="friend-donation-card__text">Payment goes to the zoo</p>
-                </div>
-                <div class="friend-donation-card__arrow-wrap">
-                  <img src="../../assets/icons/arrow-right-hollow.svg"
-                      alt="Right arrow">
-                </div>
-                <div class="friend__donation-card friend-donation-card">
-                  <div class="friend-donation-card__image-wrap">
-                    <img src="../../assets/icons/monkey.svg"
-                          alt="Smiling monkey and bananas"
-                          class="friend-donation-card__image">
-                  </div>
-                  <p class="friend-donation-card__text">Your favorite animal gets delicious dish</p>
-                </div>
+            <form action="" class="friend__form friend-form">
+              <div class="friend-form__amount-range-wrap">
+                <input type="range"
+                        min="25"
+                        max="5000"
+                        list="friend-form__amount-marks"
+                        class="friend-form__amount-range">
               </div>
-            </div>
-            <button class="friend__button link-button">
-              Feed a friend now
-            </button>
+              <datalist id="friend-form__amount-marks">
+                <option value="25" label="25">25</option>
+                <option value="50" label="50"></option>
+                <option value="100" label="100"></option>
+                <option value="250" label="250"></option>
+                <option value="500" label="500"></option>
+                <option value="1000" label="1000"></option>
+                <option value="2000" label="2000"></option>
+                <option value="5000" label="5000"></option>
+              </datalist>
+              <div class="friend-form__input-amount-number-wrap">
+                <input type="number"
+                       name="amount-number"
+                       min="1"
+                       placeholder="Another amount"
+                       class="friend-form__input-amount-number">
+              </div>
+              <fieldset class="friend-form__frequency frequency">
+                <label for="frequency__input-monthly"
+                       class="frequency__label">
+                  <input id="frequency__input-monthly"
+                         type="radio"
+                         name="frequency"
+                         value="monthly"
+                         class="frequency__input-radio"><!--
+                  -->Monthly
+                </label>
+                <label for="frequency__input-once"
+                       class="frequency__label">
+                  <input id="frequency__input-once"
+                         type="radio"
+                         name="frequency"
+                         value="once"
+                         class="frequency__input-radio"><!--
+                  -->Once
+                </label>
+              </fieldset>
+              <button class="friend__button link-button">
+                Feed a friend now
+              </button>
+              <p class="friend-form__footer">
+                Share with your friends on social networks
+              </p> 
+            </form>
           </div>
         </div>
       </section>
@@ -144,7 +154,7 @@
         <div class="footer__column-left">
           <article class="footer__logo logo">
             <p class="logo__title">
-              <a href="./landing.html" class="nav-link">
+              <a href="../landing/landing.html" class="nav-link">
                 PetStory
                 <br>
                 online
@@ -199,7 +209,7 @@
           <nav class="footer__nav">
             <ul class="footer__nav-list">
               <li class="footer__nav-item">
-                <a href="./landing.html" class="footer__nav-link">
+                <a href="../landing/landing.html" class="footer__nav-link">
                   About
                 </a>
               </li>
