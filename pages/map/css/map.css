@@ -5,12 +5,11 @@
 }
 
 .tooltip {
-  top: 50px;
-  left: 50px;
+  visibility: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  position: relative;
+  position: absolute;
   width: 158px;
   height: 109px;
   padding: 7px 11px 15px 11px;
@@ -57,7 +56,6 @@
   display: inline-block;
   width: 135px;
   height: 31px;
-  color: var(--green);
   background-color: var(--gray-light);
   border-radius: 5px;
   border: none;
@@ -65,8 +63,9 @@
   cursor: pointer;
 }
 
-#eagle:hover {
-  fill: red;
+.tooltip__button:hover,
+.tooltip__button:active {
+  color: var(--green);
 }
 
 .main {
@@ -75,13 +74,13 @@
   position: relative;
 }
 
-.map {
-  width: 1085px;
-}
-
 .map__mark:hover {
   fill: var(--orange);
   cursor: pointer;
+}
+
+.map__mark-active {
+  fill: var(--orange);
 }
 
 .zoom {
