@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="80"
+   height="80"
+   viewBox="0 0 80 80"
+   fill="none"
+   version="1.1"
+   id="svg15"
+   sodipodi:docname="down-sidebar-active.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata19">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1848"
+     inkscape:window-height="1103"
+     id="namedview17"
+     showgrid="false"
+     inkscape:zoom="2.95"
+     inkscape:cx="42.033898"
+     inkscape:cy="40"
+     inkscape:window-x="72"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg15" />
+  <circle
+     cx="40"
+     cy="40"
+     r="39"
+     id="circle2"
+     stroke-width="2"
+     stroke="url(#paint0_linear)"
+     fill="white"
+     style="stroke:#4b9200;stroke-opacity:1" />
+  <circle
+     cx="40"
+     cy="40"
+     r="30.5"
+     transform="rotate(90 40 40)"
+     stroke="black"
+     id="circle4"
+     style="stroke:#4b9200;stroke-opacity:1" />
+  <path
+     d="M44.1075 43.9982L44.2094 43.8935L44.1074 43.7889L43.9709 43.6487L43.8635 43.5384L43.756 43.6487L40.2466 47.2516V32V31.85H40.0966H39.9034H39.7534V32V47.2512L36.244 43.6487L36.1365 43.5384L36.0291 43.6487L35.8926 43.7889L35.7906 43.8935L35.8926 43.9982L39.8927 48.1047L40.0002 48.215L40.1076 48.1047L44.1075 43.9982Z"
+     fill="black"
+     stroke="black"
+     stroke-width="0.3"
+     id="path6"
+     style="stroke:#4b9200;stroke-opacity:1" />
+  <defs
+     id="defs13">
+    <linearGradient
+       id="paint0_linear"
+       x1="-3.5443"
+       y1="11.8519"
+       x2="92.9047"
+       y2="54.7202"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#F9804B"
+         id="stop8" />
+      <stop
+         offset="1"
+         stop-color="#FE9013"
+         id="stop10" />
+    </linearGradient>
+  </defs>
+</svg>

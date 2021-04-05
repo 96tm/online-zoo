@@ -1,0 +1,127 @@
+:root {
+  --orange: #fb853a;
+  --gray-light: #f1f3f2;
+  --green: #4b9200;
+}
+
+.tooltip {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: absolute;
+  width: 158px;
+  height: 109px;
+  padding: 7px 11px 15px 11px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: left;
+}
+
+.tooltip::before {
+  content: '';
+  width: 12px;
+  height: 10.12px;
+  z-index: 2;
+  background-color: #fff;
+  overflow: hidden;
+  position: absolute;
+  border: none;
+  top: 0;
+  left: 43.45px;
+}
+
+.tooltip::after {
+  content: '';
+  width: 9.57px;
+  height: 10.12px;
+  transform: rotate(45deg) skew(17deg, 17deg);
+  background-color: #fff;
+  overflow: hidden;
+  position: absolute;
+  border: 1px solid #000;
+  top: -4px;
+  left: 44.7px;
+} 
+
+.tooltip__animal,
+.tooltip__location {
+  line-height: 140%;
+}
+
+.tooltip__button {
+  text-align: center;
+  vertical-align: bottom;
+  display: inline-block;
+  width: 135px;
+  height: 31px;
+  background-color: var(--gray-light);
+  border-radius: 5px;
+  border: none;
+  margin-top: 11px;
+  cursor: pointer;
+}
+
+.animal-figure {
+  cursor: pointer;
+}
+
+.tooltip__button:hover,
+.tooltip__button:active {
+  color: var(--green);
+}
+
+.main {
+  background-color: #eaf7fe;
+  text-align: center;
+  position: relative;
+}
+
+.map__mark:hover {
+  fill: var(--orange);
+  cursor: pointer;
+}
+
+.map__mark-active {
+  fill: var(--orange);
+}
+
+.zoom {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+}
+
+.zoom__button {
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  width: 54px;
+  height: 54px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.zoom__button:hover {
+  border: 1px solid #4b9200;
+}
+
+.zoom__button-in {
+  background: url("../../../assets/icons/zoom-in-inactive.svg") no-repeat;
+}
+
+.zoom__button-in:hover {
+  background: url("../../../assets/icons/zoom-in-active.svg") no-repeat;
+}
+
+.zoom__button-out {
+  margin-top: 10px;
+  background: url("../../../assets/icons/zoom-out-inactive.svg") no-repeat;
+}
+
+.zoom__button-out:hover {
+  background: url("../../../assets/icons/zoom-out-active.svg") no-repeat;
+}

@@ -1,0 +1,9 @@
+.carousel__video-thumbnail {
+  background: url("../../../assets/images/thumbnail-eagle.jpg") no-repeat;
+  background-size: cover;
+}
+
+.donate {
+  background: url("../../../assets/images/eagle-bg-cam.png") no-repeat;
+  background-size: cover;
+}
