@@ -1,0 +1,25 @@
+
+.info__header {
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--gray);
+}
+
+.info-header__image {
+  width: 422px;
+  height: 422px;
+}
+
+.donate {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background: url("../../../assets/images/panda-bg-cam.png") no-repeat;
+  background-size: cover;
+  height: 390px;
+  padding-bottom: 60px;
+}
+
+.donate__button {
+  color: #fff;
+}
