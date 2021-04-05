@@ -1,5 +1,6 @@
 :root {
   --orange: #fb853a;
+  --orange-gradient: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   --green: #4b9200;
   --yellow: #ffee2e;
   --red: #d31414;
@@ -32,6 +33,7 @@ input {
   border-bottom: 1px solid #fe9013;
 }
 
+
 .link-button {
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   width: 298px;
@@ -58,6 +60,26 @@ input {
   background: var(--green);
 }
 
+.button-standard {
+  padding: 10px 39px;
+  border: 1px solid var(--black-blue);
+  border-radius: 5px;
+  color: #000;
+  font-size: 16px;
+  line-height: 140%;
+  background: var(--gray-light);
+  height: 42px;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.button-standard:hover,
+.button-standard:focus,
+.button-standard:active {
+  color: var(--green);
+  border-color: var(--green);
+}
+
 .submit {
   padding: 10px 39px;
   border: 1px solid var(--black-blue);
@@ -75,6 +97,18 @@ input {
 .submit:focus {
   border: 1px solid var(--green);
   color: var(--green);
+}
+
+.link-green {
+  color: green;
+  text-decoration: none;
+}
+
+.link-green:hover,
+.link-green:active,
+.link-green:focus,
+.link-green:visited {
+  color: var(--orange);
 }
 
 .link {
@@ -282,7 +316,7 @@ input {
   margin-bottom: 80px;
 }
 
-.pets__arrow {
+.button-arrow {
   width: 62px;
   height: 62px;
   border-radius: 50%;
