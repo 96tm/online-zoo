@@ -221,6 +221,7 @@
 .info-header__body {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin-left: 70px;
 }
 
@@ -235,6 +236,7 @@
   display: block;
   color: #fff;
   margin-top: 41px;
+  margin-bottom: 35px;
   cursor: pointer;
 }
 
