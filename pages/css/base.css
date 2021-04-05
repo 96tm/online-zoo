@@ -106,8 +106,7 @@ input {
 
 .link-green:hover,
 .link-green:active,
-.link-green:focus,
-.link-green:visited {
+.link-green:focus {
   color: var(--orange);
 }
 
