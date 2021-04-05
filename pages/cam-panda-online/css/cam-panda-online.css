@@ -12,27 +12,35 @@
 }
 /* Utility end */
 
-.main {
-  color: #000;
+.header {
+  margin-bottom: 45px;
+}
+
+.sticky-container {
+  display: flex;
+  justify-content: center;
   background: url("../../../assets/images/strelitzia-right.png"), url("../../../assets/images/leaf-rotated.png");
   background-repeat: no-repeat;
   background-position: bottom left, bottom -90px right;
-  padding: 45px 0 180px;
-  line-height: 140%;
 }
 
-.panda-camera__sidebar-wrap {
-  display: flex;
-  justify-content: center;
+.main {
+  color: #000;
+  padding-bottom:180px;
+  line-height: 140%;
+  margin: 0 auto;
 }
 
 .sidebar {
   position: sticky;
+  left: 30px;
+  top: 30px;
   width: 99px;
   height: 652px;
   background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
   border-radius: 5px;
   padding: 16px 10px;
+  margin-right: -99px;
 }
 
 .sidebar__list {
@@ -100,16 +108,11 @@
   margin-bottom: 80px;
 }
 
-.panda-camera__header {
+.camera-header {
   color: var(--black-blue);
   line-height: 120%;
   font-size: 48px;
   margin-bottom: 15px;
-}
-
-.panda-camera__video {
-  margin-left: 90px;
-  margin-right: 190px;
 }
 
 .panda-camera__iframe {
