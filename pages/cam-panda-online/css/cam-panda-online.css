@@ -42,6 +42,13 @@
   justify-content: space-between;
 }
 
+.sidebar__item--active .sidebar__link,
+.sidebar__item--active .sidebar__button {
+  border-color: var(--green);
+  cursor: default;
+  pointer-events: none;
+}
+
 .sidebar__link,
 .sidebar__button {
   display: flex;
@@ -68,11 +75,13 @@
   border-color: var(--green);
 }
 
+.sidebar__item--active .sidebar__icon,
 .sidebar__link:hover .sidebar__icon,
 .sidebar__link:focus .sidebar__icon {
   fill: var(--green);
 }
 
+.sidebar__item--active .sidebar__button .sidebar__icon,
 .sidebar__button:hover .sidebar__icon,
 .sidebar__button:focus .sidebar__icon {
   stroke: var(--green);

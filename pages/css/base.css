@@ -217,6 +217,7 @@ input {
   text-decoration: none;
   color: #f9804b;
   cursor: default;
+  pointer-events: none;
 }
 
 .nav__item--selected:hover {
@@ -846,5 +847,6 @@ input {
   color: #f9804b;
   transform: none;
   cursor: default;
+  pointer-events: none;
 }
 /* Footer end */
