@@ -11,6 +11,11 @@
   --white-frosted-glass: #fdfdff;
 }
 
+h1 {
+  position: absolute;
+  left: -9999px;
+}
+
 body {
   min-width: 1600px;
   font-family: "Roboto", sans-serif;
