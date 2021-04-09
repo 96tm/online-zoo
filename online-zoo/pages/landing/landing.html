@@ -51,21 +51,23 @@
     </header>
     <section class="watch-online">
       <div class="watch-online__wrap wrap-1160 center flex relative">
-        <img src="../../assets/icons/ellipse.svg" alt="Orangle circle" class="watch-online__image">
-        <article class="watch-online__description relative">
-          <div class="watch-online__text">
-            <p class="watch-online__line">Watch</p>
-            <p class="watch-online__line">Your</p>
-            <p class="watch-online__line yellow">Favorite</p>
-            <p class="watch-online__line">Animal</p>
-            <p class="watch-online__line">Online</p>
-          </div>
+        <div class="watch-online__content">
+          <img src="../../assets/icons/ellipse.svg" alt="Orangle circle" class="watch-online__image">
+          <article class="watch-online__description relative">
+            <div class="watch-online__text">
+              <p class="watch-online__line">Watch</p>
+              <p class="watch-online__line">Your</p>
+              <p class="watch-online__line yellow">Favorite</p>
+              <p class="watch-online__line">Animal</p>
+              <p class="watch-online__line">Online</p>
+            </div>
+          </article>
           <a href="../zoos/cam-panda-online.html" class="watch-online__link link-button">Watch online</a>
-        </article>
+        </div>
       </div>
     </section>
     <main class="main relative">
-      <div class="relative">
+      <div class="main__wrap relative">
         <section class="backstage wrap-1160 center">
           <div class="backstage__col-1">
             <img src="../../assets/images/backstage-man.png"
@@ -89,7 +91,6 @@
             </p>
           </div>
         </section>
-        <img src="../../assets/images/flower.png" alt="Flower" class="backstage__image-flower">
       </div>
       <section class="pets relative">
         <div class="pets__gallery">
@@ -265,106 +266,124 @@
         <div class="testimonials__wrap wrap-1160 center">
           <h3 class="testimonials__header">Testimonials</h3>
           <div class="testimonials__cards">
-            <div class="testimonials__card-wrap">
-              <div class="testimonials__card testimonials-card">
-                <div class="testimonials-card__header">
-                  <img src="../../assets/icons/user-icon.svg"
-                      alt="User picture"
-                      class="testimonials-card__avatar">
-                  <div class="testimonials-card__author">
-                    <p class="testimonials-card__name">Michael John</p>
-                    <p class="testimonials-card__location">
-                      Local Austria<span class="testimonials-card__time">Today</span>
+
+            <div class="testimonials__card testimonials-card">
+              <div class="testimonials__card-border">
+                <div class="testimonials__card-content">
+                  <div class="testimonials-card__header">
+                    <img src="../../assets/icons/user-icon.svg"
+                        alt="User picture"
+                        class="testimonials-card__avatar">
+                    <div class="testimonials-card__author">
+                      <p class="testimonials-card__name">Michael John</p>
+                      <p class="testimonials-card__location">
+                        Local Austria<span class="testimonials-card__time">Today</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="testimonials-card__text">
+                    <p class="testimonials-card__paragraph">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Aliquam sodales orci eget dui aliquet tempus.
+                      Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
+                      mauris odio commodo turpis, malesuada congue purus ligula id neque.
+                      Etiam accumsan urna velit, ut iaculis diam mattis id.
+                      Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
+                      Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
+                      Aliquam posuere, sem eget fermentum elementum...
                     </p>
                   </div>
                 </div>
-                <p class="testimonials-card__text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Aliquam sodales orci eget dui aliquet tempus.
-                  Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
-                  mauris odio commodo turpis, malesuada congue purus ligula id neque.
-                  Etiam accumsan urna velit, ut iaculis diam mattis id.
-                  Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
-                  Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
-                  Aliquam posuere, sem eget fermentum elementum...
-                </p>
+              </div>
+
+            </div>
+            <div class="testimonials__card testimonials-card">
+              <div class="testimonials__card-border">
+                <div class="testimonials__card-content">
+                  <div class="testimonials-card__header">
+                    <img src="../../assets/icons/user-oscar.svg"
+                        alt="User picture"
+                        class="testimonials-card__avatar">
+                    <div class="testimonials-card__author">
+                      <p class="testimonials-card__name">Oskar Samborsky</p>
+                      <p class="testimonials-card__location">
+                        Local Austria <span class="testimonials-card__time">Yesterday</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="testimonials-card__text">
+                    <p class="testimonials-card__paragraph">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Aliquam sodales orci eget dui aliquet tempus.
+                      Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
+                      mauris odio commodo turpis, malesuada congue purus ligula id neque.
+                      Etiam accumsan urna velit, ut iaculis diam mattis id.
+                      Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
+                      Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
+                      Aliquam posuere, sem eget fermentum elementum...
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="testimonials__card-wrap">
-              <div class="testimonials__card testimonials-card">
-                <div class="testimonials-card__header">
-                  <img src="../../assets/icons/user-oscar.svg"
-                      alt="User picture"
-                      class="testimonials-card__avatar">
-                  <div class="testimonials-card__author">
-                    <p class="testimonials-card__name">Oskar Samborsky</p>
-                    <p class="testimonials-card__location">
-                      Local Austria <span class="testimonials-card__time">Yesterday</span>
+            <div class="testimonials__card testimonials-card">
+              <div class="testimonials__card-border">
+                <div class="testimonials__card-content">
+                  <div class="testimonials-card__header">
+                    <img src="../../assets/icons/user-fredericka.svg"
+                        alt="User picture"
+                        class="testimonials-card__avatar">
+                    <div class="testimonials-card__author">
+                      <p class="testimonials-card__name">Fredericka Michelin</p>
+                      <p class="testimonials-card__location">
+                        Local Austria
+                        <span class="testimonials-card__time">Yesterday</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="testimonials-card__text">
+                    <p class="testimonials-card__paragraph">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Aliquam sodales orci eget dui aliquet tempus.
+                      Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
+                      mauris odio commodo turpis, malesuada congue purus ligula id neque.
+                      Etiam accumsan urna velit, ut iaculis diam mattis id.
+                      Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
+                      Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
+                      Aliquam posuere, sem eget fermentum elementum...
                     </p>
                   </div>
                 </div>
-                <p class="testimonials-card__text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Aliquam sodales orci eget dui aliquet tempus.
-                  Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
-                  mauris odio commodo turpis, malesuada congue purus ligula id neque.
-                  Etiam accumsan urna velit, ut iaculis diam mattis id.
-                  Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
-                  Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
-                  Aliquam posuere, sem eget fermentum elementum...
-                </p>
               </div>
             </div>
-            <div class="testimonials__card-wrap">
-              <div class="testimonials__card testimonials-card">
-                <div class="testimonials-card__header">
-                  <img src="../../assets/icons/user-fredericka.svg"
-                      alt="User picture"
-                      class="testimonials-card__avatar">
-                  <div class="testimonials-card__author">
-                    <p class="testimonials-card__name">Fredericka Michelin</p>
-                    <p class="testimonials-card__location">
-                      Local Austria
-                      <span class="testimonials-card__time">Yesterday</span>
+            <div class="testimonials__card testimonials-card">
+              <div class="testimonials__card-border">
+                <div class="testimonials__card-content">
+                  <div class="testimonials-card__header">
+                    <img src="../../assets/icons/user-mila.svg"
+                        alt="User picture"
+                        class="testimonials-card__avatar">
+                    <div class="testimonials-card__author">
+                      <p class="testimonials-card__name">Mila Riksha</p>
+                      <p class="testimonials-card__location">
+                        Local Austria
+                        <span class="testimonials-card__time">Yesterday</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="testimonials-card__text">
+                    <p class="testimonials-card__paragraph">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Aliquam sodales orci eget dui aliquet tempus.
+                      Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
+                      mauris odio commodo turpis, malesuada congue purus ligula id neque.
+                      Etiam accumsan urna velit, ut iaculis diam mattis id.
+                      Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
+                      Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
+                      Aliquam posuere, sem eget fermentum elementum...
                     </p>
                   </div>
                 </div>
-                  <p class="testimonials-card__text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aliquam sodales orci eget dui aliquet tempus.
-                    Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
-                    mauris odio commodo turpis, malesuada congue purus ligula id neque.
-                    Etiam accumsan urna velit, ut iaculis diam mattis id.
-                    Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
-                    Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
-                    Aliquam posuere, sem eget fermentum elementum...
-                  </p>
-              </div>
-            </div>
-            <div class="testimonials__card-wrap">
-              <div class="testimonials__card testimonials-card">
-                <div class="testimonials-card__header">
-                  <img src="../../assets/icons/user-mila.svg"
-                      alt="User picture"
-                      class="testimonials-card__avatar">
-                  <div class="testimonials-card__author">
-                    <p class="testimonials-card__name">Mila Riksha</p>
-                    <p class="testimonials-card__location">
-                      Local Austria
-                      <span class="testimonials-card__time">Yesterday</span>
-                    </p>
-                  </div>
-                </div>
-                <p class="testimonials-card__text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Aliquam sodales orci eget dui aliquet tempus.
-                  Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
-                  mauris odio commodo turpis, malesuada congue purus ligula id neque.
-                  Etiam accumsan urna velit, ut iaculis diam mattis id.
-                  Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
-                  Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
-                  Aliquam posuere, sem eget fermentum elementum...
-                </p>
               </div>
             </div>
           </div>

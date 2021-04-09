@@ -55,7 +55,6 @@ input {
   font-family: inherit;
   line-height: 140%;
   text-transform: uppercase;
-  transition: all .5s;
   cursor: pointer;
 }
 
@@ -166,6 +165,7 @@ input {
 
 /* Header start */
 .header {
+  min-height: 80px;
   background-color: #000;
   color: #fff;
   padding: 14px 0;
@@ -237,56 +237,57 @@ input {
 
 /* 'Watch online' start */
 .watch-online {
-  height: 1000px;
-  background-image: url("../../assets/images/panda-bg.jpg");
-  background-position-y: -70px;
+  min-height: 1000px;
+  background: url("../../assets/images/panda-bg.jpg") no-repeat center;
   background-size: cover;
-  background-repeat: no-repeat;
-  margin: 0 auto 140px;
+  margin: 0 auto;
   color: #fff;
-  padding-top: 86px;
 }
 
 .watch-online__wrap {
   justify-content: flex-end;
 }
 
-.watch-online__description {
+.watch-online__content {
+  padding-top: 12px;
   text-align: center;
 }
 
+.watch-online__description {
+  text-align: center;
+  padding-top: 74px;
+}
+
 .watch-online__image {
-  display: block;
   position: absolute;
-  transform: translate(-99px,-74px);
+  right: 98px;
 }
 
 .watch-online__text {
   line-height: 75%;
   font-size: 106.5px;
   font-weight: 700;
-  margin-bottom: 60px;
   text-transform: uppercase;
+  padding-bottom: 60px;
 }
-/* 'Watch online' start */
+/* 'Watch online' end */
+
+.main__wrap {
+  background: url("../../assets/images/flower.png") no-repeat;
+  background-position: top 12px right;
+  padding: 140px 0 180px;
+}
 
 /* 'Backstage' start */
-.backstage__image-flower {
-  display: inline-block;
-  position: absolute;
-  right: 0;
-  top: -128px;
-}
 
 .backstage {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   color: var(--black-blue);
-  margin-bottom: 180px;
 }
 
 .backstage-col-2 {
-  margin-left: 87px;
+  max-width: 465px;
 }
 
 .description__header {
@@ -370,12 +371,9 @@ input {
 
 .pet-card__image-wrap {
   overflow: hidden;
-  margin-bottom: 8px;
 }
 
 .pet-card__image {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
   vertical-align: bottom;
   transition: all .5s;
 }
@@ -589,19 +587,24 @@ input {
   max-height: 391px;
 }
 
-.testimonials__card-wrap {
+.testimonials__card {
+  position: relative;
+  border-radius: inherit;
+}
+
+.testimonials__card-border {
   position: relative;
   background: linear-gradient(#febdab, #f3a9f8, #e0d8f0, #febdab);
   padding: 1px;
   border-radius: 20px;
-  height: 392px;
+  height: 391px;
   width: 268px;
 }
 
-.testimonials__card {
-  position: relative;
-  background-color: var(--gray-light);
+.testimonials__card-content {
   padding: 15px 15px 19px 16px;
+  height: 100%;
+  background-color: var(--gray-light);
   border-radius: inherit;
 }
 
@@ -634,7 +637,7 @@ input {
 
 .testimonials-card__text {
   overflow: hidden;
-  max-height: 309px;
+  max-height: 306px;
   color: #767474;
   line-height: 120%;
   font-weight: 300;
