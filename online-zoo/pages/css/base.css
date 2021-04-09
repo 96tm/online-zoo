@@ -172,6 +172,8 @@ input {
   background-color: #000;
   color: #fff;
   padding: 14px 0;
+  position: relative;
+  z-index: 2;
 }
 
 .header__wrap {
@@ -321,6 +323,7 @@ input {
 .pets {
   background: url("../../assets/images/palm.png") no-repeat, url("../../assets/images/strelitzia.png") no-repeat;
   background-position: bottom left, bottom right;
+  padding-bottom: 80px;
 }
 
 .pets__gallery {
@@ -469,10 +472,9 @@ input {
   line-height: 120%;
 }
 
-.pets__footer {
-  padding-bottom: 80px;
+/* .pets__footer {
   text-align: center;
-}
+} */
 
 .pets__image {
   position: absolute;
@@ -489,6 +491,8 @@ input {
 }
 
 .pets__link {
+  display: block;
+  margin: 0 auto;
   color: #fff;
 }
 /* 'Pets' end */
@@ -496,8 +500,7 @@ input {
 /* 'Friend' start */
 .friend {
   background: linear-gradient(#fed290, #febdab, #fed290);
-  padding-top: 69px;
-  padding-bottom: 100px;
+  padding: 69px 0 100px 0;
   color: #333B41;
 }
 
@@ -518,12 +521,11 @@ input {
 }
 
 .friend__pick {
-  padding: 0 54px 59px 99px;
-
+  padding-bottom: 59px;
 }
 
 .friend__description {
-  margin-bottom: 60px;
+  padding: 0 54px 60px 99px;
   text-align: left;
 }
 
@@ -558,7 +560,7 @@ input {
 }
 
 .friend-donation__cards {
-  margin-bottom: 60px;
+  padding-bottom: 60px;
   display: flex;
   justify-content: center;
 }
@@ -609,8 +611,7 @@ input {
 
 /* 'Testimonials' start */
 .testimonials {
-  padding-top: 140px;
-  padding-bottom: 180px;
+  padding: 140px 0 180px;
   background: url("../../assets/images/leaf.png") no-repeat bottom -130px right;
 }
 
@@ -907,9 +908,57 @@ input {
     --guidelines-width: 940px;
   }
 
+  body {
+    min-width: 1000px;
+    max-width: 1000px;
+  }
+
+  .watch-online {
+    background: url("../../assets/images/panda-bg-1000.png") no-repeat center;
+    background-size: cover;
+    min-height: 504px;
+    max-height: 504px;
+  }
+
+  .watch-online__content {
+    padding: 0;
+    padding-right: 85.75px;
+  }
+
+  .watch-online__image {
+    width: 367px;
+    top: -12px;
+    right: 177px;
+  }
+
+  .watch-online__description {
+    padding-top: 42.8px;
+  }
+
+  .watch-online__text {
+    font-size: 85px;
+    padding-bottom: 40px;
+  }
+
+  .main__wrap {
+    background-image: none;
+    padding-top: 100px;
+  }
+
+  .backstage__image {
+    width: 455px;
+    height: 408px;
+  }
+
+  .pets {
+    background: url("../../assets/images/palm-1000.png") no-repeat, url("../../assets/images/strelitzia-1000.png") no-repeat;
+    background-position: bottom left, bottom right;
+    padding-bottom: 140px;
+  }
+
   .pets__grid {
     display: grid;
-    grid-template-columns: 1fr .5fr .5fr 1fr;
+    grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: "pet-card-1-1 pet-card-1-2 pet-card-1-2 pet-card-1-3"
                          ". pets__arrow--left pets__arrow--right ." 
@@ -918,8 +967,39 @@ input {
     row-gap: 15px;
   }
 
+  .pet-card__image {
+    min-width: 294px;
+    max-width: 294px;
+  }
+
   .pets__arrow {
     position: initial;
+  }
+
+  .friend {
+    background: linear-gradient(#fed290, #febdab, #fed290);
+    padding: 30px 0 50px 0;
+    color: #333B41;
+  }
+
+  .friend__pick {
+    padding-bottom: 50px;
+  }
+
+  .friend-donation__cards {
+    padding-bottom: 70px;
+  }
+
+  .testimonials {
+    padding: 100px 0 140px;
+  }
+
+  /* .testimonials__card:not(:last-child) {
+    margin-right: 30px;
+  } */
+
+  .testimonials__scroll {
+    width: 390px;
   }
 }
 /* Media queries end */
