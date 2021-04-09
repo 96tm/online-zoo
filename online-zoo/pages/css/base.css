@@ -620,7 +620,7 @@ input {
   font-size: 36px;
   line-height: 130%;
   color: #333b41;
-  margin-bottom: 47px;
+  padding-bottom: 47px;
   text-align: center;
 }
 
@@ -628,6 +628,7 @@ input {
   display: flex;
   justify-content: space-between;
   margin-bottom: 21px;
+  min-height: 391px;
   max-height: 391px;
 }
 
@@ -992,14 +993,24 @@ input {
 
   .testimonials {
     padding: 100px 0 140px;
+    background: url("../../assets/images/leaf-1000.png") no-repeat bottom -90px right;
   }
 
-  /* .testimonials__card:not(:last-child) {
-    margin-right: 30px;
-  } */
+  .testimonials__header {
+    padding-bottom: 30px;
+  }
+
+  .testimonials__card-border {
+    width: 295px;
+  }
+
+  .testimonials__card:last-child {
+    display: none;
+  }
 
   .testimonials__scroll {
     width: 390px;
+    margin-bottom: 52px;
   }
 }
 /* Media queries end */
