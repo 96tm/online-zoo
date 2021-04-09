@@ -318,6 +318,11 @@ input {
 /* 'Backstage' end */
 
 /* 'Pets' start */
+.pets {
+  background: url("../../assets/images/palm.png") no-repeat, url("../../assets/images/strelitzia.png") no-repeat;
+  background-position: bottom left, bottom right;
+}
+
 .pets__gallery {
   display: flex;
   align-items: center;
@@ -396,13 +401,6 @@ input {
 
 .pet-card-2-3 {
   grid-area: pet-card-2-3;
-}
-
-.pets__buttons {
-  grid-area: pets__buttons;
-  position: absolute;
-  align-self: center;
-  justify-self: center;
 }
 
 .pet-card {
@@ -922,11 +920,6 @@ input {
 
   .pets__arrow {
     position: initial;
-  }
-
-  .pets__buttons {
-    display: flex;
-    justify-content: space-between;
   }
 }
 /* Media queries end */
