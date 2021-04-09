@@ -387,8 +387,8 @@
       </section>
     </main>
     <footer class="footer">
-      <div class="wrap-guidelines flex center">
-        <div class="footer__column-left">
+      <div class="footer__wrap wrap-guidelines center">
+        <div class="footer__row-top">
           <article class="footer__logo logo">
             <p class="logo__title">
               <a href="./landing.html" class="nav-link">
@@ -398,9 +398,27 @@
               </a>
             </p>
           </article>
+          <section class="footer__subscribe">
+            <form action="#" class="footer__form footer-form">
+              <h3 class="footer-form__header">
+                Subscribe to our news
+              </h3>
+              <div class="footer-form__row">
+                <input type="email"
+                       placeholder="Enter your email"
+                       pattern="^[a-zA-Z0-9-_/.]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
+                       class="footer-form__email"><!--
+                --><input type="submit" value="Submit" class="footer-form__submit submit">
+              </div>
+            </form>
+          </section>
+        </div>
+        <div class="footer__row-middle">
           <a href="../donate/donate.html" class="footer__donate-link link-button">
             Donate for volunteers
           </a>
+        </div>
+        <div class="footer__row-bottom">
           <address class="footer__social-media">
             <ul class="footer__social-media-list">
               <li class="footer__social-media-item">
@@ -441,8 +459,6 @@
               </li>
             </ul>
           </address>
-        </div>
-        <div class="footer__column-center">
           <nav class="footer__nav">
             <ul class="footer__nav-list">
               <li class="footer__nav-item nav__item--selected">
@@ -467,22 +483,6 @@
               </li>
             </ul>
           </nav>
-        </div>
-        <div class="footer__column-right">
-          <section class="footer__subscribe">
-            <form action="#" class="footer__form footer-form">
-              <h3 class="footer-form__header">
-                Subscribe to our news
-              </h3>
-              <div class="footer-form__row">
-                <input type="email"
-                       placeholder="Enter your email"
-                       pattern="^[a-zA-Z0-9-_/.]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
-                       class="footer-form__email"><!--
-                --><input type="submit" value="Submit" class="footer-form__submit submit">
-              </div>
-            </form>
-          </section>
           <small class="footer__copyright">
             <a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online"
                target="_blank"
@@ -492,6 +492,7 @@
             </a>
           </small>
         </div>
+
       </div>
     </footer>
   </body>
