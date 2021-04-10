@@ -730,8 +730,9 @@ input {
 
 /* Footer start */
 .footer {
-  padding-top: 41px;
-  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0 50px 0;
   background-color: #111115;
   color: #fff;
 }
@@ -820,9 +821,12 @@ input {
 }
 
 .footer__nav-item {
-  margin-left: 58px;
   transition: all .5s;
   cursor: pointer;
+}
+
+.footer__nav-item:not(:first-child) {
+  margin-left: 58px;
 }
 
 .footer__nav-item:hover {
@@ -840,12 +844,6 @@ input {
   text-decoration: none;
   color: inherit;
   cursor: inherit;
-}
-
-.footer__column-right {
-  display: flex;
-  flex-direction: column;
-  margin-left: 32px;
 }
 
 .footer-form__row {
@@ -1022,6 +1020,26 @@ input {
   .testimonials__scroll {
     width: 390px;
     margin-bottom: 52px;
+  }
+
+  .footer {
+    padding-left: 43px;
+  }
+
+  .footer__nav {
+    margin-left: 190px;
+  }
+
+  .footer__nav-item:not(:first-child) {
+    margin-left: 48px;
+  }
+
+  .footer__subscribe {
+    padding-right: 32px;
+  }
+
+  .footer__nav {
+    margin-left: 180px;
   }
 }
 /* Media queries end */
