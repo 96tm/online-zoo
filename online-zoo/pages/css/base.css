@@ -180,6 +180,28 @@ input {
   align-items: center;
 }
 
+.header__menu-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  width: 18px;
+  height: 10px;
+  cursor: pointer;
+}
+
+.header__menu-button-line {
+  width: 18px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.header__menu-button:hover .header__menu-button-line {
+  background-color: var(--orange);
+}
+
 .logo {
   border: 1px solid #fff;
   border-radius: 2px;
@@ -192,8 +214,7 @@ input {
   font-weight: 400;
   font-size: 19px;
   text-align: center;
-  background-image: url("../../assets/icons/bamboo.svg");
-  background-repeat: no-repeat;
+  background: url("../../assets/icons/bamboo.svg") no-repeat;
   background-position-x: 13.5%;
   background-position-y: 75%;
 }
@@ -1086,6 +1107,74 @@ input {
 
   .footer__nav {
     margin-left: 180px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+
+  :root {
+    --guidelines-width: 600px;
+  }
+
+  body {
+    min-width: 640px;
+    max-width: 640px;
+  }
+
+  .header {
+    min-height: 34px;
+    max-height: 34px;
+    padding: 0;
+  }
+  
+  .header__wrap {
+    justify-content: space-between;
+  }
+
+  .logo {
+    border: none;
+  }
+
+  .logo__title {
+    font-size: 12.29px;
+    background: url("../../assets/icons/bamboo-640.svg") no-repeat;
+    background-position-x: 13.5%;
+    background-position-y: 75%;
+  }
+
+  .nav {
+    display: none;
+  }
+  
+  .header__menu-button {
+    display: flex;
+
+  }
+
+  .watch-online {
+    min-height: 339px;
+    max-height: 339px;
+  }
+
+  .watch-online__content {
+    padding: 0;
+    right: -23px;
+  }
+
+  .watch-online__image {
+    display: block;
+    width: 237.6px;
+    top: 10px;
+    right: 77px;
+  }
+
+  .watch-online__description {
+    padding-top: 48px;
+  }
+
+  .watch-online__text {
+    font-size: 54.29px;
+    padding-bottom: 0;
   }
 }
 /* Media queries end */
