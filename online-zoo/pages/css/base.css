@@ -334,19 +334,19 @@ input {
   font-weight: 400;
   font-size: 48px;
   line-height: 120%;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .description__short {
   font-size: 16px;
   line-height: 130%;
-  margin-bottom: 54px;
+  padding-bottom: 54px;
 }
 
 .description__subheader {
   font-size: 24px;
-  margin-bottom: 35px;
   line-height: 120%;
+  padding-bottom: 35px;
 }
 
 .description__long {
@@ -365,7 +365,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 80px;
+  padding-bottom: 80px;
 }
 
 .button-arrow {
@@ -537,19 +537,6 @@ input {
   line-height: 120%;
 }
 
-.pets__image {
-  position: absolute;
-}
-
-.pets__image--palm {
-  bottom: 0;
-  left: 0;
-}
-
-.pets__image--strelitzia {
-  right: 0;
-  bottom: 0;
-}
 
 .pets__link {
   display: block;
@@ -560,13 +547,15 @@ input {
 
 /* 'Friend' start */
 .friend {
-  background: linear-gradient(#fed290, #febdab, #fed290);
+  background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+  opacity: .9;
   padding: 69px 0 100px 0;
   color: #333B41;
 }
 
 .friend__wrapper {
   background-color: rgba(253, 253, 255, 0.52);
+  width: var(--guidelines-width);
   padding-top: 41px;
   border-radius: 20px;
   text-align: center;
@@ -594,7 +583,7 @@ input {
   font-weight: 400;
   font-size: 24px;
   line-height: 120%;
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 .friend-text__subheader {
@@ -614,20 +603,25 @@ input {
 }
 
 .friend-donation__header {
-  margin-bottom: 40px;
+  padding-bottom: 40px;
   font-weight: 400;
   font-size: 36px;
   line-height: 130%;
 }
 
 .friend-donation__cards {
-  padding-bottom: 60px;
+  padding: 0 0 60px;
   display: flex;
   justify-content: center;
 }
 
 .friend__donation-card {
   width: 168px;
+  position: relative;
+}
+
+.friend__donation-card:not(:first-child) {
+  margin-left: 130px;
 }
 
 .friend-donation-card__image-wrap {
@@ -654,11 +648,11 @@ input {
 }
 
 .friend-donation-card__arrow-wrap {
+  position: absolute;
   display: flex;
   align-items: center;
   height: 168px;
-  margin-left: 32px;
-  margin-right: 32px;
+  transform: translateX(210%);
 }
 
 .friend__button {
@@ -1024,7 +1018,8 @@ input {
   }
 
   .backstage__image {
-    width: 455px;
+    width: 100%;
+    max-width: 455px;
     height: 408px;
   }
 
@@ -1065,9 +1060,7 @@ input {
   }
 
   .friend {
-    background: linear-gradient(#fed290, #febdab, #fed290);
     padding: 30px 0 50px 0;
-    color: #333B41;
   }
 
   .friend__pick {
@@ -1174,6 +1167,8 @@ input {
 
   .watch-online__link-wrap {
     justify-self: left;
+    transform: translateY(-2.83px);
+
   }
 
   .watch-online__image {
@@ -1185,11 +1180,177 @@ input {
 
   .watch-online__text {
     max-width: 255.64px;
+    font-size: 54.29px;
+    padding-bottom: 0;
+  }
+
+  .main__wrap {
+    background: url("../../assets/images/flower-640.png") no-repeat;
+    background-position: top 12px right;
+    padding: 60px 0 80px;
+  }
+
+  .description__short {
+    padding-bottom: 30px;
+  }
+
+  .description__subheader {
+    padding-bottom: 20px;
+  }
+
+  .backstage__col-1 {
+    display: none;
+  }
+
+  .pets {
+    background: url("../../assets/images/palm-640.png") no-repeat, url("../../assets/images/strelitzia-640.png") no-repeat;
+    background-position: bottom left, bottom right;
+    padding-bottom: 100px;
+  }
+
+  .pets__gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 80px;
+  }
+
+  .pets__grid {
+    grid-template-columns: 285.24px 285.24px;
+    grid-template-areas: "pet-card--panda pet-card--eagle"
+                         "pets__arrow--left pets__arrow--right"
+                         "pet-card--gorilla pet-card--alligator";
+    column-gap: 30px;
+    row-gap: 11px;
+  }
+
+  .pets__arrow {
+    margin-bottom: 9px;
+  }
+
+  .pets__arrow--left {
+    justify-self: right;
+  }
+
+  .pets__arrow--right {
+    justify-self: left;
+  }
+
+  .pet-card--sloth,
+  .pet-card--cheetah,
+  .pet-card--penguin {
+    display: none;
+  }
+
+  .friend {
+    padding: 20px 0;
+  }
+
+  .friend__wrapper {
+    width: 100%;
+    padding-top: 10px;
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  .friend__header {
+    font-size: 42px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .friend__description {
+    padding: 0 3.3% 30px;
+  }
+
+  .friend-text__header {
+    font-size: 22px;
+    padding-bottom: 20px;
+  }
+
+  .friend-donation__header {
+    padding-bottom: 20px;
+  }
+
+  .friend__donation-card:not(:first-child) {
+    margin-left: 42px;
+  }
+
+  .friend-donation-card__arrow-wrap {
+    align-items: flex-start;
+    transform: translate(110%, -10%);
+    z-index: 2;
+  }
+
+  .friend-donation__cards {
+    padding-bottom: 40px;
+  }
+
+  .friend__pick {
+    padding-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  :root {
+    --guidelines-width: 300px;
+  }
+
+  body {
+    max-width: 320px;
+    min-width: 320px;
+  }
+
+  .watch-online {
+    min-height: 187px;
+    max-height: 187px;
+  }
+
+  .watch-online__wrap {
+    padding: 41.12px 0 0;
+    grid-template-columns: auto 128.13px;
+    grid-template-areas: ". watch-online__content-wrap"
+                         "watch-online__link-wrap watch-online__link-wrap";
+  }
+
+  .watch-online__content-wrap {
+    padding-bottom: 63.43px;
+  }
+
+  .watch-online__image {
+    max-width: 119.09px;
+    top: -18.95px;
+    left: -18.7px;
   }
 
   .watch-online__text {
-    font-size: 54.29px;
+    max-width: 128.13px;
+    font-size: 27.2px;
     padding-bottom: 0;
+  }
+
+  .backstage__col-1 {
+    display: none;
+  }
+
+  .description__header {
+    font-size: 24px;
+    padding-bottom: 10px;
+  }
+
+  .description__short {
+    padding-bottom: 20px;
+  }
+
+  .description__subheader {
+    padding-bottom: 10px;
+  }
+
+  .main__wrap {
+    background: url("../../assets/images/flower-320.png") no-repeat;
+    background-position: top 38px right;
+    padding: 104px 0 40px;
   }
 }
 /* Media queries end */
