@@ -682,7 +682,7 @@ input {
 .testimonials__cards {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 21px;
+  padding-bottom: 21px;
   min-height: 391px;
   max-height: 391px;
 }
@@ -694,7 +694,7 @@ input {
 
 .testimonials__card-border {
   position: relative;
-  background: linear-gradient(#febdab, #f3a9f8, #e0d8f0, #febdab);
+  background: linear-gradient(90deg, #febdab 74%, #f3a9f8 66%, #e0d8f0 100%, #eaf7fe 100%, #eaf7fe 100%);
   padding: 1px;
   border-radius: 20px;
   height: 391px;
@@ -703,6 +703,7 @@ input {
 
 .testimonials__card-content {
   padding: 15px 15px 19px 16px;
+  overflow: hidden;
   height: 100%;
   background-color: var(--gray-light);
   border-radius: inherit;
@@ -1135,11 +1136,11 @@ input {
     justify-content: space-between;
   }
 
-  .logo {
+  .header .logo {
     border: none;
   }
 
-  .logo__title {
+  .header .logo__title {
     font-size: 12.29px;
     background: url("../../assets/icons/bamboo-640.svg") no-repeat;
     background-position-x: 13.5%;
@@ -1288,6 +1289,44 @@ input {
 
   .friend__pick {
     padding-bottom: 60px;
+  }
+
+  .testimonials {
+    padding: 60px 0 80px;
+    background: url("../../assets/images/leaf-640.png") no-repeat bottom -68px right;
+  }
+
+  .testimonials__cards {
+    flex-direction: column;
+    min-height: initial;
+    max-height: initial;
+    padding-bottom: 40px;
+  }
+
+  .testimonials__card:not(:first-child) {
+    margin-top: 15px;
+  }
+
+  .testimonials__card-border {
+    width: 100%;
+    padding: 2px;
+    height: 109px;
+  }
+
+  .testimonials__card-text {
+    max-height: 109px;
+  }
+
+  .testimonials__scroll {
+    display: none;
+  }
+
+  .testimonials__button-feedback-wrap {
+    text-align: center;
+  }
+
+  .footer__subscribe {
+    display: none;
   }
 }
 
