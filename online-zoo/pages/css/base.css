@@ -272,9 +272,20 @@ input {
 }
 
 .watch-online__wrap {
-  display: flex;
-  justify-content: flex-end;
   padding-top: 86px;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: auto 500.31px;
+  grid-template-areas: ". watch-online__content-wrap" ". watch-online__link-wrap";
+}
+
+.watch-online__content-wrap {
+  grid-area: watch-online__content-wrap;
+
+}
+
+.watch-online__link-wrap {
+  grid-area: watch-online__link-wrap;
 }
 
 .watch-online__content {
@@ -992,6 +1003,7 @@ input {
   .watch-online__wrap {
     padding-top: 42.8px;
     padding-right: 55.75px;
+    grid-template-columns: auto 400.25px;
   }
 
   .watch-online__image {
@@ -1147,7 +1159,6 @@ input {
   
   .header__menu-button {
     display: flex;
-
   }
 
   .watch-online {
@@ -1155,20 +1166,25 @@ input {
     max-height: 339px;
   }
 
-  .watch-online__content {
-    padding: 0;
-    right: -23px;
+  .watch-online__wrap {
+    padding: 48px 0 0;
+    grid-template-columns: auto 255.64px;
+    grid-template-areas: ". watch-online__content-wrap" "watch-online__link-wrap .";
+  }
+
+  .watch-online__link-wrap {
+    justify-self: left;
   }
 
   .watch-online__image {
     display: block;
-    width: 237.6px;
-    top: 10px;
-    right: 77px;
+    max-width: 237.6px;
+    top: -37.8px;
+    left: -37.3px;
   }
 
-  .watch-online__description {
-    padding-top: 48px;
+  .watch-online__text {
+    max-width: 255.64px;
   }
 
   .watch-online__text {
