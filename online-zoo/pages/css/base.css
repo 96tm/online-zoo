@@ -570,7 +570,7 @@ input {
   font-weight: 400;
   font-size: 48px;
   line-height: 120%;
-  margin-bottom: 30px;
+  padding-bottom: 30px;
   text-align: center;
 }
 
@@ -1273,7 +1273,7 @@ input {
 
   .friend__header {
     font-size: 42px;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
     text-align: center;
   }
 

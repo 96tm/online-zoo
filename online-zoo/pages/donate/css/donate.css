@@ -25,6 +25,10 @@
   color: var(--orange-alt);
 }
 
+.friend__description {
+  padding: 0;
+}
+
 .friend__button {
   margin-bottom: 30px;
 }
@@ -32,13 +36,11 @@
 .friend__figure {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  margin-bottom: 48px;
-  padding-right: 229px;
+  justify-content: center;
+  padding: 0 35px 48px 0;
 }
 
 .friend-figure__diet {
-  padding-left: 215px;
   align-self: flex-end;
   transform: translateY(-50%);
 }
@@ -69,7 +71,9 @@
 }
 
 .friend__pick {
-  padding: 40px 92px 62px;
+  padding: 0 92px 62px;
+  display: flex;
+  flex-direction: column;
 }
 
 .donation-info__header {
@@ -77,7 +81,7 @@
   line-height: 130%;
   text-transform: uppercase;
   color: #fff;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .donation-info__body {
@@ -91,7 +95,7 @@
   color: var(--orange);
   font-size: 36px;
   line-height: 130%;
-  margin-bottom: 60px;
+  padding-bottom: 60px;
 }
 
 .amount-radio-wrap {
@@ -299,4 +303,22 @@
 .frequency__input-radio:checked {
   border: none;
   background-color: var(--green);
+}
+
+@media screen and (max-width: 1000px) {
+  .donation-info__subheader {
+    padding-bottom: 35px;
+  }
+
+  .friend {
+    padding: 40px 0 30px;
+  }
+
+  .friend__header {
+    padding-bottom: 10px;
+  }
+
+  .friend__pick {
+    padding: 0 45px 45px;
+  }
 }
