@@ -915,10 +915,6 @@ input {
   display: flex;
 }
 
-.footer-form__email {
-  border: .7px solid var(--orange);
-}
-
 .footer-form__email:active,
 .footer-form__email:focus {
   border: .7px solid var(--green);
@@ -942,8 +938,9 @@ input {
 
 .footer-form__email {
   height: 42px;
+  width: 228px;
   background-color: transparent;
-  border: 1px solid var(--orange);
+  border: .7px solid var(--orange);
   border-radius: 2px;
   padding: 10px 7px 10px 10px;
   color: #fff;
@@ -1044,7 +1041,7 @@ input {
 
   .pets__grid {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: auto ;
     grid-template-rows: auto;
     grid-template-areas: "pet-card--panda pet-card--eagle pet-card--eagle pet-card--cheetah"
                          ". pets__arrow--left pets__arrow--right ." 
@@ -1107,11 +1104,18 @@ input {
   }
 
   .footer {
-    padding-left: 43px;
+    padding-left: 13px;
+  }
+
+  .footer__grid {
+    grid-template-columns: 30% 40% 30%;
+    grid-template-areas: "footer__logo-wrap . footer__subscribe"
+                         "footer__donate-link-wrap . ."
+                         "footer__social-media footer__nav footer__copyright";
   }
 
   .footer__nav {
-    margin-left: 190px;
+    justify-self: left;
   }
 
   .footer__nav-item:not(:first-child) {
@@ -1120,10 +1124,6 @@ input {
 
   .footer__subscribe {
     padding-right: 32px;
-  }
-
-  .footer__nav {
-    margin-left: 180px;
   }
 }
 
