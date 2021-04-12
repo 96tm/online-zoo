@@ -633,7 +633,7 @@ input {
   justify-content: center;
   align-items: center;
   height: 168px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   border: 1px solid var(--orange);
   background-color: #fff;
   border-radius: 5px;
@@ -644,6 +644,7 @@ input {
 }
 
 .friend-donation-card__text {
+  padding-top: 30px;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
@@ -1454,6 +1455,63 @@ input {
 
   .pets__arrow {
     display: none;
+  }
+
+  .friend__wrapper {
+    width: var(--guidelines-width);
+  }
+
+  .friend__pick {
+    padding-bottom: 40px;
+  }
+
+  .friend__description {
+    padding: 0 0 20px;
+    text-align: center;
+  }
+
+  .friend__header {
+    font-size: 24px;
+  }
+
+  .friend-text__header {
+    font-size: 18px;
+  }
+
+  .friend-text__subheader,
+  .friend-text__body {
+    display: none;
+  }
+
+  .friend-donation__header {
+    font-size: 24px;
+  }
+
+  .friend-donation__cards {
+    flex-direction: column;
+    padding-bottom: 93px;
+    align-items: center;
+  }
+
+  .friend__donation-card:not(:first-child) {
+    margin: 0;
+  }
+
+  .friend__donation-card:nth-child(2) {
+    margin-top: 74px;
+  }
+
+  .friend__donation-card:nth-child(3) {
+    margin-top: 83px;
+  }
+
+  .friend-donation-card__arrow-wrap {
+    transform: translate(100%, 95%);
+  }
+
+  .friend-donation-card__text {
+    padding-top: 10px;
+    position: absolute;
   }
 
   .footer {
