@@ -14,15 +14,14 @@
   </head>
   <body> 
     <header class="header">
-      <div class="header__wrap wrap-1160 center flex">
+      <h1>PetStory online</h1>
+      <div class="header__wrap wrap-guidelines center flex">
         <article class="logo">
-          <h1 class="logo__title">
+          <p class="logo__title">
             <a href="../landing/landing.html" class="nav-link">
-              PetStory
-              <br>
-              online
+              <span>PetStory</span><span>online</span>
             </a>
-          </h1>
+          </p>
         </article>
         <nav class="nav">
           <ul class="nav__list">
@@ -32,14 +31,18 @@
                   About
               </a>
             </li>
-            <li class="nav__item"><a href="../map/map.html" class="nav__link">Map</a></li>
+            <li class="nav__item">
+              <a href="../map/map.html" class="nav__link">Map</a>
+            </li>
             <li class="nav__item nav__item--selected">
               <a href="./cam-panda-online.html" 
                  class="nav__link">
                   Zoos
               </a>
             </li>
-            <li class="nav__item"><a href="#!" class="nav__link">Contact us</a></li>
+            <li class="nav__item">
+              <a href="#!" class="nav__link">Contact us</a>
+            </li>
             <li class="nav__item">
               <a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online"
                 target="_blank"
@@ -48,9 +51,14 @@
             </li>
           </ul>
         </nav>
+        <div class="header__menu-button">
+          <div class="header__menu-button-line"></div>
+          <div class="header__menu-button-line"></div>
+          <div class="header__menu-button-line"></div>
+        </div>
       </div>
     </header>
-    <h2 class="camera-header wrap-1160 center">
+    <h2 class="camera-header wrap-guidelines center">
       Eagle camera
     </h2>
     <div class="sticky-container">
@@ -287,7 +295,7 @@
       </aside>
       <main class="main relative">
         <div class="pet-camera">
-          <div class="pet-camera__video wrap-1160 center">
+          <div class="pet-camera__video wrap-guidelines center">
             <iframe
               src="https://www.youtube.com/embed/LFKsyTLoLac?modestbranding=1&autohide=1&controls=1"
               frameborder="0"
@@ -298,7 +306,7 @@
         <section class="video-gallery">
           <button class="video-gallery__arrow--left button-arrow">
           </button>
-          <article class="carousel wrap-1160">
+          <article class="carousel wrap-guidelines">
             <div class="carousel__video-wrap">
               <iframe 
                 src="https://www.youtube.com/embed/LFKsyTLoLac?modestbranding=1&autohide=1&controls=0"
@@ -355,7 +363,7 @@
           <button class="video-gallery__arrow--right button-arrow">
           </button>
         </section>
-        <section class="info wrap-1160 center">
+        <section class="info wrap-guidelines center">
           <div class="info__header info-header">
             <h2 class="info-header__title">Eagle</h2>
             <div class="info-header__wrap-flex">
@@ -446,20 +454,36 @@
       <a href="../donate/donate.html" class="donate__link link-button">Donate</a>
     </div>
     <footer class="footer">
-      <div class="wrap-1160 flex center">
-        <div class="footer__column-left">
-          <article class="footer__logo logo">
-            <p class="logo__title">
-              <a href="../landing/landing.html" class="nav-link">
-                PetStory
-                <br>
-                online
-              </a>
-            </p>
-          </article>
-          <a href="../donate/donate.html" class="footer__donate-link link-button">
-            Donate for volunteers
-          </a>
+      <div class="footer__wrap wrap-guidelines">
+        <div class="footer__grid">
+          <div class="footer__logo-wrap">
+            <article class="footer__logo logo">
+              <p class="logo__title">
+                <a href="./landing.html" class="nav-link">
+                  <span>PetStory</span> <span>online</span>
+                </a>
+              </p>
+            </article>
+          </div>
+          <section class="footer__subscribe">
+            <form action="#" class="footer__form footer-form">
+              <h3 class="footer-form__header">
+                Subscribe to our news
+              </h3>
+              <div class="footer-form__row">
+                <input type="email"
+                       placeholder="Enter your email"
+                       pattern="^[a-zA-Z0-9-_/.]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
+                       class="footer-form__email"><!--
+                --><input type="submit" value="Submit" class="footer-form__submit submit">
+              </div>
+            </form>
+          </section>
+          <div class="footer__donate-link-wrap">
+            <a href="../donate/donate.html" class="footer__donate-link link-button">
+              Donate for volunteers
+            </a>
+          </div>
           <address class="footer__social-media">
             <ul class="footer__social-media-list">
               <li class="footer__social-media-item">
@@ -468,7 +492,9 @@
                     <img src="../../assets/icons/facebook.svg"
                         alt="Facebook icon"
                         class="footer__social-media-icon">
-                    Facebook
+                    <p class="footer__social-media-title">
+                      Facebook
+                    </p>
                 </a>
               </li>
               <li class="footer__social-media-item">
@@ -477,7 +503,9 @@
                     <img src="../../assets/icons/twitter.svg"
                         alt="Twitter icon"
                         class="footer__social-media-icon">
-                    Twitter
+                    <p class="footer__social-media-title">
+                      Twitter
+                    </p>
                 </a>
               </li>
               <li class="footer__social-media-item">
@@ -486,7 +514,9 @@
                     <img src="../../assets/icons/instagram.svg"
                         alt="Instagram icon"
                         class="footer__social-media-icon">
-                    Instagram
+                    <p class="footer__social-media-title">
+                      Instagram
+                    </p>
                 </a>
               </li>
               <li class="footer__social-media-item">
@@ -495,13 +525,13 @@
                     <img src="../../assets/icons/youtube.svg"
                         alt="Youtube icon"
                         class="footer__social-media-icon">
-                    YouTube
+                    <p class="footer__social-media-title">
+                      YouTube
+                    </p>
                 </a>
               </li>
             </ul>
           </address>
-        </div>
-        <div class="footer__column-center">
           <nav class="footer__nav">
             <ul class="footer__nav-list">
               <li class="footer__nav-item">
@@ -526,22 +556,6 @@
               </li>
             </ul>
           </nav>
-        </div>
-        <div class="footer__column-right">
-          <section class="footer__subscribe">
-            <form action="#" class="footer__form footer-form">
-              <h3 class="footer-form__header">
-                Subscribe to our news
-              </h3>
-              <div class="footer-form__row">
-                <input type="email"
-                       placeholder="Enter your email"
-                       pattern="^[a-zA-Z0-9-_/.]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
-                       class="footer-form__email"><!--
-                --><input type="submit" value="Submit" class="footer-form__submit submit">
-              </div>
-            </form>
-          </section>
           <small class="footer__copyright">
             <a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online"
                target="_blank"

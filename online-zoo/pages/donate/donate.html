@@ -13,15 +13,16 @@
   </head>
   <body> 
     <header class="header">
-      <div class="header__wrap wrap-1160 center flex">
+      <h1>PetStory online</h1>
+      <div class="header__wrap wrap-guidelines center flex">
         <article class="logo">
-          <h1 class="logo__title">
+          <p class="logo__title">
             <a href="../landing/landing.html" class="nav-link">
-              PetStory
-              <br>
-              online
+                  PetStory
+                  <br>
+                  online
             </a>
-          </h1>
+          </p>
         </article>
         <nav class="nav">
           <ul class="nav__list">
@@ -52,7 +53,7 @@
     <section class="background-panda"></section>
     <main class="main relative">
       <section class="friend">
-        <div class="donation-info wrap-1160 center">
+        <div class="donation-info wrap-guidelines center">
           <h2 class="donation-info__header">
             The zoo has oficially reopened but we still need your help!
           </h2>
@@ -70,7 +71,7 @@
             Donation information
           </h3>
         </div>
-        <div class="friend__wrapper wrap-1160 center">
+        <div class="friend__wrapper wrap-guidelines center">
           <h3 class="friend__header">Pick and feed a friend</h3>
           <div class="friend__pick">
             <div class="friend__description">
@@ -98,14 +99,68 @@
                 Amount
               </label>
               <div class="friend-form__amount-range-wrap">
-                <input type="range"
-                      min="25"
-                      max="5000"
-                      value="1512"
-                      id="friend-form__amount-range"
-                      class="friend-form__amount-range">
+                <div class="friend-form__amount-range-content">
+                  <div class="friend-form__amount-range-wrap-line"></div>
+                </div>
+                <div class="friend-form__amount-radio-buttons">
+                  <!--<label for="amount-radio-1000" class="amount-radio-label"></label>
+                  <label for="amount-radio-500" class="amount-radio-label"></label>
+                  <label for="amount-radio-250" class="amount-radio-label"></label>
+                  <label for="amount-radio-100" class="amount-radio-label"></label>
+                  <label for="amount-radio-50" class="amount-radio-label"></label>
+                  <label for="amount-radio-25" class="amount-radio-label"></label> -->
+                  <div class="amount-radio-wrap">
+                    <input id="amount-radio-5000" name="amount-radio" 
+                           value="5000" type="radio" class="friend-form__amount-radio">
+                    <label for="amount-radio-5000" class="amount-radio-label">5000</label>
+                    <label for="amount-radio-5000" class="amount-radio-label">5000</label>
+                  </div>
+                  
+                  <div class="amount-radio-wrap">
+                    <input id="amount-radio-2000" name="amount-radio"
+                           value="2000" type="radio" class="friend-form__amount-radio">
+                    <label for="amount-radio-2000" class="amount-radio-label">2000</label>
+                    <label for="amount-radio-2000" class="amount-radio-label">2000</label>
+                  </div>
+                  <div class="amount-radio-wrap">
+                    <input id="amount-radio-1000" name="amount-radio"
+                           value="1000" type="radio" class="friend-form__amount-radio">
+                    <label for="amount-radio-1000" class="amount-radio-label">1000</label>
+                    <label for="amount-radio-1000" class="amount-radio-label">1000</label>
+                  </div>
+                  <div class="amount-radio-wrap">
+                    <input id="amount-radio-500" name="amount-radio"
+                           value="500" type="radio" class="friend-form__amount-radio">
+                    <label for="amount-radio-500" class="amount-radio-label">500</label>
+                    <label for="amount-radio-500" class="amount-radio-label">500</label>
+                  </div>
+                  <div class="amount-radio-wrap">
+                    <input id="amount-radio-250" name="amount-radio"
+                           value="250" type="radio" class="friend-form__amount-radio">
+                    <label for="amount-radio-250" class="amount-radio-label">250</label>
+                    <label for="amount-radio-250" class="amount-radio-label">250</label>
+                  </div>
+                  <div class="amount-radio-wrap">
+                    <input id="amount-radio-100" name="amount-radio"
+                           value="100" type="radio" class="friend-form__amount-radio">
+                    <label for="amount-radio-100" class="amount-radio-label">100</label>
+                    <label for="amount-radio-100" class="amount-radio-label">100</label>
+                  </div>
+                  <div class="amount-radio-wrap">
+                    <input id="amount-radio-50" name="amount-radio"
+                           value="50" type="radio" class="friend-form__amount-radio">
+                    <label for="amount-radio-50" class="amount-radio-label">50</label>
+                    <label for="amount-radio-50" class="amount-radio-label">50</label>
+                  </div>
+                  <div class="amount-radio-wrap">
+                    <input id="amount-radio-25" name="amount-radio"
+                           value="25" type="radio" class="friend-form__amount-radio">
+                    <label for="amount-radio-25" class="amount-radio-label">25</label>
+                    <label for="amount-radio-25" class="amount-radio-label">25</label>
+                  </div>
+                </div>
               </div>
-              <ul class="friend-form__amount-range-values">
+              <!-- <ul class="friend-form__amount-range-values">
                 <li class="friend-form__amount-range-value">5000</li>
                 <li class="friend-form__amount-range-value">2000</li>
                 <li class="friend-form__amount-range-value friend-form__amount-range-value-active">1000</li>
@@ -114,17 +169,7 @@
                 <li class="friend-form__amount-range-value">100</li>
                 <li class="friend-form__amount-range-value">50</li>
                 <li class="friend-form__amount-range-value">25</li>
-              </ul>
-              <datalist id="friend-form__amount-marks">
-                <option value="25" label="25"></option>
-                <option value="50" label="50"></option>
-                <option value="100" label="100"></option>
-                <option value="250" label="250"></option>
-                <option value="500" label="500"></option>
-                <option value="1000" label="1000"></option>
-                <option value="2000" label="2000"></option>
-                <option value="5000" label="5000"></option>
-              </datalist>
+              </ul> -->
               <div class="friend-form__input-amount-number-wrap">
                 <input type="number"
                        name="amount-number"
@@ -165,20 +210,36 @@
       </section>
     </main>
     <footer class="footer">
-      <div class="wrap-1160 flex center">
-        <div class="footer__column-left">
-          <article class="footer__logo logo">
-            <p class="logo__title">
-              <a href="../landing/landing.html" class="nav-link">
-                PetStory
-                <br>
-                online
-              </a>
-            </p>
-          </article>
-          <a href="../donate/donate.html" class="footer__donate-link link-button">
-            Donate for volunteers
-          </a>
+      <div class="footer__wrap wrap-guidelines">
+        <div class="footer__grid">
+          <div class="footer__logo-wrap">
+            <article class="footer__logo logo">
+              <p class="logo__title">
+                <a href="./landing.html" class="nav-link">
+                  <span>PetStory</span> <span>online</span>
+                </a>
+              </p>
+            </article>
+          </div>
+          <section class="footer__subscribe">
+            <form action="#" class="footer__form footer-form">
+              <h3 class="footer-form__header">
+                Subscribe to our news
+              </h3>
+              <div class="footer-form__row">
+                <input type="email"
+                       placeholder="Enter your email"
+                       pattern="^[a-zA-Z0-9-_/.]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
+                       class="footer-form__email"><!--
+                --><input type="submit" value="Submit" class="footer-form__submit submit">
+              </div>
+            </form>
+          </section>
+          <div class="footer__donate-link-wrap">
+            <a href="../donate/donate.html" class="footer__donate-link link-button">
+              Donate for volunteers
+            </a>
+          </div>
           <address class="footer__social-media">
             <ul class="footer__social-media-list">
               <li class="footer__social-media-item">
@@ -187,7 +248,9 @@
                     <img src="../../assets/icons/facebook.svg"
                         alt="Facebook icon"
                         class="footer__social-media-icon">
-                    Facebook
+                    <p class="footer__social-media-title">
+                      Facebook
+                    </p>
                 </a>
               </li>
               <li class="footer__social-media-item">
@@ -196,7 +259,9 @@
                     <img src="../../assets/icons/twitter.svg"
                         alt="Twitter icon"
                         class="footer__social-media-icon">
-                    Twitter
+                    <p class="footer__social-media-title">
+                      Twitter
+                    </p>
                 </a>
               </li>
               <li class="footer__social-media-item">
@@ -205,7 +270,9 @@
                     <img src="../../assets/icons/instagram.svg"
                         alt="Instagram icon"
                         class="footer__social-media-icon">
-                    Instagram
+                    <p class="footer__social-media-title">
+                      Instagram
+                    </p>
                 </a>
               </li>
               <li class="footer__social-media-item">
@@ -214,13 +281,13 @@
                     <img src="../../assets/icons/youtube.svg"
                         alt="Youtube icon"
                         class="footer__social-media-icon">
-                    YouTube
+                    <p class="footer__social-media-title">
+                      YouTube
+                    </p>
                 </a>
               </li>
             </ul>
           </address>
-        </div>
-        <div class="footer__column-center">
           <nav class="footer__nav">
             <ul class="footer__nav-list">
               <li class="footer__nav-item">
@@ -245,22 +312,6 @@
               </li>
             </ul>
           </nav>
-        </div>
-        <div class="footer__column-right">
-          <section class="footer__subscribe">
-            <form action="#" class="footer__form footer-form">
-              <h3 class="footer-form__header">
-                Subscribe to our news
-              </h3>
-              <div class="footer-form__row">
-                <input type="email"
-                       placeholder="Enter your email"
-                       pattern="^[a-zA-Z0-9-_/.]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
-                       class="footer-form__email"><!--
-                --><input type="submit" value="Submit" class="footer-form__submit submit">
-              </div>
-            </form>
-          </section>
           <small class="footer__copyright">
             <a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online"
                target="_blank"
