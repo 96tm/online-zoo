@@ -219,6 +219,11 @@ input {
   background-position-y: 75%;
 }
 
+.logo__title .nav-link{
+  display: flex;
+  flex-direction: column;
+}
+
 .nav {
   margin-left: 63px;
   width: 526px;
@@ -1432,6 +1437,110 @@ input {
     background: url("../../assets/images/flower-320.png") no-repeat;
     background-position: top 38px right;
     padding: 104px 0 40px;
+  }
+
+  .footer {
+    padding: 0 0 30px;
+  }
+
+  .footer .logo {
+    border: none;
+  }
+
+  .logo__title {
+    padding: 20px 0 30px;
+    background: url("../../assets/icons/bamboo.svg") no-repeat;
+    background-position-x: 62.5%;
+    background-position-y: 33%;
+  }
+  
+  .logo__title .nav-link{
+    display: initial;
+  }
+
+  .footer__grid {
+    grid-template-rows: auto;
+    grid-template-areas: "footer__logo-wrap"
+                         "footer__social-media"
+                         "footer__subscribe"
+                         "footer__donate-link-wrap"
+                         "footer__copyright"
+                         "footer__nav";
+  }
+
+  .footer__logo-wrap {
+    justify-self: center;
+    padding: 0;
+    display: initial;
+  }
+
+  .footer__logo {
+    padding: 0;
+  }
+
+  .footer__subscribe {
+    display: initial;
+    justify-self: center;
+    padding: 0;
+    text-align: center;
+  }
+
+  .footer-form__row {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+  }
+
+  .footer__donate-link-wrap {
+    padding-bottom: 40px;
+  }
+
+  .footer-form__header {
+    font-size: inherit;
+  }
+
+  .footer-form__email {
+    margin: 0;
+  }
+
+  .footer-form__submit {
+    margin-top: 10px;
+  }
+
+  .footer__social-media {
+    padding-bottom: 40px;
+    justify-self: center;
+  }
+
+  .footer__social-media-item {
+    width: initial;
+  }
+
+  .footer__social-media-icon {
+    margin: 0;
+  }
+
+  .footer__social-media-list {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 194px;
+  }
+
+  .footer__copyright {
+    padding-bottom: 40px;
+    justify-self: right;
+  }
+
+  .footer__nav {
+    justify-self: auto;
+  }
+
+  .footer__nav-list {
+    justify-content: space-between;
+  }
+
+  .footer__nav-item:not(:first-child) {
+    margin: 0;
   }
 }
 /* Media queries end */
