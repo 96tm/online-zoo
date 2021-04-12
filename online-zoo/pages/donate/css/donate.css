@@ -94,16 +94,20 @@
   margin-bottom: 60px;
 }
 
+.amount-radio-wrap {
+  position: relative;
+}
+
 .friend-form__amount-range-wrap {
   width: 100%;
   height: 27px;
   display: flex;
   align-items: center;
   padding: 0 30px 0;
+  margin-bottom: 100px;
   position: relative;
   border-radius: 2px;
   background: var(--gray-dark);
-  cursor: pointer;
 }
 
 .friend-form__amount-range-content {
@@ -121,33 +125,37 @@
   background: var(--gray-range-track);
 }
 
-/* .friend-form__amount-range {
-  -webkit-appearance: none;
-  appearance: none;
-  background: transparent;
-  width: 100%;
-  cursor: pointer;
-} */
-
 .friend-form__amount-range-label {
   display: block;
   text-align: left;
   padding-bottom: 20px;
   padding-left: 4px;
   color: #000;
+}
+
+.amount-radio-label {
+  color: var(--black-blue);
+  font-weight: 500;
+  font-size: 26px;
+  position: absolute;
+  top: 34px;
+  left: -30px;
   cursor: pointer;
 }
 
-.friend-form__amount-range-values {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 500;
-  font-size: 26px;
-  color: var(--black-blue);
-  padding-right: 30px;
-  margin-bottom: 60px;
-  padding-top: 15px;
-  cursor: pointer;
+.amount-radio-label:last-child {
+  top: -30px;
+  left: -50px;
+  height: 100px;
+  width: 100px;
+  opacity: 0;
+}
+
+.amount-radio-label:before {
+  content: "$";
+  font-size: 21px;
+  font-weight: 700;
+  margin-right: 1px;
 }
 
 .friend-form__amount-range-value {
@@ -165,77 +173,12 @@
   margin-right: 1px;
 }
 
-/* .friend-form__amount-range-value:after {
-  content: "..";
-  color: transparent;
-  background: url("../../../assets/icons/range-tick.svg") no-repeat;
-  position: absolute;
-	left: 25px;
-  top: -33.5px;
-  pointer-events: none;
-} */
-
 .friend-form__amount-range::before {
   content: "";
   background-color: red;
   width: 10px;
   height: 10px;
 }
-/* 
-.friend-form__amount-range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-
-  margin-top: -21px;
-  height: 44px;
-  width: 44px;
-  border: none;
-  background: url("../../../assets/icons/roller-icon.svg") center no-repeat;
-  cursor: pointer;
-}
-
-.friend-form__amount-range::-moz-range-thumb {
-  appearance: none;
-
-  background: url("../../../assets/icons/roller-icon.svg") center no-repeat;
-  border: none;
-  height: 44px;
-  width: 44px;
-  cursor: pointer;
-}
-
-.friend-form__amount-range::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: var(--gray-range-track);
-  padding: 0;
-}
-
-.friend-form__amount-range:focus::-webkit-slider-runnable-track {
-  background: var(--gray-range-track);
-  padding: 0;
-
-}
-
-.friend-form__amount-range::-moz-range-track {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: var(--gray-range-track);
-}
-
-.friend-form__amount-range:focus {
-  outline: none;
-}
-
-.friend-form__amount-range::-ms-track {
-  width: 100%;
-  cursor: pointer;
-  background: transparent; 
-  border-color: transparent;
-  color: transparent;
-} */
 
 .friend-form__input-amount-number-wrap {
   position: relative;
@@ -274,14 +217,6 @@
   color: var(--gray-placeholder);
   line-height: 140%;
 }
-/* 
-.friend-form__input-amount-number::-webkit-outer-spin-button,
-.friend-form__input-amount-number::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  margin: 0;
-} */
 
 .friend-form__frequency {
   margin-bottom: 40px;
@@ -298,6 +233,7 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+  position: relative;
 }
 
 .friend-form__amount-radio {
@@ -311,6 +247,10 @@
   cursor: pointer;
   position: relative;
   margin: 0;
+}
+
+.friend-form__amount-radio:checked + .amount-radio-label {
+  color: var(--orange-alt);
 }
 
 .friend-form__amount-radio:checked:after {
@@ -332,10 +272,6 @@
   border: 1px solid var(--orange-alt);
   transform: translate(-37%, -38%);
 }
-/* 
-.friend-form__amount-radio:not(:first-child) {
-  margin-left: 120px;
-} */
 
 .frequency__input-radio {
   -webkit-appearance: none;
