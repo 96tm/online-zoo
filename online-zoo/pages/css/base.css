@@ -425,7 +425,6 @@ input {
 .pet-card--alligator {
   grid-area: pet-card--alligator;
   display: none;
-  position: absolute;
 }
 
 .pet-card--panda {
@@ -1437,6 +1436,24 @@ input {
     background: url("../../assets/images/flower-320.png") no-repeat;
     background-position: top 38px right;
     padding: 104px 0 40px;
+  }
+
+  .pets {
+    background: url("../../assets/images/palm-320.png") no-repeat, url("../../assets/images/strelitzia-320.png") no-repeat;
+    background-position: bottom left, bottom right;
+    padding-bottom: 60px;
+  }
+
+  .pets__grid {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "pet-card--panda"
+                         "pet-card--eagle"
+                         "pet-card--gorilla"
+                         "pet-card--alligator";
+  }
+
+  .pets__arrow {
+    display: none;
   }
 
   .footer {
