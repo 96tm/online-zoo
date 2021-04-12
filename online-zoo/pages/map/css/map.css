@@ -126,3 +126,9 @@
 .zoom__button-out:hover {
   background: url("../../../assets/icons/zoom-out-active.svg") no-repeat;
 }
+
+@media screen and (max-width: 640px) {
+  .zoom {
+    display: none;
+  }
+}

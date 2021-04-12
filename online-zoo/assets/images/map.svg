@@ -1,61 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map</title>
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="./css/map.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
-          rel="stylesheet"> 
-  </head>
-  <body>
-    <header class="header">
-      <h1>PetStory online</h1>
-      <div class="header__wrap wrap-guidelines center flex">
-        <article class="logo">
-          <p class="logo__title">
-            <a href="../landing/landing.html" class="nav-link">
-                  PetStory
-                  <br>
-                  online
-            </a>
-          </p>
-        </article>
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item"><a href="../landing/landing.html" class="nav__link">About</a></li>
-            <li class="nav__item nav__item--selected">
-              <a href="./map.html" class="nav__link">Map</a>
-            </li>
-            <li class="nav__item"><a href="../zoos/cam-panda-online.html" class="nav__link">Zoos</a></li>
-            <li class="nav__item"><a href="#!" class="nav__link">Contact us</a></li>
-            <li class="nav__item">
-              <a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online"
-                target="_blank"
-                class="nav__link">Designed by ©
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <main class="main">
-      <div class="tooltip">
-        <p class="tooltip__animal">Alligators</p>
-        <p class="tooltip__location">Florida, USA</p>
-        <button class="tooltip__button">Watch online</button>
-      </div>
-      <!-- <div class="map-wrap"> -->
-        <!-- <object type="image/svg+xml"
-            data="../../assets/images/map.svg"
-            width="1600"
-            height="900"
-            class="map">
-        </object> -->
         <svg
           xmlns:dc="http://purl.org/dc/elements/1.1/"
           xmlns:cc="http://creativecommons.org/ns#"
@@ -71,7 +13,7 @@
           id="svg614"
           sodipodi:docname="map.svg"
           inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
-          class="map"
+
           preserveAspectRatio="xMidYMin slice">
           <metadata
             id="metadata618">
@@ -1409,16 +1351,14 @@
               data-animal="Pandas"
               data-location="China"
               d="M1115.33 449.909C1115.33 442.852 1121.05 437.132 1128.1 437.132C1135.16 437.132 1140.88 442.852 1140.88 449.909C1140.88 451.172 1140.69 452.391 1140.35 453.546C1138.53 460.903 1128.05 469.132 1128.05 469.132C1128.05 469.132 1116.2 459.841 1115.5 452.174L1115.53 452.168C1115.4 451.436 1115.33 450.681 1115.33 449.909ZM1127.93 452.755C1130.82 452.755 1133.16 450.414 1133.16 447.527C1133.16 444.64 1130.82 442.3 1127.93 442.3C1125.04 442.3 1122.7 444.64 1122.7 447.527C1122.7 450.414 1125.04 452.755 1127.93 452.755Z"
-              fill="#4B9200"
-              id="path522" />
+              fill="#4B9200"/>
             <path
               id="map__mark-usa-florida"
               class="map__mark"
               data-animal="Alligators"
               data-location="Florida, USA"
               d="M513.054 494.923C513.054 487.866 518.774 482.146 525.83 482.146C532.887 482.146 538.607 487.866 538.607 494.923C538.607 496.186 538.421 497.405 538.08 498.56C536.261 505.917 525.773 514.146 525.773 514.146C525.773 514.146 513.924 504.855 513.227 497.188L513.258 497.182C513.126 496.45 513.054 495.695 513.054 494.923ZM525.656 497.769C528.543 497.769 530.883 495.428 530.883 492.541C530.883 489.654 528.543 487.314 525.656 487.314C522.77 487.314 520.43 489.654 520.43 492.541C520.43 495.428 522.77 497.769 525.656 497.769Z"
-              fill="#4B9200"
-              id="path524" />
+              fill="#4B9200"/>
             <path
               d="M415.833 463.651C416.109 463.651 416.333 463.428 416.333 463.151C416.333 462.875 416.109 462.651 415.833 462.651C415.557 462.651 415.333 462.875 415.333 463.151C415.333 463.428 415.557 463.651 415.833 463.651Z"
               fill="#4F5352"
@@ -1433,8 +1373,7 @@
               data-animal="Pandas"
               data-location="China"
               d="M1110 496.777C1110 489.72 1115.72 484 1122.78 484C1129.83 484 1135.55 489.72 1135.55 496.777C1135.55 498.04 1135.37 499.259 1135.03 500.414C1133.21 507.771 1122.72 516 1122.72 516C1122.72 516 1110.87 506.709 1110.17 499.042L1110.2 499.036C1110.07 498.304 1110 497.549 1110 496.777ZM1122.6 499.623C1125.49 499.623 1127.83 497.282 1127.83 494.395C1127.83 491.508 1125.49 489.168 1122.6 489.168C1119.72 489.168 1117.38 491.508 1117.38 494.395C1117.38 497.282 1119.72 499.623 1122.6 499.623Z"
-              fill="#4B9200"
-              id="path530" />
+              fill="#4B9200"/>
             <path
               d="M544.831 528.65C545.107 528.65 545.331 528.426 545.331 528.15C545.331 527.874 545.107 527.65 544.831 527.65C544.555 527.65 544.331 527.874 544.331 528.15C544.331 528.426 544.555 528.65 544.831 528.65Z"
               fill="#4F5352"
@@ -1465,16 +1404,14 @@
               data-animal="Gorillas"
               data-location="Congo"
               d="M803 580.777C803 573.72 808.72 568 815.776 568C822.833 568 828.553 573.72 828.553 580.777C828.553 582.04 828.367 583.259 828.026 584.414C826.207 591.771 815.719 600 815.719 600C815.719 600 803.87 590.709 803.173 583.042L803.204 583.036C803.072 582.304 803 581.549 803 580.777ZM815.602 583.623C818.489 583.623 820.829 581.282 820.829 578.395C820.829 575.508 818.489 573.168 815.602 573.168C812.716 573.168 810.376 575.508 810.376 578.395C810.376 581.282 812.716 583.623 815.602 583.623Z"
-              fill="#4b9200"
-              id="path544" />
+              fill="#4b9200"/>
             <path
               id="map__mark-usa-los-angeles"
               class="map__mark"
               data-animal="Eagles"
               data-location="Los-Angeles, USA"
               d="M397.056 477.93C397.056 470.873 402.776 465.153 409.832 465.153C416.889 465.153 422.609 470.873 422.609 477.93C422.609 479.193 422.423 480.412 422.082 481.567C420.263 488.924 409.775 497.153 409.775 497.153C409.775 497.153 397.926 487.862 397.229 480.195L397.26 480.189C397.128 479.457 397.056 478.702 397.056 477.93ZM409.658 480.776C412.545 480.776 414.885 478.435 414.885 475.548C414.885 472.661 412.545 470.321 409.658 470.321C406.772 470.321 404.432 472.661 404.432 475.548C404.432 478.435 406.772 480.776 409.658 480.776Z"
-              fill="#4b9200"
-              id="path546" />
+              fill="#4b9200"/>
           </g>
           <defs
             id="defs612">
@@ -1578,127 +1515,3 @@
                 data-animal="Pandas"
                 data-map-mark="china-south"/>
         </svg>
-      <!-- </div> -->
-      <div class="zoom">
-        <button class="zoom__button zoom__button-in"></button>
-        <button class="zoom__button zoom__button-out"></button>
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer__wrap wrap-guidelines">
-        <div class="footer__grid">
-          <div class="footer__logo-wrap">
-            <article class="footer__logo logo">
-              <p class="logo__title">
-                <a href="./landing.html" class="nav-link">
-                  <span>PetStory</span> <span>online</span>
-                </a>
-              </p>
-            </article>
-          </div>
-          <section class="footer__subscribe">
-            <form action="#" class="footer__form footer-form">
-              <h3 class="footer-form__header">
-                Subscribe to our news
-              </h3>
-              <div class="footer-form__row">
-                <input type="email"
-                       placeholder="Enter your email"
-                       pattern="^[a-zA-Z0-9-_/.]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
-                       class="footer-form__email"><!--
-                --><input type="submit" value="Submit" class="footer-form__submit submit">
-              </div>
-            </form>
-          </section>
-          <div class="footer__donate-link-wrap">
-            <a href="../donate/donate.html" class="footer__donate-link link-button">
-              Donate for volunteers
-            </a>
-          </div>
-          <address class="footer__social-media">
-            <ul class="footer__social-media-list">
-              <li class="footer__social-media-item">
-                <a href="https://www.facebook.com/groups/TheRollingScopes"
-                  class="footer__social-media-link">
-                    <img src="../../assets/icons/facebook.svg"
-                        alt="Facebook icon"
-                        class="footer__social-media-icon">
-                    <p class="footer__social-media-title">
-                      Facebook
-                    </p>
-                </a>
-              </li>
-              <li class="footer__social-media-item">
-                <a href="https://twitter.com/rollingscopes"
-                  class="footer__social-media-link">
-                    <img src="../../assets/icons/twitter.svg"
-                        alt="Twitter icon"
-                        class="footer__social-media-icon">
-                    <p class="footer__social-media-title">
-                      Twitter
-                    </p>
-                </a>
-              </li>
-              <li class="footer__social-media-item">
-                <a href="https://www.instagram.com/rollingscopes/"
-                  class="footer__social-media-link">
-                    <img src="../../assets/icons/instagram.svg"
-                        alt="Instagram icon"
-                        class="footer__social-media-icon">
-                    <p class="footer__social-media-title">
-                      Instagram
-                    </p>
-                </a>
-              </li>
-              <li class="footer__social-media-item">
-                <a href="https://www.youtube.com/c/rollingscopesschool"
-                  class="footer__social-media-link">
-                    <img src="../../assets/icons/youtube.svg"
-                        alt="Youtube icon"
-                        class="footer__social-media-icon">
-                    <p class="footer__social-media-title">
-                      YouTube
-                    </p>
-                </a>
-              </li>
-            </ul>
-          </address>
-          <nav class="footer__nav">
-            <ul class="footer__nav-list">
-              <li class="footer__nav-item">
-                <a href="../landing/landing.html" class="footer__nav-link">
-                  About
-                </a>
-              </li>
-              <li class="footer__nav-item nav__item--selected">
-                <a href="./map.html" class="footer__nav-link">
-                  Map
-                </a>
-              </li>
-              <li class="footer__nav-item">
-                <a href="../zoos/cam-panda-online.html" class="footer__nav-link">
-                  Zoos
-                </a>
-              </li>
-              <li class="footer__nav-item">
-                <a href="" class="footer__nav-link">
-                  Contact us
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <small class="footer__copyright">
-            <a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/ PetStory-online"
-               target="_blank"
-               class="footer__copyright-link link">
-                <p class="footer__copyright-line link-text">Designed by Alisa Samborskaya</p>
-                <p class="footer__copyright-line link-text">©RSSchool & ©Yem Digital 2021</p>
-            </a>
-          </small>
-        </div>
-      </div>
-    </footer>
-    <script src="./js/map.js"></script>
-  </body>
-</html>
