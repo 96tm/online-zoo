@@ -23,14 +23,15 @@
 
 .friend__header {
   color: var(--orange-alt);
+  padding: 0;
 }
 
 .friend__description {
   padding: 0;
 }
 
-.friend__button {
-  margin-bottom: 30px;
+.friend__button-wrap {
+  padding-bottom: 30px;
 }
 
 .friend__figure {
@@ -223,7 +224,7 @@
 }
 
 .friend-form__frequency {
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 .frequency__label {
@@ -305,6 +306,7 @@
   background-color: var(--green);
 }
 
+/* Media queries start  */
 @media screen and (max-width: 1000px) {
   .donation-info__subheader {
     padding-bottom: 35px;
@@ -314,11 +316,59 @@
     padding: 40px 0 30px;
   }
 
-  .friend__header {
-    padding-bottom: 10px;
-  }
-
   .friend__pick {
     padding: 0 45px 45px;
   }
 }
+
+@media screen and (max-width: 640px) {
+  .friend {
+    padding: 30px 0 46px;
+  }
+
+  .friend__wrapper {
+    width: var(--guidelines-width);
+    padding-top: 37px;
+  }
+
+  .friend__description {
+    padding: 0 47px 0;
+    text-align: center;
+  }
+
+  .friend-text__header {
+    padding-bottom: 50px;
+  }
+
+  .friend__figure {
+    padding-bottom: 41px;
+  }
+
+  .friend__pick {
+    padding: 37px 0 30px;
+  }
+
+  .friend-form__input-amount-number-wrap {
+    padding: 0 0 41px 10px;
+
+  }
+
+  .friend-form__input-amount-number {
+    width: 180px;
+    height: 42px;
+    padding: 10px 25px 14.9px 6px;
+  }
+
+  .friend-form__frequency {
+    padding-bottom: 30px;
+  }
+
+  .amount-radio-wrap:not(:nth-child(n+4)) {
+    display: none;
+  }
+
+  .amount-radio-label:nth-child(2) {
+    padding-left: 17px;
+  }
+}
+/* Media queries end */
