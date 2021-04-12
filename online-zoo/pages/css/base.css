@@ -1335,6 +1335,38 @@ input {
     text-align: center;
   }
 
+  .footer {
+    padding: 12px 0;
+  }
+
+  .footer__grid {
+    column-gap: 74px;
+    grid-template-columns: auto auto;
+    grid-template-areas: "footer__logo-wrap footer__social-media"
+                         "footer__donate-link-wrap footer__social-media"
+                         "footer__nav footer__copyright";
+  }
+
+  .footer__nav-item:not(:first-child) {
+    margin-left: 37px;
+  }
+
+  .footer__social-media {
+    justify-self: right;
+  }
+
+  .footer__donate-link-wrap {
+    padding-bottom: 67px;
+  }
+
+  .footer__social-media-title {
+    display: none;
+  }
+
+  .footer__copyright {
+    justify-self: left;
+  }
+
   .footer__subscribe {
     display: none;
   }
