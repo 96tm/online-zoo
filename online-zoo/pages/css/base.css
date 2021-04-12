@@ -1447,14 +1447,14 @@ input {
     border: none;
   }
 
-  .logo__title {
+  footer .logo__title {
     padding: 20px 0 30px;
     background: url("../../assets/icons/bamboo.svg") no-repeat;
     background-position-x: 62.5%;
     background-position-y: 33%;
   }
   
-  .logo__title .nav-link{
+  footer .logo__title .nav-link{
     display: initial;
   }
 
@@ -1474,7 +1474,7 @@ input {
     display: initial;
   }
 
-  .footer__logo {
+  footer .footer__logo {
     padding: 0;
   }
 
