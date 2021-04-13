@@ -20,7 +20,7 @@ h1 {
 }
 
 body {
-  min-width: 1600px;
+  /* min-width: 1600px; */
   font-family: "Roboto", sans-serif;
   background-color: #fff;
 }
@@ -163,6 +163,10 @@ input {
 
 .wrap-guidelines {
   width: var(--guidelines-width);
+}
+
+.wrap-guidelines-max {
+  max-width: var(--guidelines-width);
 }
 /* utility end */
 

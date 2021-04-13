@@ -18,7 +18,7 @@
 
 .sticky-container {
   display: flex;
-  justify-content: center;
+  position: relative;
   background: url("../../../assets/images/strelitzia-right.png"), url("../../../assets/images/leaf-rotated.png");
   background-repeat: no-repeat;
   background-position: bottom left, bottom -90px right;
@@ -31,16 +31,29 @@
   margin: 0 auto;
 }
 
+.camera-header {
+
+}
+
+.sticky-container {
+  padding-right: calc(99px + 30px);
+}
+
+.sidebar-wrap {
+  position: relative;
+  padding-left: 30px;
+  /* left: 30px; */
+}
+
 .sidebar {
   position: sticky;
-  left: 30px;
   top: 30px;
-  width: 99px;
+  /* width: 99px; */
+  /* margin-right: -99px; */
   height: 652px;
   background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
   border-radius: 5px;
   padding: 16px 10px;
-  margin-right: -99px;
 }
 
 .sidebar__list {
@@ -48,6 +61,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.sidebar-item {
+  overflow: hidden;
 }
 
 .sidebar__item--active {
@@ -124,19 +141,32 @@
 }
 
 .pet-camera {
-  margin-bottom: 80px;
+  padding-bottom: 80px;
 }
 
 .camera-header {
   color: var(--black-blue);
   line-height: 120%;
   font-size: 48px;
-  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.pet-camera__video {
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* width: 100%; */
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 
 .pet-camera__iframe {
-  height: 650px;
   width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .video-gallery {
@@ -144,6 +174,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.video-gallery__arrow-wrap-left {
+  order: -1
+}
+
+.video-gallery__arrow-wrap-right {
+  order: 10;
 }
 
 .video-gallery__arrow--left {
@@ -154,10 +192,6 @@
   background: url("../../../assets/icons/arrow-right-orange.svg") no-repeat, linear-gradient(#f9804b, #fe9013);
 }
 
-.video-gallery__arrow--left,
-.video-gallery__arrow--right {
-  display: block;
-}
 
 .video-gallery__arrow--left:hover,
 .video-gallery__arrow--left:focus {
@@ -320,3 +354,65 @@
 .donate__link {
   color: #fff;
 }
+
+/* Media queries start */
+@media screen and (max-width: 1000px) {
+
+  .sidebar-wrap {
+    /* padding-right: 90px; */
+    height: 808px;
+  }
+
+  .sidebar {
+    margin: 0;
+  }
+
+  .sidebar__link,
+  .sidebar__button {
+    width: 52px;
+    height: 52px;
+}
+
+  .sidebar {
+    height: 438px;
+    padding: 10px;
+  }
+
+  .icon-circle {
+    display: none;
+  }
+
+  .sidebar__button .sidebar__icon {
+    transform: scale(2);
+  }
+
+/* 
+  .pet-camera__iframe {
+    max-width: 778px;
+    height: 438px;
+  }
+
+  .carousel {
+    margin: 0;
+  }
+
+  .carousel__video-wrap:nth-child(n+3) {
+    display: none;
+    width: 0;
+  }
+  .carousel__video-wrap:nth-child(n+3) .carousel__video,
+  .carousel__video-wrap:nth-child(n+3) .carousel__video-thumbnail,
+  .carousel__video-wrap:nth-child(n+3) .carousel__video-overlay {
+    display: none;
+    width: 0;
+  }
+
+  .video-gallery__arrow-wrap-left {
+    order: 10
+  }
+  
+  .video-gallery__arrow-wrap-right {
+    order: 20;
+  } */
+}
+/* Media queries end */
