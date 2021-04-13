@@ -1380,7 +1380,7 @@ input {
 @media screen and (max-width: 320px) {
 
   :root {
-    --guidelines-width: 300px;
+    --guidelines-width: 301px;
   }
 
   body {

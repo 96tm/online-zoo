@@ -46,18 +46,10 @@
   transform: translateY(-50%);
 }
 
-.friend-figure__x-icon {
-  background: url("../../../assets/icons/x-icon.svg") no-repeat;
-  width: 14px;
-  height: 14px;
-  margin-left: 11px;
-  transform: translateY(150%);
-}
-
 .friend-figure__number {
   font-weight: 500;
   font-size: 72px;
-  line-height: 80px;
+  line-height: 80%;
   color: #000;
 }
 
@@ -66,9 +58,24 @@
 }
 
 .friend-figure__image {
-  width: 284px;
-  height: 246px;
+  max-width: 100%;
+  min-width: 284px;
   margin-left: 64px;
+}
+
+.friend-figure__image-wrap {
+  position: relative;
+}
+
+.friend-figure__image-wrap:before {
+  content: "";
+  position: absolute;
+  background: url("../../../assets/icons/x-icon.svg") no-repeat;
+  background-size: cover;
+  width: 14px;
+  height: 14px;
+
+  /* left: 50%; */
 }
 
 .friend__pick {
@@ -89,7 +96,7 @@
   font-weight: 500;
   line-height: 140%;
   color: #fff;
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 .donation-info__subheader {
@@ -225,6 +232,8 @@
 
 .friend-form__frequency {
   padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .frequency__label {
@@ -260,6 +269,7 @@
 
 .friend-form__amount-radio:checked:after {
   content:"";
+  display: block;
   width: 22.95px;
   height: 22.95px;
   position: absolute;
@@ -270,6 +280,7 @@
 
 .friend-form__amount-radio:checked:before {
   content:"";
+  display: block;
   width: 40px;
   height: 40px;
   position: absolute;
@@ -297,9 +308,6 @@
   transform: scale(1.5);
 }
 
-.frequency__label:first-child {
-  margin-right: 50px;
-}
 
 .frequency__input-radio:checked {
   border: none;
@@ -308,6 +316,12 @@
 
 /* Media queries start  */
 @media screen and (max-width: 1000px) {
+
+  .background-panda {
+    min-height: 504px;
+    max-height: 504px;
+  }
+
   .donation-info__subheader {
     padding-bottom: 35px;
   }
@@ -322,6 +336,12 @@
 }
 
 @media screen and (max-width: 640px) {
+
+  .background-panda {
+    min-height: 339px;
+    max-height: 339px;
+  }
+
   .friend {
     padding: 30px 0 46px;
   }
@@ -331,17 +351,43 @@
     padding-top: 37px;
   }
 
+  .friend__header {
+    font-size: 48px;
+  }
+
   .friend__description {
-    padding: 0 47px 0;
+    padding: 0 45px 0;
     text-align: center;
   }
 
   .friend-text__header {
     padding-bottom: 50px;
+    font-size: 24px;
   }
 
   .friend__figure {
-    padding-bottom: 41px;
+    padding: 0 41px 41px 27px;
+    justify-content: space-between;
+  }
+
+  .friend-figure__diet {
+    transform: translateY(-55%);
+  }
+
+  .friend-figure__number {
+    padding-bottom: 11px;
+  }
+
+  .friend-figure__image {
+    width: 100%;
+    min-width: 284px;
+  }
+
+  .friend-figure__image-wrap:before {
+    width: 7.9px;
+    height: 7.9px;
+    top: 54%;
+    left: -19%;
   }
 
   .friend__pick {
@@ -369,6 +415,142 @@
 
   .amount-radio-label:nth-child(2) {
     padding-left: 17px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  
+  .background-panda {
+    min-height: 187px;
+    max-height: 187px;
+  }
+
+  .donation-info__header {
+    font-size: 24px;
+  }
+
+  .friend {
+    padding: 30px 0 20px;
+  }
+
+  .friend__header {
+    font-size: 24px;
+  }
+
+  .friend__description {
+    padding: 0 0 10px 0;
+  }
+
+  .friend__pick {
+    padding: 10px 0 20px;
+  }
+
+  .friend__wrapper {
+    padding-top: 20px;
+  }
+
+  .friend-text__header {
+    padding-bottom: 0;
+    font-size: inherit;
+  }
+
+  .donation-info__header {
+    padding-bottom: 20px;
+  }
+
+  .donation-info__body {
+    padding-bottom: 30px;
+  }
+
+  .donation-info__subheader {
+    font-size: 24px;
+    padding-bottom: 30px;
+  }
+
+  .friend__figure {
+    padding: 0 0 10px;
+    justify-content: space-between;
+  }
+
+  .friend-figure__diet {
+    transform: translateY(-55%);
+  }
+
+  .friend-figure__number {
+    font-size: 40.6px;
+    padding-bottom: 10px;
+  }
+
+  .friend-figure__label {
+    font-size: 9px;
+  }
+
+  .friend-figure__image {
+    min-width: 160px;
+    margin: 0;
+  }
+
+  .friend-figure__image-wrap:before {
+    width: 7.9px;
+    height: 7.9px;
+    top: 54%;
+    left: -28%;
+  }
+
+  .friend-form__frequency {
+    padding: 0 62px 30px 41px;
+  }
+
+  .friend-form__amount-range-label {
+    padding: 0 0 15px 0;
+  }
+
+  .friend-form__amount-range-content {
+    top: 6px;
+  }
+
+  .friend-form__amount-range-wrap {
+    height: 13.5px;
+    margin-bottom: 50px;
+  }
+
+  .friend-form__input-amount-number-wrap {
+    padding: 0 0 30px;
+  }
+
+  .friend-form__amount-radio {
+    width: 5px;
+    height: 5px;
+  }
+
+  .friend-form__amount-radio:checked:after {
+    width: 11.48px;
+    height: 11.48px;
+    transform: translate(-27%, -27%);
+  }
+  
+  .friend-form__amount-radio:checked:before {
+    width: 20px;
+    height: 20px;
+    transform: translate(-37%, -37%);
+  }
+
+  .amount-radio-wrap {
+    top: -3px;
+  }
+
+  .amount-radio-label {
+    font-size: 18px;
+    top: 25px;
+  }
+
+  .amount-radio-label:before {
+    font-size: 14px;
+  }
+
+  .amount-radio-label:last-child {
+    width: 50px;
+    left: -25px;
   }
 }
 /* Media queries end */
