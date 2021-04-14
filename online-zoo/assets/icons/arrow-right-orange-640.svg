@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="43"
+   height="43"
+   viewBox="0 0 43 43"
+   fill="none"
+   version="1.1"
+   id="svg13"
+   sodipodi:docname="arrow-right-orange-640.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata17">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2488"
+     inkscape:window-height="1503"
+     id="namedview15"
+     showgrid="false"
+     inkscape:zoom="5.4883721"
+     inkscape:cx="-2.0042373"
+     inkscape:cy="21.5"
+     inkscape:window-x="72"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg13" />
+  <path
+     d="M24.1653 18.5684L24.0931 18.498L24.0208 18.5684L23.924 18.6627L23.8479 18.7369L23.924 18.811L26.4117 21.2342H15.8809H15.7773V21.3378V21.4712V21.5747H15.8809H26.4115L23.924 23.9979L23.8479 24.0721L23.924 24.1463L24.0208 24.2406L24.0931 24.311L24.1653 24.2406L27.0007 21.4785L27.0769 21.4043L27.0007 21.3302L24.1653 18.5684Z"
+     fill="white"
+     stroke="white"
+     stroke-width="0.207143"
+     id="path4" />
+  <defs
+     id="defs11">
+    <linearGradient
+       id="paint0_linear"
+       x1="-1.70619"
+       y1="6.34215"
+       x2="49.9055"
+       y2="29.2818"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(57.211864,2.3686441)">
+      <stop
+         stop-color="#F9804B"
+         id="stop6" />
+      <stop
+         offset="1"
+         stop-color="#FE9013"
+         id="stop8" />
+    </linearGradient>
+  </defs>
+</svg>
