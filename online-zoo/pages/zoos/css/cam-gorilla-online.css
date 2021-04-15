@@ -4,6 +4,22 @@
 }
 
 .donate {
-  background: url("../../../assets/images/gorilla-bg-cam.png") no-repeat;
+  background: url("../../../assets/images/gorilla-bg-cam.png") no-repeat center;
   background-size: cover;
+}
+
+@media screen and (max-width: 320px) {
+  
+  .info-header__title-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .info-header__title {
+    max-width: 55%;
+  }
+
+  .sidebar {
+    margin-bottom: -52px;
+  }
 }
