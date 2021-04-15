@@ -7,3 +7,21 @@
   background: url("../../../assets/images/panda-bg-cam.png") no-repeat;
   background-size: cover;
 }
+
+@media screen and (max-width: 640px) {
+
+  .donate {
+    background: url("../../../assets/images/panda-bg-cam-640.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  .donate {
+    background: url("../../../assets/images/panda-bg-cam-320.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}

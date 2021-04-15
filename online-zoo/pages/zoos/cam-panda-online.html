@@ -58,8 +58,6 @@
         </div>
       </div>
     </header>
-    <!-- <div class="sticky-container"> -->
-      
       <main class="main">
         <div class="main__guidelines relative center">
           <h2 class="camera-header wrap-guidelines center">
@@ -69,7 +67,8 @@
             <aside class="sidebar">
               <ul class="sidebar__list">
                 <li title="Gorilla" class="sidebar__item">
-                  <a href="./cam-gorilla-online.html" class="sidebar__link">
+                  <a href="./cam-gorilla-online.html"
+                     class="sidebar__link">
                     <svg
                       class="sidebar__icon sidebar__icon--gorilla"
                       xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -115,9 +114,11 @@
                         id="defs21" />
                     </svg>
                   </a>
+                  <div class="overlay"></div>
                 </li>
                 <li title="Alligator" class="sidebar__item">
-                  <a href="./cam-alligator-online.html" class="sidebar__link">
+                  <a href="./cam-alligator-online.html"
+                     class="sidebar__link">
                     <svg
                       class="sidebar__icon sidebar__icon--alligator"
                       xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -143,9 +144,11 @@
                         id="defs21" />
                     </svg>
                   </a>
+                  <div class="overlay"></div>
                 </li>
                 <li title="Panda" class="sidebar__item sidebar__item--active">
-                  <a href="./cam-panda-online.html" class="sidebar__link">
+                  <a href="./cam-panda-online.html"
+                     class="sidebar__link">
                     <svg
                       class="sidebar__icon sidebar__icon--panda"
                       xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -183,9 +186,11 @@
                         id="defs21" />
                     </svg>
                   </a>
+                  <div class="overlay"></div>
                 </li>
                 <li title="Eagle" class="sidebar__item">
-                  <a href="./cam-eagle-online.html" class="sidebar__link">
+                  <a href="./cam-eagle-online.html"
+                     class="sidebar__link">
                     <svg
                       class="sidebar__icon"
                       xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -213,6 +218,7 @@
                         id="defs21" />
                     </svg>
                   </a>
+                  <div class="overlay"></div>
                 </li>
                 <li title="Sloth" class="sidebar__item">
                   <a href="" class="sidebar__link">
@@ -243,6 +249,7 @@
                         id="defs21" />
                     </svg>
                   </a>
+                  <div class="overlay"></div>
                 </li>
                 <li title="Penguin" class="sidebar__item">
                   <a href="" class="sidebar__link">
@@ -268,6 +275,7 @@
                         id="defs21" />
                     </svg>
                   </a>
+                  <div class="overlay"></div>
                 </li>
                 <li title="Show more" class="sidebar__item">
                   <button class="sidebar__button">
@@ -385,9 +393,15 @@
             <div class="info__header info-header">
               <h2 class="info-header__title">Giant Panda</h2>
               <div class="info-header__wrap">
-                <img src="../../assets/images/panda-photo.png"
-                    alt="Panda photo in close-up"
-                    class="info-header__image">
+                <div class="info-header__image-wrap">
+                  <picture class="info-header__picture">
+                    <source srcset="../../assets/images/panda-photo-320.png"
+                            media="screen and (max-width: 320px)">
+                    <img src="../../assets/images/panda-photo.png"
+                        alt="Panda photo in close-up"
+                        class="info-header__image">
+                  </picture>
+                </div>
                 <div class="info-header__body">
                   <p class="info-header-body__text">
                     Giant pandas are very
@@ -400,7 +414,9 @@
                     Its popularity around the world has helped the giant panda become
                     the focus of successful conservation programs.
                   </p>
-                  <a href="" class="info-header-body__button link-button">Feed a friend now</a>
+                  <div class="info-header-body__button-wrap">
+                    <a href="" class="info-header-body__button link-button">Feed a friend now</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -528,7 +544,6 @@
           </section>
         </div>
       </main>
-    <!-- </div> -->
     <div class="donate">
       <a href="../donate/donate.html" class="donate__link link-button">Donate</a>
     </div>
