@@ -4,6 +4,18 @@
 }
 
 .donate {
-  background: url("../../../assets/images/eagle-bg-cam.png") no-repeat;
+  background: url("../../../assets/images/eagle-bg-cam.png") no-repeat center;
   background-size: cover;
+}
+
+@media screen and (max-width: 320px) {
+  .sidebar__item:nth-child(4) {
+    display: initial;
+  }
+  .sidebar__item:nth-child(3) {
+    display: none;
+  }
+  .sidebar__item:last-child {
+    display: initial;
+  }
 }
