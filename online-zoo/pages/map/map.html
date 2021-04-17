@@ -14,7 +14,7 @@
   <body>
     <header class="header">
       <h1>PetStory online</h1>
-      <div class="header__wrap wrap-guidelines center flex">
+      <div class="header__wrap wrap-guidelines flex">
         <article class="logo">
           <p class="logo__title">
             <a href="../landing/landing.html" class="nav-link">
@@ -54,13 +54,7 @@
         <p class="tooltip__location">Florida, USA</p>
         <button class="tooltip__button">Watch online</button>
       </div>
-      <!-- <div class="map-wrap"> -->
-        <!-- <object type="image/svg+xml"
-            data="../../assets/images/map.svg"
-            width="1600"
-            height="900"
-            class="map">
-        </object> -->
+      <div class="map-wrap">
         <svg
           xmlns:dc="http://purl.org/dc/elements/1.1/"
           xmlns:cc="http://creativecommons.org/ns#"
@@ -73,11 +67,9 @@
           viewBox="0 0 1600 938"
           fill="none"
           version="1.1"
-          id="svg614"
-          sodipodi:docname="map.svg"
-          inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
           class="map"
-          preserveAspectRatio="xMidYMin slice">
+          id="map-source"
+          preserveAspectRatio="none">
           <metadata
             id="metadata618">
             <rdf:RDF>
@@ -113,11 +105,6 @@
           <g
             clip-path="url(#clip0)"
             id="g583">
-            <path
-              d="M -347.32627,-115.65254 H 2211.6737 V 1084.3475 H -347.32627 Z"
-              id="path2"
-              inkscape:connector-curvature="0"
-              style="fill:#eaf7fe;stroke:#000000" />
             <path
               d="M776.085 459.014L776.002 459.041L775.725 459.208L775.568 459.265L775.424 459.294L775.311 459.283L775.249 459.185L775.255 459.036L775.229 458.903L775.208 458.831L775.249 458.636L775.341 458.532L775.469 458.446L775.671 458.478L776.098 458.602L776.187 458.719L776.188 458.796L776.11 458.924L776.085 459.014Z"
               fill="#c3b89e"
@@ -1583,13 +1570,14 @@
                 data-animal="Pandas"
                 data-map-mark="china-south"/>
         </svg>
-      <!-- </div> -->
-      <div class="zoom">
-        <button class="zoom__button zoom__button-in"></button>
-        <button class="zoom__button zoom__button-out"></button>
+      </div>
+      <div class="zoom-wrap">
+        <div class="zoom">
+          <button class="zoom__button zoom__button-in"></button>
+          <button class="zoom__button zoom__button-out"></button>
+        </div>
       </div>
     </main>
-
     <footer class="footer">
       <div class="footer__wrap wrap-guidelines">
         <div class="footer__grid">
