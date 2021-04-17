@@ -8,34 +8,32 @@
 
 /* Utility end */
 
-/* .sticky-container {
-  display: flex;
-  position: relative;
-  background: url("../../../assets/images/strelitzia-right.png"), url("../../../assets/images/leaf-rotated.png");
-  background-repeat: no-repeat;
-  background-position: bottom left, bottom -90px right;
-} */
+.main-wrap {
 
-/* .main-wrap {
-  background: url("../../../assets/images/strelitzia-right.png"), url("../../../assets/images/leaf-rotated.png");
-  background-repeat: no-repeat;
-  background-position: bottom left, bottom -90px right;
-} */
+  /* width: 89.6875%; */
+  display: flex;
+  justify-content: center;
+
+}
 
 .main {
   background: url("../../../assets/images/strelitzia-right.png"), url("../../../assets/images/leaf-rotated.png");
   background-repeat: no-repeat;
   background-position: bottom left, bottom -90px right;
+  /* width: 84.375%; */
+  /* margin-left: -95px; */
 }
 
 .main__guidelines {
-  max-width: 1540px;
+  width: calc(var(--guidelines-width-1600) + 180px + 100px);
+  margin-left: -100px;
+
   color: #000;
   line-height: 140%;
   padding-top: 45px;
 
   display: grid;
-  grid-template-columns: min-content 90px var(--guidelines-width) 90px;
+  grid-template-columns: min-content 90px 80.55555555555556% 90px;
   grid-template-areas: ". . camera-header ."
                        "sidebar-wrap . pet-camera ."
                        "sidebar-wrap arrow-wrap-left video-gallery arrow-wrap-right"
@@ -156,7 +154,6 @@
 }
 
 .pet-camera {
-  max-width: 100%;
   padding-bottom: 80px;
   grid-area: pet-camera;
 }
@@ -169,10 +166,9 @@
 }
 
 .pet-camera__video {
-  max-width: 100%;
+  width: 100%;
   position: relative;
   overflow: hidden;
-  /* width: 100%; */
   padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 
@@ -182,8 +178,6 @@
   position: absolute;
   left: 0;
   top: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .video-gallery {
@@ -224,6 +218,7 @@
 }
 
 .carousel {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
