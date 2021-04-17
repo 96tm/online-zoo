@@ -157,6 +157,12 @@
 }
 
 @media screen and (max-width: 640px) {
+
+  .wrap-guidelines {
+    max-width: var(--max-width-640);
+    width: var(--guidelines-width-640);
+  }
+  
   .zoom {
     display: none;
   }
