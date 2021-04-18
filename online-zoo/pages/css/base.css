@@ -19,6 +19,9 @@
   --max-width-1000: 940px;
   --max-width-640: 600px;
   --max-width-320: 300px;
+  --content-margin-1600: 13.75%;
+  --content-margin-1000: 3%;
+  --content-margin-640: 3.125%;
 }
 
 h1 {
@@ -177,17 +180,17 @@ input {
 /* Header start */
 .header {
   display: flex;
-  /* justify-content: center; */
   min-height: 80px;
   background-color: #000;
   color: #fff;
-  padding: 14px 0 14px 13.75%;;
+  padding: 14px 0;
   position: relative;
   z-index: 2;
 }
 
 .header__wrap {
   align-items: center;
+  margin-left: var(--content-margin-1600);
 }
 
 .header__menu-button {
@@ -804,7 +807,6 @@ input {
 /* Footer start */
 .footer {
   display: flex;
-  justify-content: center;
   padding: 40px 0 50px 0;
   background-color: #111115;
   color: #fff;
@@ -813,11 +815,15 @@ input {
 .footer__wrap {
   display: flex;
   flex-direction: column;
+  width: var(--guidelines-width-1600);
+  max-width: var(--max-width-1600);
+  margin-left: var(--content-margin-1600);
 }
 
 .footer__grid {
   display: grid;
   /* max-width: var(--max-width-1600); */
+  grid-template-rows: auto auto 134px;
   grid-template-columns: 25.689655172413794% auto 34.48275862068966%;
   grid-template-areas: "footer__logo-wrap . footer__subscribe"
                        "footer__donate-link-wrap . ."
@@ -853,6 +859,8 @@ input {
 .footer__social-media-list {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .footer__social-media-item {
@@ -861,9 +869,9 @@ input {
   width: 40%;
 }
 
-.footer__social-media-item:not(:last-child) {
+/* .footer__social-media-item:not(:last-child) {
   margin-bottom: 10px;
-}
+} */
 
 .footer__social-media-icon {
   margin-right: 12px;
@@ -1004,8 +1012,8 @@ input {
     --guidelines-width: var(--guidelines-width-1000);
   }
 
-  .header {
-    padding-left: 3%;
+  .header__wrap {
+    margin-left: var(--content-margin-1000);
   }
 
   .wrap-guidelines {
@@ -1123,12 +1131,13 @@ input {
     margin-bottom: 52px;
   }
 
-  .footer {
-    padding-left: 13px;
+  .footer__wrap {
+    width: var(--guidelines-width-1000);
+    margin-left: var(--content-margin-1000);
   }
 
   .footer__grid {
-    grid-template-columns: 31% 39% 30%;
+    grid-template-columns: 32% 39% 30%;
     grid-template-areas: "footer__logo-wrap . footer__subscribe"
                          "footer__donate-link-wrap . ."
                          "footer__social-media footer__nav footer__copyright";
@@ -1165,14 +1174,13 @@ input {
   .footer__social-media-title {
     display: none;
   }
-  /* .footer__nav {
-    max-width: 270px;
-    padding-right: 5px;
-  }
+}
 
-  .footer__grid {
-    grid-template-columns: 20% 39% 32%;
-  } */
+@media screen and (max-width: 670px) {
+
+  .header__wrap {
+    width: var(--guidelines-width-640);
+  }
 }
 
 @media screen and (max-width: 640px) {
@@ -1181,15 +1189,13 @@ input {
     --guidelines-width: var(--guidelines-width-640);
   }
 
-  /* .wrap-guidelines {
-    max-width: var(--max-width-640);
-    width: var(--guidelines-width-640);
-  } */
-
   .header {
     min-height: 34px;
     max-height: 34px;
-    padding: 0 0 0 3.125%;
+  }
+
+  .header__wrap {
+    margin-left: var(--content-margin-640);
   }
   
   .header__wrap {
@@ -1384,28 +1390,40 @@ input {
   }
 
   .footer {
-    padding: 12px 0;
+    padding: 12px 0 12px 3.125%;
   }
 
   .footer__donate-link-wrap {
     padding-bottom: 67px;
   }
+}
 
-  /* .footer__copyright {
-    justify-self: left;
-  } */
+@media screen and (max-width: 660px) {
 
+  .footer__logo-wrap {
+    padding-bottom: 32px;
+  }
+
+  .footer__grid {
+    column-gap: 1%;
+    grid-template-rows: initial;
+  }
+
+  .footer__social-media-list {
+    align-items: center;
+    height: 164px;
+  }
 }
 
 @media screen and (max-width: 640px) {
 
-  .footer__grid {
-    column-gap: 1%;
-    
+  .footer__wrap {
+    width: 96.7741935483871%;
+    margin: 0;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 510px) {
 
 /* }
 
@@ -1556,6 +1574,7 @@ input {
   }
 
   .footer {
+    justify-content: center;
     padding: 0 0 30px;
   }
 
@@ -1642,6 +1661,7 @@ input {
     flex-direction: row;
     justify-content: space-between;
     width: 194px;
+    height: initial;
   }
 
   .footer__copyright {
