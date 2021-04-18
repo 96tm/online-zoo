@@ -177,11 +177,11 @@ input {
 /* Header start */
 .header {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   min-height: 80px;
   background-color: #000;
   color: #fff;
-  padding: 14px 0;
+  padding: 14px 0 14px 13.75%;;
   position: relative;
   z-index: 2;
 }
@@ -1004,6 +1004,10 @@ input {
     --guidelines-width: var(--guidelines-width-1000);
   }
 
+  .header {
+    padding-left: 3%;
+  }
+
   .wrap-guidelines {
     max-width: var(--max-width-1000);
     width: var(--guidelines-width-1000);
@@ -1185,7 +1189,7 @@ input {
   .header {
     min-height: 34px;
     max-height: 34px;
-    padding: 0;
+    padding: 0 0 0 3.125%;
   }
   
   .header__wrap {

@@ -9,8 +9,8 @@
 /* Utility end */
 
 .main-wrap {
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 
 }
 
@@ -18,11 +18,14 @@
   background: url("../../../assets/images/strelitzia-right.png"), url("../../../assets/images/leaf-rotated.png");
   background-repeat: no-repeat;
   background-position: bottom left, bottom -90px right;
+  padding-left: calc(13.75% - 180px);
 }
 
 .main__guidelines {
-  width: calc(var(--guidelines-width-1600) + 180px + 100px);
-  margin-left: -6.25%;
+  /* width: calc(var(--guidelines-width-1600) + 180px + 100px); */
+  width: calc(var(--max-width-1600) + 180px + 100px);
+
+  /* margin-left: -6.25%; */
 
   color: #000;
   line-height: 140%;
