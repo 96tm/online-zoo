@@ -5,6 +5,7 @@
   --map-background: #eaf7fe;
 }
 
+
 .tooltip {
   z-index: 2;
   display: flex;
@@ -21,6 +22,21 @@
   border-radius: 5px;
   background-color: #fff;
   text-align: left;
+}
+
+.tooltip-eagles {
+  left: 23%;
+  top: 59%;
+}
+
+.tooltip-gorillas {
+  left: 49%;
+  top: 70%;
+}
+
+.tooltip-pandas {
+  left: 66%;
+  top: 59%;
 }
 
 .tooltip::before {
@@ -79,7 +95,6 @@
 .main {
   display: flex;
   position: relative;
-  overflow: hidden;
 }
 
 .map {
@@ -95,6 +110,7 @@
   width: 100%;
   padding: 0 0 58.625%;
   background-color: var(--map-background);
+  overflow: hidden;
 }
 
 .map__mark:hover {
