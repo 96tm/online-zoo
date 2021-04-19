@@ -782,9 +782,7 @@
   }
 
   .carousel__video-wrap {
-    /* width: 42.38%; */
     width: 47.08994708994709%;
-
     max-height: 68px;
     height: initial;
   }
@@ -801,6 +799,7 @@
   .info-header__image-wrap {
     width: 106.67%;
     margin-left: -3.125%;
+    height: 193px;
   }
 }
 /* Media queries end */
