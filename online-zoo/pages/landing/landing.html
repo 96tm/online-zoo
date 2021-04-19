@@ -13,7 +13,7 @@
   <body> 
     <header class="header">
       <h1>PetStory online</h1>
-      <div class="header__wrap wrap-guidelines flex">
+      <div class="header__wrap flex">
         <article class="logo">
           <p class="logo__title">
             <a href="./landing.html" class="nav-link">
@@ -53,7 +53,7 @@
       </div>
     </header>
     <section class="watch-online">
-      <div class="watch-online__wrap wrap-guidelines center">
+      <div class="watch-online__wrap wrap-guidelines">
         <div class="watch-online__content-wrap">
           <div class="watch-online__content relative">
             <img src="../../assets/icons/ellipse.svg"
@@ -77,7 +77,7 @@
     </section>
     <main class="main relative">
       <div class="main__wrap relative">
-        <section class="backstage wrap-guidelines center">
+        <section class="backstage wrap-guidelines">
           <div class="backstage__col-1">
             <picture class="backstage__picture">
               <source srcset="../../assets/images/backstage-man-1000.png"
@@ -87,7 +87,7 @@
                    class="backstage__image">
             </picture>
           </div>
-          <div class="backstage-col-2 description">
+          <div class="backstage__col-2 description">
             <h3 class="description__header">The Backstage of the Wilderness World.</h3>
             <p class="description__short">
               The site was founded on the basis of a volunteer movement
@@ -106,8 +106,8 @@
         </section>
       </div>
       <section class="pets relative">
-        <div class="pets__gallery">
-          <div class="wrap-guidelines">
+        <div class="pets__gallery wrap-guidelines">
+          <!-- <div class="wrap-guidelines"> -->
             <div class="pets__grid">
               <div class="pet-card pet-card--panda">
                 <div class="pet-card__image-wrap">
@@ -205,13 +205,15 @@
                 </div>
               </div>
             </div>
-          </div>
+          <!-- </div> -->
           </div>
         </div>
-        <a href="../map/map.html" class="pets__link link-button">Choose your favorite</a>
+        <div class="pets__link-wrap wrap-guidelines">
+          <a href="../map/map.html" class="pets__link link-button">Choose your favorite</a>
+        </div>
       </section>
       <section class="friend">
-        <div class="friend__wrapper center">
+        <div class="friend__wrapper wrap-guidelines">
           <h3 class="friend__header">Pick and feed a friend</h3>
           <div class="friend__pick">
             <div class="friend__description">
@@ -236,52 +238,54 @@
                 </p>
               </div>
             </div>
-            <div class="friend__donation friend-donation">
-              <h4 class="friend-donation__header">How it works</h4>
-              <div class="friend-donation__cards friend-donation-cards">
-                <div class="friend__donation-card friend-donation-card">
-                  <div class="friend-donation-card__image-wrap">
-                    <img src="../../assets/icons/credit-card.svg"
-                        alt="Hand holding a credit card"
-                        class="friend-donation-card__image">
-                    <div class="friend-donation-card__arrow-wrap">
-                      <picture class="friend-donation-card__arrow-picture">
-                        <source srcset="../../assets/icons/arrow-down-green.svg"
-                                media="(max-width: 320px)">
-                        <source srcset="../../assets/icons/arrow-right-green.svg"
-                                media="(max-width: 640px)">
-                        <img src="../../assets/icons/arrow-right-hollow.svg"
-                              alt="Arrow">
-                      </picture>
-                    </div>
-                  </div>
-                  <p class="friend-donation-card__text">Pay with a card</p>
-                </div>
-                <div class="friend__donation-card friend-donation-card">
-                  <div class="friend-donation-card__image-wrap">
-                    <img src="../../assets/icons/money-tree.svg"
-                          alt="Tree growing from a hand"
+            <div class="friend__donation-wrap">
+              <div class="friend__donation friend-donation">
+                <h4 class="friend-donation__header">How it works</h4>
+                <div class="friend-donation__cards friend-donation-cards">
+                  <div class="friend__donation-card friend-donation-card">
+                    <div class="friend-donation-card__image-wrap">
+                      <img src="../../assets/icons/credit-card.svg"
+                          alt="Hand holding a credit card"
                           class="friend-donation-card__image">
-                    <div class="friend-donation-card__arrow-wrap">
-                      <picture class="friend-donation-card__arrow-picture">
-                        <source srcset="../../assets/icons/arrow-down-green.svg"
-                                media="(max-width: 320px)">
-                        <source srcset="../../assets/icons/arrow-right-green.svg"
-                                media="(max-width: 640px)">
-                        <img src="../../assets/icons/arrow-right-hollow.svg"
-                              alt="Arrow">
-                      </picture>
+                      <div class="friend-donation-card__arrow-wrap">
+                        <picture class="friend-donation-card__arrow-picture">
+                          <source srcset="../../assets/icons/arrow-down-green.svg"
+                                  media="(max-width: 320px)">
+                          <source srcset="../../assets/icons/arrow-right-green.svg"
+                                  media="(max-width: 640px)">
+                          <img src="../../assets/icons/arrow-right-hollow.svg"
+                                alt="Arrow">
+                        </picture>
+                      </div>
                     </div>
+                    <p class="friend-donation-card__text">Pay with a card</p>
                   </div>
-                  <p class="friend-donation-card__text">Payment goes to the zoo</p>
-                </div>
-                <div class="friend__donation-card friend-donation-card">
-                  <div class="friend-donation-card__image-wrap">
-                    <img src="../../assets/icons/monkey.svg"
-                          alt="Smiling monkey and bananas"
-                          class="friend-donation-card__image">
+                  <div class="friend__donation-card friend-donation-card">
+                    <div class="friend-donation-card__image-wrap">
+                      <img src="../../assets/icons/money-tree.svg"
+                            alt="Tree growing from a hand"
+                            class="friend-donation-card__image">
+                      <div class="friend-donation-card__arrow-wrap">
+                        <picture class="friend-donation-card__arrow-picture">
+                          <source srcset="../../assets/icons/arrow-down-green.svg"
+                                  media="(max-width: 320px)">
+                          <source srcset="../../assets/icons/arrow-right-green.svg"
+                                  media="(max-width: 640px)">
+                          <img src="../../assets/icons/arrow-right-hollow.svg"
+                                alt="Arrow">
+                        </picture>
+                      </div>
+                    </div>
+                    <p class="friend-donation-card__text">Payment goes to the zoo</p>
                   </div>
-                  <p class="friend-donation-card__text">Your favorite animal gets delicious dish</p>
+                  <div class="friend__donation-card friend-donation-card">
+                    <div class="friend-donation-card__image-wrap">
+                      <img src="../../assets/icons/monkey.svg"
+                            alt="Smiling monkey and bananas"
+                            class="friend-donation-card__image">
+                    </div>
+                    <p class="friend-donation-card__text">Your favorite animal gets delicious dish</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -292,7 +296,7 @@
         </div>
       </section>
       <section class="testimonials">
-        <div class="testimonials__wrap wrap-guidelines center">
+        <div class="testimonials__wrap wrap-guidelines">
           <h3 class="testimonials__header">Testimonials</h3>
           <div class="testimonials__cards">
             <div class="testimonials__card testimonials-card">
@@ -427,7 +431,7 @@
       </section>
     </main>
     <footer class="footer">
-      <div class="footer__wrap wrap-guidelines">
+      <div class="footer__wrap">
         <div class="footer__grid">
           <div class="footer__logo-wrap">
             <article class="footer__logo logo">
