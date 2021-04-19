@@ -527,16 +527,9 @@
 
   .main__guidelines {
     width: var(--guidelines-width-640);
-    /* width: 96.7741935483871%; */
     padding-top: 30px;
 
     grid-template-columns: 12% 5.5% 65% 17.5%;
-    /* grid-template-rows: auto auto auto min-content auto; */
-    /* grid-template-areas: ". . camera-header ."
-                         "sidebar-wrap . pet-camera pet-camera"
-                         "sidebar-wrap . video-gallery arrow-wrap-right"
-                         "sidebar-wrap . video-gallery arrow-wrap-left"
-                         "info info info info"; */
     grid-template-areas: ". . camera-header camera-header"
     "sidebar-wrap . pet-camera pet-camera"
     "sidebar-wrap . video-gallery arrow-wrap-right"
@@ -661,11 +654,36 @@
     height: 293px;
     padding-bottom: 34px;
   }
-
 }
 
+@media screen and (max-width: 600px) {
 
-@media screen and (max-width: 510px) {
+  .carousel {
+    flex-direction: column;
+    width: 180px;
+    height: 290px;
+  }
+
+  .carousel__video-wrap {
+    height: 140px;
+  }
+
+  .video-gallery {
+    height: 290px;
+    max-height: initial;
+  }
+
+  .arrow-wrap-left,
+  .arrow-wrap-right {
+    padding-left: 0;
+  }
+
+  .main__guidelines {
+    grid-template-columns: 12% 12.5% 33% 43.5%;
+  }
+}
+
+@media screen and (max-width: 320px) {
 
   .main {
     background: url("../../../assets/images/strelitzia-right-320.png"), url("../../../assets/images/leaf-rotated-320.png");
@@ -714,6 +732,9 @@
     justify-self: flex-start;
     align-self: flex-start;
     margin: 0;
+
+    height: initial;
+    max-height: initial;
   }
 
   .info {
@@ -734,7 +755,7 @@
     width: 100%;
     margin-top: 20px;
   }
-
+  grid-template-columns: 12% 12.5% 58% 14.5%;
   .info-header-body__text {
     font-size: inherit;
     font-weight: 400;
@@ -753,13 +774,24 @@
     margin-bottom: 15px;
   }
 
+  .video-gallery {
+    max-height: 140px;
+  }
+
   .carousel {
     padding-left: 21px;
+    width: 210px;
+
+    height: 146px;
+    flex-direction: row;
   }
 
   .carousel__video-wrap {
-    width: 42.38%;
+    /* width: 42.38%; */
+    width: 47.08994708994709%;
+
     max-height: 68px;
+    height: initial;
   }
 
   .carousel__video-wrap:nth-child(n+3) {
@@ -774,13 +806,6 @@
   .info-header__image-wrap {
     width: 106.67%;
     margin-left: -3.125%;
-  }
-}
-
-@media screen and (max-width: 320px) {
-
-  .carousel__video-wrap {
-    width: 47.08994708994709%;
   }
 }
 /* Media queries end */
