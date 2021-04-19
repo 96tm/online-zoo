@@ -16,6 +16,10 @@
   color: #fff;
 }
 
+.friend-form__frequency {
+  width: 218px;
+}
+
 .friend {
   background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #febdab 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #e0d8f0 80.49%, #eaf7fe 127.9%, #eaf7fe 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #e0d8f0 80.49%, #eaf7fe 127.9%, #eaf7fe 149.54%);
   padding-top: 40px;
@@ -39,6 +43,11 @@
 }
 
 .friend-figure-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.fieldset-wrap {
   display: flex;
   justify-content: center;
 }
@@ -250,7 +259,7 @@
 
 .friend-form__frequency {
   /* padding: 0 398px 40px 390px; */
-  padding: 0 40.77868852459016% 4.0983606557377046% 39.959016393442626%;
+  padding: 0 0 4.0983606557377046% 0;
   display: flex;
   justify-content: space-between;
 }
@@ -412,7 +421,7 @@
   }
 
   .friend-form__frequency {
-    padding: 0 314px 40px 318px;
+    padding: 0 0 40px 0;
   }
 }
 
@@ -445,6 +454,7 @@
 
   .friend__wrapper {
     width: var(--guidelines-width);
+    margin-left: var(--content-margin-640);
     padding-top: 37px;
   }
 
@@ -463,7 +473,6 @@
   }
 
   .friend__figure {
-    /* padding: 0 41px 41px 27px; */
     padding: 0 0 27px 0;
     width: 88.66666666666667%;
   }
@@ -507,7 +516,8 @@
   }
 
   .friend-form__frequency {
-    padding: 0 190px 30px;
+    padding: 0 0 30px;
+    width: 218px;
   }
 
   .friend-form__amount-range-wrap {
