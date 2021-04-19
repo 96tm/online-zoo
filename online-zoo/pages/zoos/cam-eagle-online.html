@@ -15,7 +15,7 @@
   <body> 
     <header class="header">
       <h1>PetStory online</h1>
-      <div class="header__wrap wrap-guidelines flex">
+      <div class="header__wrap flex">
         <article class="logo">
           <p class="logo__title">
             <a href="../landing/landing.html" class="nav-link">
@@ -58,10 +58,9 @@
         </div>
       </div>
     </header>
-    
     <main class="main">
-      <div class="main__guidelines relative center">
-        <h2 class="camera-header wrap-guidelines center">
+      <div class="main__guidelines relative">
+        <h2 class="camera-header">
           Eagle camera
         </h2>
         <div class="sidebar-wrap">
@@ -304,7 +303,7 @@
           </aside>
         </div>
         <div class="pet-camera">
-          <div class="pet-camera__video wrap-guidelines center">
+          <div class="pet-camera__video">
             <iframe
               src="https://www.youtube.com/embed/LFKsyTLoLac?modestbranding=1&autohide=1&controls=1"
               frameborder="0"
@@ -319,7 +318,7 @@
           <button class="arrow-right button-arrow"></button>
         </div>
         <section class="video-gallery">
-          <article class="carousel wrap-guidelines">
+          <article class="carousel">
             <div class="carousel__video-wrap">
               <iframe 
                 src="https://www.youtube.com/embed/LFKsyTLoLac?modestbranding=1&autohide=1&controls=0"
@@ -374,7 +373,7 @@
             </div>
           </article>
         </section>
-        <section class="info wrap-guidelines center">
+        <section class="info">
           <div class="info__header info-header">
             <div class="info-header__title-wrap">
               <h2 class="info-header__title">Eagle</h2>
@@ -389,7 +388,9 @@
                 <p class="info-header-body__text">
                   There are about <a href="https://wikipedia.org" class="link-green">40 species</a> of these birds in the world. The largest eagle is the <a href="https://wikipedia.org" class="link-green">Golden Eagle</a>. It reaches a length of 95 cm and a wingspan of over two meters. Its plumage ranges from golden to t. brown. They nest exclusively in mountainous areas. They hunt in pairs and mainly during daylight hours. They feed on birds, squirrels, martens, hares and even larger animals.
                 </p>
-                <a href="" class="info-header-body__button link-button">Feed a friend now</a>
+                <div class="info-header-body__button-wrap">
+                  <a href="" class="info-header-body__button link-button">Feed a friend now</a>
+                </div>
               </div>
             </div>
           </div>
@@ -466,10 +467,12 @@
       </div>
     </main>
     <div class="donate">
-      <a href="../donate/donate.html" class="donate__link link-button">Donate</a>
+        <div class="donate__link-wrap">
+          <a href="../donate/donate.html" class="donate__link link-button">Donate</a>
+        </div>
     </div>
     <footer class="footer">
-      <div class="footer__wrap wrap-guidelines">
+      <div class="footer__wrap">
         <div class="footer__grid">
           <div class="footer__logo-wrap">
             <article class="footer__logo logo">
