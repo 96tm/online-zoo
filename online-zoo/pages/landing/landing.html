@@ -8,18 +8,16 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
-          rel="stylesheet"> 
+          rel="stylesheet">
   </head>
   <body> 
     <header class="header">
       <h1>PetStory online</h1>
-      <div class="header__wrap wrap-1160 center flex">
+      <div class="header__wrap wrap-guidelines flex">
         <article class="logo">
           <p class="logo__title">
             <a href="./landing.html" class="nav-link">
-                  PetStory
-                  <br>
-                  online
+              <span>PetStory</span><span>online</span>
             </a>
           </p>
         </article>
@@ -47,34 +45,49 @@
             </li>
           </ul>
         </nav>
+        <div class="header__menu-button">
+          <div class="header__menu-button-line"></div>
+          <div class="header__menu-button-line"></div>
+          <div class="header__menu-button-line"></div>
+        </div>
       </div>
     </header>
     <section class="watch-online">
-      <div class="watch-online__wrap wrap-1160 center flex relative">
-        <div class="watch-online__content">
-          <img src="../../assets/icons/ellipse.svg" alt="Orangle circle" class="watch-online__image">
-          <article class="watch-online__description relative">
-            <div class="watch-online__text">
-              <p class="watch-online__line">Watch</p>
-              <p class="watch-online__line">Your</p>
-              <p class="watch-online__line yellow">Favorite</p>
-              <p class="watch-online__line">Animal</p>
-              <p class="watch-online__line">Online</p>
-            </div>
-          </article>
-          <a href="../zoos/cam-panda-online.html" class="watch-online__link link-button">Watch online</a>
+      <div class="watch-online__wrap wrap-guidelines">
+        <div class="watch-online__content-wrap">
+          <div class="watch-online__content relative">
+            <img src="../../assets/icons/ellipse.svg"
+                alt="Orangle circle" class="watch-online__image">
+            <article class="watch-online__description relative">
+              <div class="watch-online__text">
+                <p class="watch-online__line">Watch</p>
+                <p class="watch-online__line">Your</p>
+                <p class="watch-online__line yellow">Favorite</p>
+                <p class="watch-online__line">Animal</p>
+                <p class="watch-online__line">Online</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="watch-online__link-wrap">
+          <a href="../zoos/cam-panda-online.html"
+             class="watch-online__link link-button">Watch online</a>
         </div>
       </div>
     </section>
     <main class="main relative">
       <div class="main__wrap relative">
-        <section class="backstage wrap-1160 center">
+        <section class="backstage wrap-guidelines">
           <div class="backstage__col-1">
-            <img src="../../assets/images/backstage-man.png"
-                alt="Man wearing a bamboo hat"
-                class="backstage__image">
+            <picture class="backstage__picture">
+              <source srcset="../../assets/images/backstage-man-1000.png"
+                      media="(max-width: 1000px)">
+              <img src="../../assets/images/backstage-man.png"
+                   alt="Man wearing a bamboo hat"
+                   class="backstage__image">
+            </picture>
           </div>
-          <div class="backstage-col-2 description">
+          <div class="backstage__col-2 description">
             <h3 class="description__header">The Backstage of the Wilderness World.</h3>
             <p class="description__short">
               The site was founded on the basis of a volunteer movement
@@ -93,108 +106,139 @@
         </section>
       </div>
       <section class="pets relative">
-        <div class="pets__gallery">
-          <div class="pets__panel-left">
-            <button class="pets__arrow pets__arrow--left button-arrow">
-            </button>
-          </div>
-          <div class="pets__grid wrap-1160">
-            <div class="pet-card pet-card-1-1">
+        <div class="pets__gallery wrap-guidelines">
+          <!-- <div class="wrap-guidelines"> -->
+            <div class="pets__grid">
+              <div class="pet-card pet-card--panda">
                 <div class="pet-card__image-wrap">
                   <img src="../../assets/images/card-panda.png" 
                       alt="Two pandas playing with a tyre"
                       class="pet-card__image">
                 </div>
                 <div class="pet-card__footer pet-card-footer">
-                  <div class="pet-card-footer__wrap-banana">
+                  <div class="pet-card-footer__wrap pet-card-footer__wrap-banana">
                     <p class="pet-card__title">Giant Pandas</p>
                     <p class="pet-card__text">Native to Southwest China</p>
                   </div>
-                </div>
-            </div>
-            <div class="pet-card pet-card-1-2">
-              <div class="pet-card__image-wrap">
-                <img src="../../assets/images/card-eagle.png" 
-                    alt="Flying eagle"
-                    class="pet-card__image">
-              </div>
-              <div class="pet-card__footer pet-card-footer">
-                <div class="pet-card-footer__wrap-flesh">
-                  <p class="pet-card__title">Eagles</p>
-                  <p class="pet-card__text">Native to South America</p>
+                  <img src="../../assets/icons/banana-bamboo.svg"
+                       alt="Banana"
+                       class="pet-card-footer__animal-food">
                 </div>
               </div>
-            </div>
-            <div class="pet-card pet-card-1-3">
-              <div class="pet-card__image-wrap">
-                <img src="../../assets/images/card-gorilla.png" 
-                    alt="Gorilla near a rock"
-                    class="pet-card__image">
+              <div class="pet-card pet-card--eagle">
+                <div class="pet-card__image-wrap">
+                  <img src="../../assets/images/card-eagle.png" 
+                       alt="Flying eagle"
+                       class="pet-card__image">
+                </div>
+                <div class="pet-card__footer pet-card-footer">
+                  <div class="pet-card-footer__wrap pet-card-footer__wrap-flesh">
+                    <p class="pet-card__title">Eagles</p>
+                    <p class="pet-card__text">Native to South America</p>
+                  </div>
+                  <img src="../../assets/icons/flesh.svg"
+                       alt="Piece of meat"
+                       class="pet-card-footer__animal-food">
+                </div>
               </div>
-              <div class="pet-card__footer pet-card-footer">
-                <div class="pet-card-footer__wrap-banana">
-                  <p class="pet-card__title">Gorillas</p>
-                  <p class="pet-card__text">Native to Congo</p>
+              <div class="pet-card pet-card--gorilla">
+                <div class="pet-card__image-wrap">
+                  <img src="../../assets/images/card-gorilla.png" 
+                       alt="Gorilla near a rock"
+                       class="pet-card__image">
+                </div>
+                <div class="pet-card__footer pet-card-footer">
+                  <div class="pet-card-footer__wrap pet-card-footer__wrap-banana">
+                    <p class="pet-card__title">Gorillas</p>
+                    <p class="pet-card__text">Native to Congo</p>
+                  </div>
+                  <img src="../../assets/icons/banana-bamboo.svg"
+                       alt="Banana"
+                       class="pet-card-footer__animal-food">
+                </div>
+              </div>
+                <div class="pets__arrow-left-wrap">
+                  <button class="pets__arrow pets__arrow--left button-arrow">
+                  </button>
+                </div>
+                <div class="pets__arrow-right-wrap">
+                  <button class="pets__arrow pets__arrow--right button-arrow">
+                  </button>
+                </div>
+              <div class="pet-card pet-card--sloth">
+                <div class="pet-card__image-wrap">
+                  <img src="../../assets/images/card-sloth.png" 
+                      alt="Sloth on a tree"
+                      class="pet-card__image">
+                </div>
+                <div class="pet-card__footer pet-card-footer">
+                  <div class="pet-card-footer__wrap pet-card-footer__wrap-banana">
+                    <p class="pet-card__title">Two-Toed Sloth</p>
+                    <p class="pet-card__text">Mesoamerica, South America</p>
+                  </div>
+                  <img src="../../assets/icons/banana-bamboo.svg"
+                       alt="Banana"
+                       class="pet-card-footer__animal-food">
+                </div>
+              </div>
+              <div class="pet-card pet-card--cheetah">
+                <div class="pet-card__image-wrap">
+                  <img src="../../assets/images/card-cheetah.png" 
+                      alt="Grown-up cheetah and a cheetah cub"
+                      class="pet-card__image">
+                </div>
+                <div class="pet-card__footer pet-card-footer">
+                  <div class="pet-card-footer__wrap-flesh">
+                    <p class="pet-card__title">Cheetahs</p>
+                    <p class="pet-card__text">Native Africa</p>
+                  </div>
+                  <img src="../../assets/icons/flesh.svg"
+                       alt="Piece of meat"
+                       class="pet-card-footer__animal-food">
+                </div>
+              </div>
+              <div class="pet-card pet-card--penguin">
+                <div class="pet-card__image-wrap">
+                  <img src="../../assets/images/card-penguin.png" 
+                      alt="Penguin in the snow"
+                      class="pet-card__image">
+                </div>
+                <div class="pet-card__footer pet-card__footer">
+                  <div class="pet-card-footer__wrap pet-card-footer__wrap-flesh">
+                    <p class="pet-card__title">Penguins</p>
+                    <p class="pet-card__text">Native to Antarctica</p>
+                  </div>
+                  <img src="../../assets/icons/flesh.svg"
+                       alt="Piece of meat"
+                       class="pet-card-footer__animal-food">
+                </div>
+              </div>
+              <div class="pet-card pet-card--alligator">
+                <div class="pet-card__image-wrap">
+                  <img src="../../assets/images/card-alligator.png" 
+                      alt="Alligator photo"
+                      class="pet-card__image">
+                </div>
+                <div class="pet-card__footer pet-card__footer">
+                  <div class="pet-card-footer__wrap pet-card-footer__wrap-flesh">
+                    <p class="pet-card__title">Alligators</p>
+                    <p class="pet-card__text">Native to Southeastern U.S.</p>
+                  </div>
+                  <img src="../../assets/icons/flesh.svg"
+                       alt="Piece of meat"
+                       class="pet-card-footer__animal-food">
                 </div>
               </div>
             </div>
-            <div class="pet-card pet-card-2-1">
-              <div class="pet-card__image-wrap">
-                <img src="../../assets/images/card-sloth.png" 
-                    alt="Sloth on a tree"
-                    class="pet-card__image">
-              </div>
-              <div class="pet-card__footer pet-card-footer">
-                <div class="pet-card-footer__wrap-banana">
-                  <p class="pet-card__title">Two-Toed Sloth</p>
-                  <p class="pet-card__text">Mesoamerica, South America</p>
-                </div>
-              </div>
-            </div>
-            <div class="pet-card pet-card-2-2">
-              <div class="pet-card__image-wrap">
-                <img src="../../assets/images/card-cheetah.png" 
-                    alt="Grown-up cheetah and a cheetah cub"
-                    class="pet-card__image">
-              </div>
-              <div class="pet-card__footer pet-card-footer">
-                <div class="pet-card-footer__wrap-flesh">
-                  <p class="pet-card__title">Cheetahs</p>
-                  <p class="pet-card__text">Native Africa</p>
-                </div>
-              </div>
-            </div>
-            <div class="pet-card pet-card-2-3">
-              <div class="pet-card__image-wrap">
-                <img src="../../assets/images/card-penguin.png" 
-                    alt="Penguin in the snow"
-                    class="pet-card__image">
-              </div>
-              <div class="pet-card__footer pet-card__footer">
-                <div class="pet-card-footer__wrap-flesh">
-                  <p class="pet-card__title">Penguins</p>
-                  <p class="pet-card__text">Native to Antarctica</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="pets__panel-right">
-            <button class="pets__arrow pets__arrow--right button-arrow">
-            </button>
+          <!-- </div> -->
           </div>
         </div>
-        <footer class="pets__footer relative">
-          <img src="../../assets/images/palm.png"
-              alt="Palm leaves"
-              class="pets__image pets__image--palm">
+        <div class="pets__link-wrap wrap-guidelines">
           <a href="../map/map.html" class="pets__link link-button">Choose your favorite</a>
-          <img src="../../assets/images/strelitzia.png"
-              alt="Strelitzia"
-              class="pets__image pets__image--strelitzia">
-        </footer>
+        </div>
       </section>
       <section class="friend">
-        <div class="friend__wrapper wrap-1160 center">
+        <div class="friend__wrapper wrap-guidelines">
           <h3 class="friend__header">Pick and feed a friend</h3>
           <div class="friend__pick">
             <div class="friend__description">
@@ -219,40 +263,56 @@
                 </p>
               </div>
             </div>
-            <div class="friend__donation friend-donation">
-              <h4 class="friend-donation__header">How it works</h4>
-              <div class="friend-donation__cards friend-donation-cards">
-                <div class="friend__donation-card friend-donation-card">
-                  <div class="friend-donation-card__image-wrap">
-                    <img src="../../assets/icons/credit-card.svg"
-                        alt="Hand holding a credit card"
-                        class="friend-donation-card__image">
-                  </div>
-                  <p class="friend-donation-card__text">Pay with a card</p>
-                </div>
-                <div class="friend-donation-card__arrow-wrap">
-                  <img src="../../assets/icons/arrow-right-hollow.svg"
-                      alt="Right arrow">
-                </div>
-                <div class="friend__donation-card friend-donation-card">
-                  <div class="friend-donation-card__image-wrap">
-                    <img src="../../assets/icons/money-tree.svg"
-                          alt="Tree growing from a hand"
+            <div class="friend__donation-wrap">
+              <div class="friend__donation friend-donation">
+                <h4 class="friend-donation__header">How it works</h4>
+                <div class="friend-donation__cards friend-donation-cards">
+                  <div class="friend__donation-card friend-donation-card">
+                    <div class="friend-donation-card__image-wrap">
+                      <img src="../../assets/icons/credit-card.svg"
+                          alt="Hand holding a credit card"
                           class="friend-donation-card__image">
+                      <div class="friend-donation-card__arrow-wrap">
+                        <picture class="friend-donation-card__arrow-picture">
+                          <source srcset="../../assets/icons/arrow-down-green.svg"
+                                  media="(max-width: 510px)">
+                          <source srcset="../../assets/icons/arrow-right-green.svg"
+                                  media="(max-width: 640px)">
+                          <img src="../../assets/icons/arrow-right-hollow.svg"
+                               alt="Arrow"
+                               class="friend-donation-card__arrow-image">
+                        </picture>
+                      </div>
+                    </div>
+                    <p class="friend-donation-card__text">Pay with a card</p>
                   </div>
-                  <p class="friend-donation-card__text">Payment goes to the zoo</p>
-                </div>
-                <div class="friend-donation-card__arrow-wrap">
-                  <img src="../../assets/icons/arrow-right-hollow.svg"
-                      alt="Right arrow">
-                </div>
-                <div class="friend__donation-card friend-donation-card">
-                  <div class="friend-donation-card__image-wrap">
-                    <img src="../../assets/icons/monkey.svg"
-                          alt="Smiling monkey and bananas"
-                          class="friend-donation-card__image">
+                  <div class="friend__donation-card friend-donation-card">
+                    <div class="friend-donation-card__image-wrap">
+                      <img src="../../assets/icons/money-tree.svg"
+                            alt="Tree growing from a hand"
+                            class="friend-donation-card__image">
+                      <div class="friend-donation-card__arrow-wrap">
+                        <picture class="friend-donation-card__arrow-picture">
+                          <source srcset="../../assets/icons/arrow-down-green.svg"
+                                  media="(max-width: 510px)">
+                          <source srcset="../../assets/icons/arrow-right-green.svg"
+                                  media="(max-width: 640px)">
+                          <img src="../../assets/icons/arrow-right-hollow.svg"
+                              alt="Arrow"
+                              class="friend-donation-card__arrow-image">
+                        </picture>
+                      </div>
+                    </div>
+                    <p class="friend-donation-card__text">Payment goes to the zoo</p>
                   </div>
-                  <p class="friend-donation-card__text">Your favorite animal gets delicious dish</p>
+                  <div class="friend__donation-card friend-donation-card">
+                    <div class="friend-donation-card__image-wrap">
+                      <img src="../../assets/icons/monkey.svg"
+                            alt="Smiling monkey and bananas"
+                            class="friend-donation-card__image">
+                    </div>
+                    <p class="friend-donation-card__text">Your favorite animal gets delicious dish</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -263,10 +323,9 @@
         </div>
       </section>
       <section class="testimonials">
-        <div class="testimonials__wrap wrap-1160 center">
+        <div class="testimonials__wrap wrap-guidelines">
           <h3 class="testimonials__header">Testimonials</h3>
           <div class="testimonials__cards">
-
             <div class="testimonials__card testimonials-card">
               <div class="testimonials__card-border">
                 <div class="testimonials__card-content">
@@ -390,27 +449,45 @@
           <div class="testimonials__scroll testimonials-scroll relative">
             <span class="testimonials-scroll__active"></span>
           </div>
-          <button class="testimonials__button-feedback link-button">
-            Leave Feedback
-          </button>
+          <div class="testimonials__button-feedback-wrap">
+            <button class="testimonials__button-feedback link-button">
+              Leave Feedback
+            </button>
+          </div>
         </div>
       </section>
     </main>
     <footer class="footer">
-      <div class="wrap-1160 flex center">
-        <div class="footer__column-left">
-          <article class="footer__logo logo">
-            <p class="logo__title">
-              <a href="./landing.html" class="nav-link">
-                PetStory
-                <br>
-                online
-              </a>
-            </p>
-          </article>
-          <a href="../donate/donate.html" class="footer__donate-link link-button">
-            Donate for volunteers
-          </a>
+      <div class="footer__wrap">
+        <div class="footer__grid">
+          <div class="footer__logo-wrap">
+            <article class="footer__logo logo">
+              <p class="logo__title">
+                <a href="./landing.html" class="nav-link">
+                  <span>PetStory</span> <span>online</span>
+                </a>
+              </p>
+            </article>
+          </div>
+          <section class="footer__subscribe">
+            <form action="#" class="footer__form footer-form">
+              <h3 class="footer-form__header">
+                Subscribe to our news
+              </h3>
+              <div class="footer-form__row">
+                <input type="email"
+                       placeholder="Enter your email"
+                       pattern="^[a-zA-Z0-9-_/.]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
+                       class="footer-form__email"><!--
+                --><input type="submit" value="Submit" class="footer-form__submit submit">
+              </div>
+            </form>
+          </section>
+          <div class="footer__donate-link-wrap">
+            <a href="../donate/donate.html" class="footer__donate-link link-button">
+              Donate for volunteers
+            </a>
+          </div>
           <address class="footer__social-media">
             <ul class="footer__social-media-list">
               <li class="footer__social-media-item">
@@ -419,7 +496,9 @@
                     <img src="../../assets/icons/facebook.svg"
                         alt="Facebook icon"
                         class="footer__social-media-icon">
-                    Facebook
+                    <p class="footer__social-media-title">
+                      Facebook
+                    </p>
                 </a>
               </li>
               <li class="footer__social-media-item">
@@ -428,7 +507,9 @@
                     <img src="../../assets/icons/twitter.svg"
                         alt="Twitter icon"
                         class="footer__social-media-icon">
-                    Twitter
+                    <p class="footer__social-media-title">
+                      Twitter
+                    </p>
                 </a>
               </li>
               <li class="footer__social-media-item">
@@ -437,7 +518,9 @@
                     <img src="../../assets/icons/instagram.svg"
                         alt="Instagram icon"
                         class="footer__social-media-icon">
-                    Instagram
+                    <p class="footer__social-media-title">
+                      Instagram
+                    </p>
                 </a>
               </li>
               <li class="footer__social-media-item">
@@ -446,13 +529,13 @@
                     <img src="../../assets/icons/youtube.svg"
                         alt="Youtube icon"
                         class="footer__social-media-icon">
-                    YouTube
+                    <p class="footer__social-media-title">
+                      YouTube
+                    </p>
                 </a>
               </li>
             </ul>
           </address>
-        </div>
-        <div class="footer__column-center">
           <nav class="footer__nav">
             <ul class="footer__nav-list">
               <li class="footer__nav-item nav__item--selected">
@@ -477,22 +560,6 @@
               </li>
             </ul>
           </nav>
-        </div>
-        <div class="footer__column-right">
-          <section class="footer__subscribe">
-            <form action="#" class="footer__form footer-form">
-              <h3 class="footer-form__header">
-                Subscribe to our news
-              </h3>
-              <div class="footer-form__row">
-                <input type="email"
-                       placeholder="Enter your email"
-                       pattern="^[a-zA-Z0-9-_/.]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
-                       class="footer-form__email"><!--
-                --><input type="submit" value="Submit" class="footer-form__submit submit">
-              </div>
-            </form>
-          </section>
           <small class="footer__copyright">
             <a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online"
                target="_blank"

@@ -2,15 +2,19 @@
   --orange: #fb853a;
   --gray-light: #f1f3f2;
   --green: #4b9200;
+  --map-background: #eaf7fe;
 }
 
+
 .tooltip {
+  z-index: 2;
   display: flex;
+  visibility: hidden;
   flex-direction: column;
   justify-content: flex-end;
   position: absolute;
-  left: 598px;
-  top: 569px;
+  left: 30%;
+  top: 60%;
   width: 158px;
   height: 109px;
   padding: 7px 11px 15px 11px;
@@ -18,6 +22,21 @@
   border-radius: 5px;
   background-color: #fff;
   text-align: left;
+}
+
+.tooltip-eagles {
+  left: 23%;
+  top: 59%;
+}
+
+.tooltip-gorillas {
+  left: 49%;
+  top: 70%;
+}
+
+.tooltip-pandas {
+  left: 66%;
+  top: 59%;
 }
 
 .tooltip::before {
@@ -74,9 +93,24 @@
 }
 
 .main {
-  background-color: #eaf7fe;
-  text-align: center;
+  display: flex;
   position: relative;
+}
+
+.map {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.map-wrap {
+  position: relative;
+  width: 100%;
+  padding: 0 0 58.625%;
+  background-color: var(--map-background);
+  overflow: hidden;
 }
 
 .map__mark:hover {
@@ -88,12 +122,19 @@
   fill: var(--orange);
 }
 
+.zoom-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: calc(-1*54px - 2.5%);
+  margin-bottom: 2.5%;
+}
+
 .zoom {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  right: 40px;
-  bottom: 40px;
+  position: sticky;
+  bottom: 20px;
 }
 
 .zoom__button {
@@ -125,4 +166,20 @@
 
 .zoom__button-out:hover {
   background: url("../../../assets/icons/zoom-out-active.svg") no-repeat;
+}
+
+@media screen and (max-width: 1000px) {
+
+}
+
+@media screen and (max-width: 640px) {
+
+  .wrap-guidelines {
+    max-width: var(--max-width-640);
+    width: var(--guidelines-width-640);
+  }
+  
+  .zoom {
+    display: none;
+  }
 }
