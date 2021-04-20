@@ -1553,7 +1553,7 @@ input {
 @media screen and (max-width: 510px) {
 
   .pets__link-wrap {
-    margin-top: -60px;
+    margin-top: -40px;
   }
 
   .watch-online {
@@ -1623,11 +1623,7 @@ input {
 
 
   .pets__arrow {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
+    position: static;
   }
 
   .pets__arrow--left {
@@ -1636,7 +1632,13 @@ input {
   }
 
   .pets__arrow-left-wrap {
+    left: -290%;
+
     position: relative;
+  }
+
+  .pets__arrow-right-wrap {
+    left: -184%;
   }
 
   .pets__arrow--right {
@@ -1649,16 +1651,15 @@ input {
     /* height: 1388px; */
     column-gap: 0;
     row-gap: 20px;
-    grid-template-columns: auto;
     /* grid-template-rows: 55.33333333333333% 55.33333333333333% 55.33333333333333% 55.33333333333333%; */
     /* grid-template-rows: 332px 332px 332px 332px 1px; */
-    
-    grid-template-areas: "pet-card--panda"
-                         "pet-card--eagle"
-                         "pet-card--gorilla"
-                         "pet-card--alligator"
-                         "pets-arrow--left"
-                         "pets-arrow--right";
+    grid-template-rows: initial;
+    grid-template-columns: initial;
+    grid-template-areas: "pet-card--panda pet-card--panda pet-card--panda pet-card--panda"
+                         "pet-card--eagle pet-card--eagle pet-card--eagle pet-card--eagle"
+                         "pet-card--gorilla pet-card--gorilla pet-card--gorilla pet-card--gorilla"
+                         "pet-card--alligator pet-card--alligator pet-card--alligator pet-card--alligator"
+                         ". pets-arrow--left pets-arrow--right .";
   }
 
   .pet-card {
