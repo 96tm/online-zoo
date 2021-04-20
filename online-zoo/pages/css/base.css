@@ -1299,16 +1299,15 @@ input {
 
   .watch-online__wrap {
     padding: 48px 0 0;
-    /* grid-template-columns: auto 255.64px; */
     grid-template-columns: 298px 42.606666666666665%;
-
     grid-template-areas: ". watch-online__content-wrap" "watch-online__link-wrap .";
   }
 
   .watch-online__link-wrap {
     justify-self: left;
     transform: translateY(-2.83px);
-
+    position: relative;
+    z-index: 2;
   }
 
   .watch-online__image {
