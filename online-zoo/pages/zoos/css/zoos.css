@@ -422,7 +422,8 @@
   }
 
   .main__guidelines {
-    grid-template-columns: 6.2% 80px 72% 80px;
+    grid-template-columns: 10.2% 9% 99% 9%;
+    width: var(--guidelines-width-1600);
   }
 }
 
