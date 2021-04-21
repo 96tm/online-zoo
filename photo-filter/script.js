@@ -1,25 +1,70 @@
-const btnFullscreen = document.querySelector('.fullscreen');
-const btnLoad = document.querySelector('.btn-load--input');
-const filters = document.querySelector('.filters');
-const filterList = ['blur', 'invert', 'sepia', 'saturate', 'hue', ];
-const units = new Map([['blur', 'px'], ['invert','%'],
-    ['sepia','%'],
-    ['saturate','%'],
-    ['hue','deg'],])
+const btnFullscreen = document.querySelector(".fullscreen");
+const btnLoad = document.querySelector(".btn-load--input");
+const btnSave = document.querySelector(".btn-save");
+const btnReset = document.querySelector(".btn-reset");
+const filters = document.querySelector(".filters");
+const filterList = ["blur", "invert", "sepia", "saturate", "hue", ];
+const units = new Map([["blur", "px"], ["invert","%"],
+    ["sepia","%"],
+    ["saturate","%"],
+    ["hue","deg"],])
 
-const image = document.querySelector('img');
+const image = document.querySelector("img");
 
 
-window.addEventListener('click', event => {
+window.addEventListener("click", event => {
   if (event.target === btnFullscreen) {
     toggleFullscreen();
   }
+  else if (event.target === btnSave) {
+    console.log(image.src)
+    const tempImage = document.createElement("img");
+    tempImage.setAttribute("crossOrigin", "anonymous");
+    tempImage.src = image.src;
+    tempImage.addEventListener("load", event => {
+      const canvas = document.createElement("canvas");
+      canvas.width = tempImage.width;
+      canvas.height = tempImage.height;
+      const ctx = canvas.getContext("2d");
+      ctx.filter = getCanvasFilters();
+      ctx.drawImage(tempImage, 0, 0);
+      const link = document.createElement("a");
+      link.download = "image.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+      link.delete;
+      canvas.remove();
+      link.remove();
+      tempImage.remove();
+    });
+  }
+  else if (event.target === btnReset) {
+    for (let filterLabel of filters.children) {
+      const input = filterLabel.querySelector("input");
+      let initial = input.name === "saturate" ? 100 : 0;
+      const output = filterLabel.querySelector("output");
+      output.value = input.value = initial;
+    }
+    image.style.setProperty("filter", "none");
+  }
 });
 
-filters.addEventListener('input', event => {
+function getCanvasFilters() {
+  let filters = [];
+  filterList.forEach(v => {
+    const filterName = v === "hue" ? "hue-rotate" : v;
+    const value = image.style.getPropertyValue(`--${v}`);
+    if (value) {
+      filters.push(`${filterName}(${value})`);
+    }
+  });
+  return filters.join(" ");
+}
+
+filters.addEventListener("input", event => {
   const target = event.target;
-  if (target.matches('input') && filterList.includes(target.name)) {
-    const output = target.closest('label').querySelector('output');
+  if (target.matches("input") && filterList.includes(target.name)) {
+    const output = target.closest("label").querySelector("output");
     output.value = target.value;
     const value = output.value + units.get(target.name);
     image.style.setProperty(`--${target.name}`, value);
@@ -27,7 +72,7 @@ filters.addEventListener('input', event => {
 });
 
 
-btnLoad.addEventListener('input', event => {
+btnLoad.addEventListener("input", event => {
   const files = btnInput.files;
   let file = null;
   if (files.length && (file = files[0])) {
