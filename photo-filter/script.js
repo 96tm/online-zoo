@@ -1,4 +1,5 @@
 const btnFullscreen = document.querySelector(".fullscreen");
+const btnNext = document.querySelector(".btn-next");
 const btnLoad = document.querySelector(".btn-load--input");
 const btnSave = document.querySelector(".btn-save");
 const btnReset = document.querySelector(".btn-reset");
@@ -10,6 +11,9 @@ const units = new Map([["blur", "px"], ["invert","%"],
     ["hue","deg"],])
 
 const image = document.querySelector("img");
+const baseUrl = "https://github.com/rolling-scopes-school/stage1-tasks/tree/assets/images/";
+
+let imageIndex = 0;
 
 
 window.addEventListener("click", event => {
@@ -47,6 +51,13 @@ window.addEventListener("click", event => {
     }
     image.style.setProperty("filter", "none");
   }
+  else if (event.target === btnNext) {
+    const directoryName = getDirectoryName();
+    const url = baseUrl + directoryName;
+    const image = fetch(url).then(result => {
+      console.log(result);
+    });
+  }
 });
 
 function getCanvasFilters() {
@@ -82,8 +93,25 @@ btnLoad.addEventListener("input", event => {
   }
 });
 
+function getDirectoryName() {
+  const date = new Date();
+  const hours = (new Date()).getHours();
+  if (hours > 6 && hours < 12) {
+    return "morning";
+  }
+  else if (hours > 11 && hours < 18) {
+    return "day";
+  }
+  else if (hours > 17) {
+    return "evening";
+  }
+  else {
+    return "night";
+  }
+}
+
 /*
-  fullscreen functionality
+  #region fullscreen functionality start
 */
 function toggleFullscreen () {
   if (
@@ -117,3 +145,4 @@ function exitFullscreen() {
     document.webkitExitFullscreen();
   }
 }
+/* #endregion fullscreen functionality end */
