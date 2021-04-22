@@ -11,9 +11,10 @@ const units = new Map([["blur", "px"], ["invert","%"],
     ["hue","deg"],])
 
 const image = document.querySelector("img");
-const baseUrl = "https://github.com/rolling-scopes-school/stage1-tasks/tree/assets/images/";
+const baseUrl = "https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/";
 
-let imageIndex = 0;
+let imageIndex = 1;
+let directoryName = getDirectoryName();
 
 
 window.addEventListener("click", event => {
@@ -29,8 +30,12 @@ window.addEventListener("click", event => {
       const canvas = document.createElement("canvas");
       canvas.width = tempImage.width;
       canvas.height = tempImage.height;
+      const imageToCanvasRatio = Math.hypot(image.width,
+                                            image.height)
+                                 / Math.hypot(tempImage.width,
+                                              tempImage.height);
       const ctx = canvas.getContext("2d");
-      ctx.filter = getCanvasFilters();
+      ctx.filter = getCanvasFilters(imageToCanvasRatio);
       ctx.drawImage(tempImage, 0, 0);
       const link = document.createElement("a");
       link.download = "image.png";
@@ -48,24 +53,31 @@ window.addEventListener("click", event => {
       let initial = input.name === "saturate" ? 100 : 0;
       const output = filterLabel.querySelector("output");
       output.value = input.value = initial;
+      image.style.setProperty(`--${input.name}`, initial + units.get(input.name));
     }
-    image.style.setProperty("filter", "none");
   }
   else if (event.target === btnNext) {
-    const directoryName = getDirectoryName();
-    const url = baseUrl + directoryName;
-    const image = fetch(url).then(result => {
-      console.log(result);
-    });
+    const newDirectoryName = getDirectoryName();
+    if (directoryName !== newDirectoryName) {
+      directoryName = newDirectoryName;
+      imageIndex = 1;
+    }
+    const url = baseUrl + directoryName + "/"
+                + imageIndex.toString().padStart(2, "0") + ".jpg";
+    image.src = url;
+    imageIndex = Math.max(1, ((imageIndex + 1) % 21));
   }
 });
 
-function getCanvasFilters() {
+function getCanvasFilters(blurRatio) {
   let filters = [];
   filterList.forEach(v => {
     const filterName = v === "hue" ? "hue-rotate" : v;
-    const value = image.style.getPropertyValue(`--${v}`);
+    let value = image.style.getPropertyValue(`--${v}`);
     if (value) {
+      if (v === "blur") {
+        value = value.slice(0, -2) / blurRatio + "px";
+      }
       filters.push(`${filterName}(${value})`);
     }
   });
@@ -81,7 +93,6 @@ filters.addEventListener("input", event => {
     image.style.setProperty(`--${target.name}`, value);
   }
 });
-
 
 btnLoad.addEventListener("input", event => {
   const files = btnInput.files;
