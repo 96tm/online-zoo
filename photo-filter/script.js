@@ -6,6 +6,8 @@ const btnSave = document.querySelector(".btn-save");
 const btnReset = document.querySelector(".btn-reset");
 const filters = document.querySelector(".filters");
 const image = document.querySelector("img");
+const canvas = document.createElement("canvas");
+const ctx = canvas.getContext("2d");
 const filterList = ["blur", "invert", "sepia", "saturate", "hue", ];
 const units = new Map([
     ["blur", "px"],
@@ -21,34 +23,31 @@ let directoryName = getDirectoryName();
 
 // #region event listeners start
 window.addEventListener("click", event => {
+  console.log('click');
   if (event.target === btnFullscreen) {
     toggleFullscreen();
   }
   else if (event.target === btnSave) {
-    console.log(image.src)
     const tempImage = document.createElement("img");
     tempImage.setAttribute("crossOrigin", "anonymous");
-    tempImage.src = image.src;
     tempImage.addEventListener("load", event => {
-      const canvas = document.createElement("canvas");
       canvas.width = tempImage.width;
       canvas.height = tempImage.height;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       const imageToCanvasRatio = Math.hypot(image.width,
                                             image.height)
-                                 / Math.hypot(tempImage.width,
+                                  / Math.hypot(tempImage.width,
                                               tempImage.height);
-      const ctx = canvas.getContext("2d");
       ctx.filter = getCanvasFilters(imageToCanvasRatio);
       ctx.drawImage(tempImage, 0, 0);
       const link = document.createElement("a");
       link.download = "image.png";
       link.href = canvas.toDataURL("image/png");
       link.click();
-      link.delete;
-      canvas.remove();
       link.remove();
       tempImage.remove();
     });
+    tempImage.src = image.src;
   }
   else if (event.target === btnReset) {
     for (let filterLabel of filters.children) {
@@ -71,6 +70,7 @@ window.addEventListener("click", event => {
     imageIndex = Math.max(1, ((imageIndex + 1) % 21));
   }
 });
+
 
 filters.addEventListener("input", event => {
   const target = event.target;
