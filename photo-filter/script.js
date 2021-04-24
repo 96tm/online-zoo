@@ -82,13 +82,10 @@ filters.addEventListener("input", event => {
 });
 
 btnLoad.addEventListener("input", event => {
-  console.log('load file');
   const files = btnInput.files;
   let file = null;
   if (files.length && (file = files[0])) {
-    console.log('got file', file);
     if (["image/png", "image/jpeg"].includes(file.type)) {
-      console.log('loaded');
       image.src = URL.createObjectURL(file);
     }
   }
