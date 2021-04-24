@@ -1,22 +1,25 @@
+// #region state and constants start
 const btnFullscreen = document.querySelector(".fullscreen");
 const btnNext = document.querySelector(".btn-next");
 const btnLoad = document.querySelector(".btn-load--input");
 const btnSave = document.querySelector(".btn-save");
 const btnReset = document.querySelector(".btn-reset");
 const filters = document.querySelector(".filters");
+const image = document.querySelector("img");
 const filterList = ["blur", "invert", "sepia", "saturate", "hue", ];
-const units = new Map([["blur", "px"], ["invert","%"],
+const units = new Map([
+    ["blur", "px"],
+    ["invert","%"],
     ["sepia","%"],
     ["saturate","%"],
-    ["hue","deg"],])
-
-const image = document.querySelector("img");
+    ["hue","deg"],]);
 const baseUrl = "https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/";
 
 let imageIndex = 1;
 let directoryName = getDirectoryName();
+// #endregion state and constants end
 
-
+// #region event listeners start
 window.addEventListener("click", event => {
   if (event.target === btnFullscreen) {
     toggleFullscreen();
@@ -69,21 +72,6 @@ window.addEventListener("click", event => {
   }
 });
 
-function getCanvasFilters(blurRatio) {
-  let filters = [];
-  filterList.forEach(v => {
-    const filterName = v === "hue" ? "hue-rotate" : v;
-    let value = image.style.getPropertyValue(`--${v}`);
-    if (value) {
-      if (v === "blur") {
-        value = value.slice(0, -2) / blurRatio + "px";
-      }
-      filters.push(`${filterName}(${value})`);
-    }
-  });
-  return filters.join(" ");
-}
-
 filters.addEventListener("input", event => {
   const target = event.target;
   if (target.matches("input") && filterList.includes(target.name)) {
@@ -103,9 +91,10 @@ btnLoad.addEventListener("input", event => {
     }
   }
 });
+// #endregion event listeners start
 
+// #region helpers start
 function getDirectoryName() {
-  const date = new Date();
   const hours = (new Date()).getHours();
   if (hours > 6 && hours < 12) {
     return "morning";
@@ -121,9 +110,23 @@ function getDirectoryName() {
   }
 }
 
-/*
-  #region fullscreen functionality start
-*/
+function getCanvasFilters(blurRatio) {
+  let filters = [];
+  filterList.forEach(v => {
+    const filterName = v === "hue" ? "hue-rotate" : v;
+    let value = image.style.getPropertyValue(`--${v}`);
+    if (value) {
+      if (v === "blur") {
+        value = value.slice(0, -2) / blurRatio + "px";
+      }
+      filters.push(`${filterName}(${value})`);
+    }
+  });
+  return filters.join(" ");
+}
+// #endregion helpers end
+
+// #region fullscreen functionality start
 function toggleFullscreen () {
   if (
     document.fullscreenElement ||
@@ -156,4 +159,4 @@ function exitFullscreen() {
     document.webkitExitFullscreen();
   }
 }
-/* #endregion fullscreen functionality end */
+// #endregion fullscreen functionality end
