@@ -23,7 +23,6 @@ let directoryName = getDirectoryName();
 
 // #region event listeners start
 window.addEventListener("click", event => {
-  console.log('click');
   if (event.target === btnFullscreen) {
     toggleFullscreen();
   }
@@ -69,8 +68,8 @@ window.addEventListener("click", event => {
     image.src = url;
     imageIndex = Math.max(1, ((imageIndex + 1) % 21));
   }
+  btnLoad.value = "";
 });
-
 
 filters.addEventListener("input", event => {
   const target = event.target;
@@ -83,10 +82,13 @@ filters.addEventListener("input", event => {
 });
 
 btnLoad.addEventListener("input", event => {
+  console.log('load file');
   const files = btnInput.files;
   let file = null;
   if (files.length && (file = files[0])) {
+    console.log('got file', file);
     if (["image/png", "image/jpeg"].includes(file.type)) {
+      console.log('loaded');
       image.src = URL.createObjectURL(file);
     }
   }
