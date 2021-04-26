@@ -2,28 +2,234 @@ html {
   color: black;
 }
 
+/* #region utility start */
+.text-input,
+.select-input {
+  /* margin-left: 30px; */
+  height: 42px;
+  border: 1px solid black;
+}
+
+.info-label {
+  justify-self: flex-end;
+}
+
+.checkbox-input {
+  /* margin: 0 3px 0 30px; */
+  margin: 0 3px 0 0;
+
+  height: 12px;
+  width: 12px;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.select-input {
+  width: 152px;
+}
+/* #endregion utility end */
+
 .donation-form {
-  padding: 60px 17.1875% 60px 3.125%;
+  /* padding: 60px 17.1875% 60px 3.125%; */
+  padding: 60px 0 60px;
   max-width: 1280px;
 }
+  .info-label {
+    font-weight: 500;
+  }
+
+/* #region donation-info start */
+.donation-info__fieldset {
+  display: flex;
+  flex-direction: column;
+  padding-left: 35.46875%;
+}
+  .info-line--card-security-code .text-input {
+    width: 72px;
+  }
+  .donation-info__fieldset .amount-input {
+    margin-left: 30px;
+  }
 
 .donation-form__donation-info {
   padding-bottom: 43px;
+  /* width: 45.546875%; */
+  /* max-width: 583px; */
 }
+/* #region donation-info end */
 
+/* #region additional-info start  */
 .donation-form__additional-info {
   padding-bottom: 40px;
 }
+  .additional-info__fieldset {
+    display: grid;
+    row-gap: 10px;
+    column-gap: 30px;
+    grid-template:
+      ". additional-info__share-label" min-content
+      ". social-networks-list" min-content
+      "additional-info__is-corporate-title additional-info__is-corporate-label" min-content
+      "additional-info__is-anomymous-title additional-info__is-anomymous-label" min-content
+      "additional-info__comment-title additional-info__comment-input"
+      / min-content auto;
+      padding-left: 33.28125%;
+  }
+  /* #region additional-info grid-areas start */
+  .social-networks-list {
+    grid-area: social-networks-list;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 151px;
+  }
+  .additional-info__share-label {
+    grid-area: additional-info__share-label;
+  }
+  .additional-info__share-input {
+    grid-area: additional-info__share-input;
+  }
+  .additional-info__is-corporate-label {
+    grid-area: additional-info__is-corporate-label;
+    padding-bottom: 10px;
+  }
+  .additional-info__is-corporate-title {
+    grid-area: additional-info__is-corporate-title;
+  }
+  .additional-info__is-corporate-input {
+    grid-area: additional-info__is-corporate-input;
+  }
+  .additional-info__is-anomymous-label {
+    
+    grid-area: additional-info__is-anomymous-label;
+  }
+  .additional-info__is-anomymous-title {
+    grid-area: additional-info__is-anomymous-title;
+  }
+  .additional-info__is-anomymous-input {
+    grid-area: additional-info__is-anomymous-input;
+  }
+  .additional-info__comment-title {
+    grid-area: additional-info__comment-title;
+    padding-top: 10px;
+  }
+  .additional-info__comment-input {
+    grid-area: additional-info__comment-input;
+    resize: none;
+    height: 80px;
+  }
+  /* #endregion additional-info grid-areas end */
+  
+  .social-network-list__item--facebook,
+  .social-network-list__item--twitter {
+    width: 25px;
+    height: 25px;
+  }
+  .social-network-list__item--instagram {
+    width: 35.5px;
+    height: 35.5px;
+  }
+  .list-item-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
+  /* .list-item-icon--facebook {
+    width: 24.87px;
+    height: 24.87px;
+
+  }
+  .list-item-icon--instagram {
+    width: 35.53px;
+    height: 35.53px;
+  }
+  .list-item-icon--twitter {
+    width: 24.87px;
+    height: 24.87px;
+  } */
+
+/* #endregion additional-info end  */
+
+
+/* #region payment-info start */
 .donation-form__payment-info {
   padding-bottom: 60px;
 }
+  .payment-info__fieldset {
+    display: grid;
+    column-gap: 30px;
+    row-gap: 20px;
+    grid-template:
+      "payment-info__title-cardholder payment-cardholder-input payment-cardholder-input"
+      "payment-info__title-card-type payment-info__card-type-input payment-info__card-type-input"
+      "payment-info__title-card-number payment-info__card-number-input payment-info__card-number-input"
+      "payment-info__title-card-expiration payment-info__card-expiration-day-input payment-info__card-expiration-month-input"
+      "payment-info__card-security-code payment-info__card-security-code-input payment-info__card-security-code-input"
+      "payment-info__amount-label payment-info__amount-input payment-info__amount-input"
+      / 150px 151px auto;
+    padding-left: 28.515625%;
+  }
+
+  /* #region payment-area grid-areas start */
+  .payment-info__title-cardholder {
+    grid-area: payment-info__title-cardholder;
+  }
+  .payment-cardholder-input {
+    grid-area: payment-cardholder-input;
+  }
+  .payment-info__title-card-type {
+    grid-area: payment-info__title-card-type;
+  }
+  .payment-info__card-type-input {
+    grid-area: payment-info__card-type-input;
+  }
+  .payment-info__title-card-number {
+    grid-area: payment-info__title-card-number;
+  }
+  .payment-info__card-number-input {
+    grid-area: payment-info__card-number-input;
+  }
+  .payment-info__title-card-expiration {
+    grid-area: payment-info__title-card-expiration;
+  }
+  .payment-info__card-expiration-day-input {
+    grid-area: payment-info__card-expiration-day-input;
+  }
+  .payment-info__card-expiration-month-input {
+    grid-area: payment-info__card-expiration-month-input;
+  }
+  .payment-info__card-security-code {
+    grid-area: payment-info__card-security-code;
+  }
+  .payment-info__card-security-code-input {
+    grid-area: payment-info__card-security-code-input;
+    width: 71px;
+  }
+  .payment-info__amount-label {
+    grid-area: payment-info__amount-label;
+  }
+  .payment-info__amount-input {
+    grid-area: payment-info__amount-input;
+  }
+  /* #endregion payment-area grid-areas end */
+
+  .payment-info__card-expiration-day-input,
+  .payment-info__card-expiration-month-input {
+    width: 151px;
+  }
 
 .donation-form__submit-wrap {
   color: white;
+  padding-left: 41.796875%;
 }
 
+/* #endregion payment-info end */
+
 .info-section .heading {
+  padding-left: 7.1875%;
   color: var(--orange);
   font-size: 36px;
   line-height: 130%;
@@ -31,6 +237,28 @@ html {
   text-transform: capitalize;
 }
 
+.additional-info__fieldset {
+  height: 231px;
+}
+  .additional-info__fieldset .info-line {
+    margin-top: 10px;
+  }
+  .additional-info .info-line--is-anonymous {
+    margin-top: 20px;
+  }
+
+.additional-info-line__comment {
+  width: 40.234375%;
+  height: 80px;
+}
+
+.payment-cardholder-input,
+.payment-info__card-type-input,
+.payment-info__card-number-input,
+.additional-info__comment-input {
+  /* width: 40.234375%; */
+  width: 515px;
+}
 
 .amount-input {
   -moz-appearance: textfield;
@@ -38,10 +266,7 @@ html {
   background: transparent;
   padding: 11px 82px 9px 12px;
   width: 130px;
-  height: 42px;
   line-height: 140%;
-  border: 1px solid var(--gray-placeholder);
-  border-radius: 2px;
   background: url("../../../assets/icons/dollar.svg") right 10px center no-repeat;
   background-size: 10px 20px;
 }
