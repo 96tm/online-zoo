@@ -1,29 +1,54 @@
+:root {
+  --social-media-list-width: 141px;
+}
+
 html {
   color: black;
 }
 
+label {
+  cursor: pointer;
+}
+
 /* #region utility start */
+.info-label--required {
+  position: relative;
+}
+
+.info-label--required:before {
+  content: "*";
+  color: var(--red);
+  position: absolute;
+  top: -8px;
+  left: -8px;
+}
+
 .text-input,
 .select-input {
-  /* margin-left: 30px; */
   height: 42px;
-  border: 1px solid black;
+  border: 1.5px solid var(--black-blue);
+  border-radius: 2px;
 }
 
 .info-label {
   justify-self: flex-end;
+  font-weight: 500;
 }
 
 .checkbox-input {
-  /* margin: 0 3px 0 30px; */
   margin: 0 3px 0 0;
-
   height: 12px;
   width: 12px;
   -moz-appearance: none;
   appearance: none;
-  border: 1px solid black;
+  border: 1.5px solid var(--black-blue);
   border-radius: 2px;
+}
+
+.checkbox-input:checked {
+  background: url("../../../assets/icons/checkbox.svg") center no-repeat;
+  background-color: var(--orange);
+  background-size: contain;
 }
 
 .select-input {
@@ -32,31 +57,23 @@ html {
 /* #endregion utility end */
 
 .donation-form {
-  /* padding: 60px 17.1875% 60px 3.125%; */
   padding: 60px 0 60px;
   max-width: 1280px;
 }
-  .info-label {
-    font-weight: 500;
-  }
 
 /* #region donation-info start */
 .donation-info__fieldset {
   display: flex;
   flex-direction: column;
-  padding-left: 35.46875%;
+  align-items: flex-end;
+  padding-right: 47.265625%;
 }
-  .info-line--card-security-code .text-input {
-    width: 72px;
-  }
   .donation-info__fieldset .amount-input {
     margin-left: 30px;
   }
 
 .donation-form__donation-info {
   padding-bottom: 43px;
-  /* width: 45.546875%; */
-  /* max-width: 583px; */
 }
 /* #region donation-info end */
 
@@ -66,6 +83,7 @@ html {
 }
   .additional-info__fieldset {
     display: grid;
+    justify-content: flex-end;
     row-gap: 10px;
     column-gap: 30px;
     grid-template:
@@ -75,15 +93,24 @@ html {
       "additional-info__is-anomymous-title additional-info__is-anomymous-label" min-content
       "additional-info__comment-title additional-info__comment-input"
       / min-content auto;
-      padding-left: 33.28125%;
+    padding-right: 17.1875%;
   }
+
+  .checkbox-label {
+    display: flex;
+  }
+  .checkbox-label .checkbox-input {
+    align-self: center;
+    margin: 1px 7px 0 0;
+  }
+
   /* #region additional-info grid-areas start */
   .social-networks-list {
     grid-area: social-networks-list;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 151px;
+    width: var(--social-media-list-width);
   }
   .additional-info__share-label {
     grid-area: additional-info__share-label;
@@ -136,21 +163,6 @@ html {
     height: 100%;
     object-fit: cover;
   }
-
-  /* .list-item-icon--facebook {
-    width: 24.87px;
-    height: 24.87px;
-
-  }
-  .list-item-icon--instagram {
-    width: 35.53px;
-    height: 35.53px;
-  }
-  .list-item-icon--twitter {
-    width: 24.87px;
-    height: 24.87px;
-  } */
-
 /* #endregion additional-info end  */
 
 
@@ -160,6 +172,7 @@ html {
 }
   .payment-info__fieldset {
     display: grid;
+    justify-content: flex-end;
     column-gap: 30px;
     row-gap: 20px;
     grid-template:
@@ -170,7 +183,11 @@ html {
       "payment-info__card-security-code payment-info__card-security-code-input payment-info__card-security-code-input"
       "payment-info__amount-label payment-info__amount-input payment-info__amount-input"
       / 150px 151px auto;
-    padding-left: 28.515625%;
+    padding-right: 17.1875%;
+  }
+
+  .payment-info .info-label {
+    align-self: center;
   }
 
   /* #region payment-area grid-areas start */
@@ -224,9 +241,17 @@ html {
     width: 151px;
   }
 
+  .payment-info__card-expiration-day-input, 
+  .payment-info__card-expiration-month-input {
+    appearance: none;
+    background: url("../../../assets/icons/checkbox-gray.svg") right 10px center no-repeat;
+  }
+
 .donation-form__submit-wrap {
   color: white;
-  padding-left: 41.796875%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 34.921875%;
 }
 
 /* #endregion payment-info end */

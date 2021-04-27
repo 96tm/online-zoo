@@ -33,7 +33,7 @@
         <fieldset class="additional-info__fieldset">
           <!-- <div class="additional-info-line info-line info-line--share"> -->
             <label for="additional-info__share-input"
-                   class="additional-info__share-label">
+                   class="additional-info__share-label checkbox-label">
               <input type="checkbox"
                     id="additional-info__share-input"
                     class="additional-info__share-input checkbox-input">
@@ -72,7 +72,7 @@
             <label for="additional-info__is-anonymous-input"
                   class="additional-info__is-anomymous-title info-label">Anonymous</label>
             <label for="additional-info__is-anonymous-input"
-                   class="additional-info__is-anomymous-label">
+                   class="additional-info__is-anomymous-label checkbox-label">
                   <input type="checkbox"
                         id="additional-info__is-anonymous-input"
                         class="additional-info__is-anonymous-input checkbox-input">
@@ -94,45 +94,37 @@
         <fieldset class="payment-info__fieldset">
           <!-- <div class="payment-info-line info-line info-line--cardholder"> -->
             <label for="payment-cardholder-input"
-                   class="payment-info__cardholder-title info-label">Cardholder's name
+                   class="payment-info__cardholder-title info-label info-label--required">Cardholder's name
             </label>
             <input id="payment-cardholder-input" class="payment-cardholder-input text-input">
           <!-- </div> -->
           <!-- <div class="payment-info-line info-line info-line--card-type"> -->
             <label for="payment-info__card-type-input"
-                   class="payment-info__card-type-title info-label">Card Type
+                   class="payment-info__card-type-title info-label info-label--required">Card Type
             </label>
             <input id="payment-info__card-type-input" class="payment-info__card-type-input text-input">
-          <!-- </div> -->
-          <!-- <div class="payment-info-line info-line info-line--card-number"> -->
             <label for="payment-info__card-number-input"
-                   class="payment-info__card-number-title info-label">Credit Card Number
+                   class="payment-info__card-number-title info-label info-label--required">Credit Card Number
             </label>
             <input id="payment-info__card-number-input"
                    class="payment-info__card-number-input text-input">
-          <!-- </div> -->
-          <!-- <div class="payment-info-line info-line info-line--card-expiration"> -->
             <label for="payment-info__card-expiration-day-input"
-                   class="payment-info__card-expiration-title info-label">
+                   class="payment-info__card-expiration-title info-label info-label--required">
               Card Expiration
             </label>
             <select id="payment-info__card-expiration-day-input"
-                    class="payment-info__card-expiration-day-input select-input"> </select>
+                    class="payment-info__card-expiration-day-input select-input">
+            </select>
             <select type="select" class="payment-info__card-expiration-month-input select-input"> </select>
-          <!-- </div> -->
-          <!-- <div class="payment-info-line info-line info-line--card-security-code"> -->
             <label for="payment-info__card-security-code-input"
-                   class="payment-info__card-security-code info-label">Card Security Code
+                   class="payment-info__card-security-code info-label info-label--required">Card Security Code
             </label>
             <input id="payment-info__card-security-code" class="payment-info__card-security-code-input text-input">
-          <!-- </div> -->
-          <!-- <div class="payment-info-line info-line info-line--amount"> -->
             <label for="payment-info__amount-input"
                    class="payment-info__amount-label info-label">
               Amount
             </label>
             <input type="text" id="payment-info__amount-input" class="payment-info__amount-input amount-input text-input">
-          <!-- </div> -->
         </fieldset>
       </div>
       <div class="donation-form__submit-wrap">
