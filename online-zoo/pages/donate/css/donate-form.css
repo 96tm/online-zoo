@@ -163,10 +163,10 @@ html {
     column-gap: 30px;
     row-gap: 20px;
     grid-template:
-      "payment-info__title-cardholder payment-cardholder-input payment-cardholder-input"
-      "payment-info__title-card-type payment-info__card-type-input payment-info__card-type-input"
-      "payment-info__title-card-number payment-info__card-number-input payment-info__card-number-input"
-      "payment-info__title-card-expiration payment-info__card-expiration-day-input payment-info__card-expiration-month-input"
+      "payment-info__cardholder-title payment-cardholder-input payment-cardholder-input"
+      "payment-info__card-type-title payment-info__card-type-input payment-info__card-type-input"
+      "payment-info__card-number-title payment-info__card-number-input payment-info__card-number-input"
+      "payment-info__card-expiration-title payment-info__card-expiration-day-input payment-info__card-expiration-month-input"
       "payment-info__card-security-code payment-info__card-security-code-input payment-info__card-security-code-input"
       "payment-info__amount-label payment-info__amount-input payment-info__amount-input"
       / 150px 151px auto;
@@ -174,26 +174,29 @@ html {
   }
 
   /* #region payment-area grid-areas start */
-  .payment-info__title-cardholder {
-    grid-area: payment-info__title-cardholder;
+  .payment-info__cardholder-title {
+    grid-area: payment-info__cardholder-title;
   }
   .payment-cardholder-input {
     grid-area: payment-cardholder-input;
   }
-  .payment-info__title-card-type {
-    grid-area: payment-info__title-card-type;
+  .payment-info__card-type-title {
+    grid-area: payment-info__card-type-title;
   }
   .payment-info__card-type-input {
     grid-area: payment-info__card-type-input;
+    background: url("../../../assets/icons/payment.svg") no-repeat;
+    background-position: right 6px center;
+    padding-right: 131px;
   }
-  .payment-info__title-card-number {
-    grid-area: payment-info__title-card-number;
+  .payment-info__card-number-title {
+    grid-area: payment-info__card-number-title;
   }
   .payment-info__card-number-input {
     grid-area: payment-info__card-number-input;
   }
-  .payment-info__title-card-expiration {
-    grid-area: payment-info__title-card-expiration;
+  .payment-info__card-expiration-title {
+    grid-area: payment-info__card-expiration-title;
   }
   .payment-info__card-expiration-day-input {
     grid-area: payment-info__card-expiration-day-input;
