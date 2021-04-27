@@ -83,6 +83,9 @@ label {
   padding-bottom: 40px;
 }
   .additional-info__fieldset {
+    padding-right: 17.1875%;
+  }
+  .additional-info__fieldset .wrap {
     display: grid;
     justify-content: flex-end;
     row-gap: 10px;
@@ -94,7 +97,6 @@ label {
       "additional-info__is-anomymous-title additional-info__is-anomymous-label" min-content
       "additional-info__comment-title additional-info__comment-input"
       / min-content auto;
-    padding-right: 17.1875%;
   }
 
   .checkbox-label {
@@ -172,6 +174,9 @@ label {
   padding-bottom: 60px;
 }
   .payment-info__fieldset {
+    padding-right: 17.1875%;
+  }
+  .payment-info__fieldset .wrap {
     display: grid;
     justify-content: flex-end;
     column-gap: 30px;
@@ -184,9 +189,7 @@ label {
       "payment-info__card-security-code payment-info__card-security-code-input payment-info__card-security-code-input"
       "payment-info__amount-label payment-info__amount-input payment-info__amount-input"
       / 150px 151px auto;
-    padding-right: 17.1875%;
   }
-
   .payment-info .info-label {
     align-self: center;
   }
