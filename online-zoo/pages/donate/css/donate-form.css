@@ -326,3 +326,9 @@ label {
   color: var(--gray-placeholder);
   line-height: 140%;
 }
+
+/* #region media queries */
+  @media screen and (max-width: 1000px) {
+    
+  }
+/* #endregion media queries */

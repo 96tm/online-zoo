@@ -1,5 +1,8 @@
 const foldButton = document.querySelector(".info-body__button");
 const info = document.querySelector(".info__body");
+const generalInfo = document.querySelector(".info-body-section--general-info");
+const generalInfoFirstParagraph = generalInfo.querySelector(".info-body-section__text");
+const overlay = document.querySelector(".opacity-overlay");
 let folded = false;
 
 foldButton.addEventListener("click", event => {
