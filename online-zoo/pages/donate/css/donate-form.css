@@ -289,6 +289,12 @@ label {
   width: 515px;
 }
 
+.amount-input::-webkit-outer-spin-button,
+.amount-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .amount-input {
   -moz-appearance: textfield;
   appearance: textfield;
