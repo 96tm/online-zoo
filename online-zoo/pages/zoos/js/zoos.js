@@ -6,13 +6,15 @@ const generalInfoFirstParagraph = generalInfo.querySelector(".info-body-section_
 const overlay = document.querySelector(".text-overlay");
 const camera = document.querySelector(".pet-camera__iframe");
 
-const carouselList = document.querySelector(".carousel__list");
-const videoContainers = carouselList.querySelectorAll(".carousel__video-wrap");
+const slider = document.querySelector(".carousel__list");
+const videoContainers = slider.querySelectorAll(".carousel__video-wrap");
 const arrowRight = document.querySelector(".arrow-right");
 const arrowLeft = document.querySelector(".arrow-left");
-let folded = false;
 
-carouselList.addEventListener("click", event => {
+let folded = false;
+let sliderPage = localStorage.getItem("sliderPage") || 1;
+
+slider.addEventListener("click", event => {
   console.log(event.target)
   if (event.target.matches(".carousel__video-overlay")) {
     const video = event.target.parentElement.querySelector(".carousel__video");
@@ -23,10 +25,10 @@ carouselList.addEventListener("click", event => {
   }
 });
 arrowRight.addEventListener("click", event => {
-  rotateSlider(carouselList, "right");
+  rotateSlider(slider, "right");
 });
 arrowLeft.addEventListener("click", event => {
-  rotateSlider(carouselList, "left");
+  rotateSlider(slider, "left");
 });
 
 foldButton.addEventListener("click", event => {
@@ -48,18 +50,21 @@ foldButton.addEventListener("click", event => {
 });
 
 function rotateSlider(slider, direction, numberOfElements = 1) {
+  console.log(sliderPage);
   const margin = videoContainers[1].offsetLeft
                  - videoContainers[0].offsetLeft
                  - videoContainers[0].clientWidth;
   const shiftWidth = videoContainers[0].clientWidth + margin;
-  const initialMargin = parseFloat(slider.style.marginLeft.replace("px", "")) || 0;
-  if (direction === "left") {
-    slider.style.marginLeft = numberOfElements
-                              * (initialMargin + shiftWidth) + "px";
+  const initialLeft = parseFloat(slider.style.left.replace("px", "")) || 0;
+  if (direction === "left" && sliderPage !== 1) {
+    slider.style.left = numberOfElements
+                        * (initialLeft + shiftWidth) + "px";
+    sliderPage--;
   }
-  else {
-    slider.style.marginLeft = numberOfElements
-                              * (initialMargin - shiftWidth) + "px";
+  else if (direction === "right" && videoContainers.length - 3 > sliderPage) {
+    slider.style.left = numberOfElements
+                        * (initialLeft - shiftWidth) + "px";
+    sliderPage++;
   }
 }
 
