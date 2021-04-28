@@ -4,7 +4,19 @@ const generalInfo = document.querySelector(".info-body-section--general-info");
 const generalInfoHeading = document.querySelector(".info-body-section__title");
 const generalInfoFirstParagraph = generalInfo.querySelector(".info-body-section__text");
 const overlay = document.querySelector(".text-overlay");
+
+const carouselList = document.querySelector(".carousel__list");
+const videoContainers = carouselList.querySelectorAll(".carousel__video-wrap");
+const arrowRight = document.querySelector(".arrow-right");
+const arrowLeft = document.querySelector(".arrow-left");
 let folded = false;
+
+arrowRight.addEventListener("click", event => {
+  rotateSlider(carouselList, "right");
+});
+arrowLeft.addEventListener("click", event => {
+  rotateSlider(carouselList, "left");
+});
 
 foldButton.addEventListener("click", event => {
   infoBody.classList.toggle("hidden-sections");
@@ -23,6 +35,22 @@ foldButton.addEventListener("click", event => {
   }
   folded = !folded;
 });
+
+function rotateSlider(slider, direction) {
+  const margin = videoContainers[1].offsetLeft
+                 - videoContainers[0].offsetLeft
+                 - videoContainers[0].clientWidth;
+  const shiftWidth = videoContainers[0].clientWidth + margin;
+  console.log('shiftwidth', shiftWidth, 'margin', margin, 'width', videoContainers[0].clientWidth);
+  const initialMargin = parseFloat(slider.style.marginLeft.replace("px", "")) || 0;
+  console.log("float", initialMargin);
+  if (direction === "left") {
+    slider.style.marginLeft = initialMargin + shiftWidth + "px";
+  }
+  else {
+    slider.style.marginLeft = initialMargin - shiftWidth + "px";
+  }
+}
 
 function showOverlay() {
   const headingHeight = generalInfoHeading.clientHeight;

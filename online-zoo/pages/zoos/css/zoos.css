@@ -237,6 +237,7 @@
   height: 100%;
   display: flex;
   justify-content: space-between;
+  transition: all 1s;
 }
 
 .carousel__list-item {
