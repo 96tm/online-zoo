@@ -4,6 +4,7 @@ const generalInfo = document.querySelector(".info-body-section--general-info");
 const generalInfoHeading = document.querySelector(".info-body-section__title");
 const generalInfoFirstParagraph = generalInfo.querySelector(".info-body-section__text");
 const overlay = document.querySelector(".text-overlay");
+const camera = document.querySelector(".pet-camera__iframe");
 
 const carouselList = document.querySelector(".carousel__list");
 const videoContainers = carouselList.querySelectorAll(".carousel__video-wrap");
@@ -11,6 +12,16 @@ const arrowRight = document.querySelector(".arrow-right");
 const arrowLeft = document.querySelector(".arrow-left");
 let folded = false;
 
+carouselList.addEventListener("click", event => {
+  console.log(event.target)
+  if (event.target.matches(".carousel__video-overlay")) {
+    const video = event.target.parentElement.querySelector(".carousel__video");
+    const videoSrc = video.src;
+    console.log(video, camera);
+    video.src = camera.src;
+    camera.src = videoSrc;
+  }
+});
 arrowRight.addEventListener("click", event => {
   rotateSlider(carouselList, "right");
 });
@@ -36,19 +47,19 @@ foldButton.addEventListener("click", event => {
   folded = !folded;
 });
 
-function rotateSlider(slider, direction) {
+function rotateSlider(slider, direction, numberOfElements = 1) {
   const margin = videoContainers[1].offsetLeft
                  - videoContainers[0].offsetLeft
                  - videoContainers[0].clientWidth;
   const shiftWidth = videoContainers[0].clientWidth + margin;
-  console.log('shiftwidth', shiftWidth, 'margin', margin, 'width', videoContainers[0].clientWidth);
   const initialMargin = parseFloat(slider.style.marginLeft.replace("px", "")) || 0;
-  console.log("float", initialMargin);
   if (direction === "left") {
-    slider.style.marginLeft = initialMargin + shiftWidth + "px";
+    slider.style.marginLeft = numberOfElements
+                              * (initialMargin + shiftWidth) + "px";
   }
   else {
-    slider.style.marginLeft = initialMargin - shiftWidth + "px";
+    slider.style.marginLeft = numberOfElements
+                              * (initialMargin - shiftWidth) + "px";
   }
 }
 

@@ -250,6 +250,7 @@
   /* width: 23.103448275862068%; */
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .carousel__video {
