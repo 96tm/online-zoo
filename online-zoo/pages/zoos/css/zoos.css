@@ -380,7 +380,7 @@
   margin-right: 10px;
 }
 
-.info-body__section--long:not(:last-child) .info-body-section__text {
+.info-body-section__text:not(:last-child) {
   margin-bottom: 20px;
 }
 
