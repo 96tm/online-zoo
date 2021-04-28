@@ -1,21 +1,42 @@
 const foldButton = document.querySelector(".info-body__button");
-const info = document.querySelector(".info__body");
+const infoBody = document.querySelector(".info__body");
 const generalInfo = document.querySelector(".info-body-section--general-info");
+const generalInfoHeading = document.querySelector(".info-body-section__title");
 const generalInfoFirstParagraph = generalInfo.querySelector(".info-body-section__text");
-const overlay = document.querySelector(".opacity-overlay");
+const overlay = document.querySelector(".text-overlay");
 let folded = false;
 
 foldButton.addEventListener("click", event => {
-  console.log(info.style.height, info.scrollHeight + "px", (info.style.height !== info.scrollHeight + "px"));
+  infoBody.classList.toggle("hidden-sections");
   if (folded) {
-    console.log('unfold')
-    info.style.height = info.scrollHeight + "px";
+    infoBody.style.height = infoBody.scrollHeight + "px";
     event.target.textContent = "Read less";
+    hideOverlay();
   }
   else {
-    console.log('fold')
-    info.style.height = 500 + "px";
+    paragraphRect = generalInfoFirstParagraph.getBoundingClientRect();
+    infoRect = infoBody.getBoundingClientRect();
+    infoBody.style.height = paragraphRect.y - infoRect.y + paragraphRect.height + "px";
     event.target.textContent = "Read more";
+    showOverlay();
+    infoBody.scrollIntoView("top");
   }
   folded = !folded;
 });
+
+function showOverlay() {
+  const headingHeight = generalInfoHeading.clientHeight;
+  const paragraphHeight = generalInfoFirstParagraph.clientHeight;
+  const margin = generalInfoFirstParagraph.offsetTop
+                 - generalInfoHeading.offsetTop
+                 - headingHeight;
+  overlay.style.width = generalInfo.clientWidth + "px";
+  overlay.style.height = headingHeight + paragraphHeight + margin + "px";
+  overlay.style.left = generalInfo.offsetLeft + "px";
+  overlay.style.top = generalInfo.offsetTop + "px";
+  overlay.style.display = "initial";
+}
+
+function hideOverlay() {
+  overlay.style.display = "none";
+}
