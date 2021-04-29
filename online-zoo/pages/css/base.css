@@ -702,7 +702,7 @@ input {
     padding-bottom: 140px;
   }
 
-  .pets__grid {
+  .pets__list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: "pet-card--panda pet-card--panda pet-card--eagle pet-card--eagle pet-card--cheetah pet-card--cheetah"
@@ -863,13 +863,6 @@ input {
     max-height: 339px;
   }
 
-  .pets__arrow-left-wrap {
-    justify-self: right;
-  }
-  .pets__arrow-right-wrap {
-    justify-self: left;
-  }
-
   .watch-online__wrap {
     padding: 48px 0 0;
     grid-template-columns: 298px 42.606666666666665%;
@@ -931,7 +924,7 @@ input {
     padding-bottom: 80px;
   }
 
-  .pets__grid {
+  .pets__list {
     /* grid-template-columns: 285.24px 285.24px; */
     grid-template-columns: 1fr 1fr;
     
@@ -1180,7 +1173,7 @@ input {
     padding-bottom: 60px;
   }
 
-  .pets__grid {
+  .pets__list {
     column-gap: 30px;
     row-gap: 20px;
     grid-template-columns: 1fr 1fr;
