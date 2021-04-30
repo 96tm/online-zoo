@@ -271,12 +271,18 @@
 .testimonials__cards {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   padding-bottom: 21px;
 }
 
-.testimonials__card {
+.testimonials__list-item {
   width: 23.103448275862068%;
+}
+
+.testimonials__list-item:not(:first-child) {
+  margin-left: 30px;
+}
+
+.testimonials__card {
   position: relative;
   border-radius: inherit;
 }
