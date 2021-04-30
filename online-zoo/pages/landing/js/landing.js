@@ -11,7 +11,6 @@ class Slider {
     this.sliderContainer = sliderContainer;
     this.sliderIndex = sliderIndex;
     this.sliderStep = step;
-    this.cardWidth = this.slider.firstElementChild.offsetWidth;
     this.gap = gap;
     this.numberOfVisible = numberOfVisible;
     this.scroll = scroll;
@@ -19,19 +18,25 @@ class Slider {
     this.padSlider();
   }
 
+  getCardWidth() {
+    return this.slider.firstElementChild.offsetWidth;
+  }
+
   scrollLeft() {
     if (this.sliderIndex >= this.sliderStep) {
       this.sliderIndex -= this.sliderStep;
-      this.scroll -= (this.cardWidth + this.gap) * this.sliderStep;
+      this.scroll -= (this.getCardWidth() + this.gap) * this.sliderStep;
       this.sliderContainer.scrollTo(this.scroll, 0);
+      console.log(this.sliderIndex, this.scroll, this.getCardWidth(), this.gap, this.getCardWidth() + this.gap, (this.getCardWidth() + this.gap) * this.sliderStep)
     }
   }
 
   scrollRight () {
     if (this.sliderIndex + this.sliderStep <= this.numberOfCards) {
       this.sliderIndex += this.sliderStep;
-      this.scroll += (this.cardWidth + this.gap) * this.sliderStep;
+      this.scroll += (this.getCardWidth() + this.gap) * this.sliderStep;
       this.sliderContainer.scrollTo(this.scroll, 0);
+      console.log(this.sliderIndex, this.scroll, this.getCardWidth(), this.gap, this.getCardWidth() + this.gap, (this.getCardWidth() + this.gap) * this.sliderStep)
     }
   }
 
