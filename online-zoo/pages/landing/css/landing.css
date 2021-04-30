@@ -107,7 +107,7 @@
 .pets__gallery {
   display: flex;
   position: relative;
-  overflow: auto;
+  overflow: hidden;
   scroll-behavior: smooth;
   align-items: center;
 }
@@ -172,51 +172,21 @@
 
 .pets__list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 31.551724137931036%);
   grid-template-rows: auto auto;
   grid-auto-flow: column;
+  grid-auto-columns: 31.551724137931036%;
   column-gap: 30px;
   row-gap: 20px;
-  /* grid-template-areas: "pet-card--panda pet-card--eagle pet-card--gorilla"
-                       "pets__arrow--left . pets__arrow--right"
-                       "pet-card--sloth pet-card--cheetah pet-card--penguin"; */
-  /* column-gap: 30px;
-  row-gap: 20px; */
 }
 
 /* #region grid areas */
-/* .pets__list-item--alligator {
-  grid-area: pet-card--alligator;
-  display: none;
-}
-
-.pets__list-item--panda {
-  grid-area: pet-card--panda;
-}
-
-.pets__list-item--eagle {
-  grid-area: pet-card--eagle;
-}
-
-.pets__list-item--gorilla {
-  grid-area: pet-card--gorilla;
-}
-
-.pets__list-item--sloth {
-  grid-area: pet-card--sloth;
-}
-
-.pets__list-item--cheetah {
-  grid-area: pet-card--cheetah;
-}
-
-.pets__list-item--penguin {
-  grid-area: pet-card--penguin;
-} */
 /* #endregion grid areas */
+
 .pets__list-item {
+  
   /* width: 31.551724137931036%; */
-  width: calc(100vw * 0.22875);
+  /* width: calc(100vw * 0.22875); */
   /* height: calc(100vw * 0.26625); */
 }
 
