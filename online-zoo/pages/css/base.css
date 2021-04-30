@@ -45,6 +45,14 @@ input {
 }
 
 /* #region utility */
+.button-arrow {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
 .underline-orange {
   padding-bottom: 1px;
   border-bottom: 1px solid #fe9013;
