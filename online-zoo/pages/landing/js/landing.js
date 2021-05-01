@@ -23,20 +23,44 @@ class Slider {
   }
 
   scrollLeft() {
-    if (this.sliderIndex >= this.sliderStep) {
-      this.sliderIndex -= this.sliderStep;
+    if (this.sliderIndex >= this.numberOfVisible) {
+      this.sliderIndex -= this.numberOfVisible;
       this.scroll -= (this.getCardWidth() + this.gap) * this.sliderStep;
       this.sliderContainer.scrollTo(this.scroll, 0);
       console.log(this.sliderIndex, this.scroll, this.getCardWidth(), this.gap, this.getCardWidth() + this.gap, (this.getCardWidth() + this.gap) * this.sliderStep)
     }
+    else {
+      // if (this.sliderIndex < this.numberOfCards - this.numVisible) {
+      //   this.scroll -= (this.getCardWidth * this.gap) * this.sliderStep;
+      //   this.sliderIndex -= this.numberOfVisible;
+      // }
+      const first = this.slider.firstElementChild;
+      for (let i = this.numberOfCards - this.numberOfVisible; i < this.numberOfCards; i++) {
+        // this.slider.append(this.slider.children[i].cloneNode(true));
+        first.before(this.slider.children[i]);
+      }
+      this.sliderContainer.scrollTo(this.scroll, 0);
+    }
   }
 
   scrollRight () {
-    if (this.sliderIndex + this.sliderStep <= this.numberOfCards) {
-      this.sliderIndex += this.sliderStep;
+    if (this.sliderIndex + this.numberOfVisible < this.numberOfCards) {
+      this.sliderIndex += this.numberOfVisible;
       this.scroll += (this.getCardWidth() + this.gap) * this.sliderStep;
       this.sliderContainer.scrollTo(this.scroll, 0);
       console.log(this.sliderIndex, this.scroll, this.getCardWidth(), this.gap, this.getCardWidth() + this.gap, (this.getCardWidth() + this.gap) * this.sliderStep)
+    }
+    else{
+      for (let i = 0; i < this.numberOfVisible; i++) {
+        // this.slider.append(this.slider.children[i].cloneNode(true));
+        this.slider.append(this.slider.firstElementChild);
+      }
+      if (this.sliderIndex > this.numVisible) {
+        this.scroll -= (this.getCardWidth * this.gap) * this.sliderStep;
+        this.sliderIndex -= this.numberOfVisible;
+
+      }
+      this.sliderContainer.scrollTo(this.scroll, 0);
     }
   }
 
@@ -46,9 +70,9 @@ class Slider {
     for (let i = 0; i < this.numberOfVisible - off; i++) {
       const li = document.createElement("li");
       li.classList.add("pets__list-item");
-      li.style.width = "100%";
       this.slider.append(li);
     }
+    this.numberOfCards += this.numberOfVisible - off;
   }
 }
 
