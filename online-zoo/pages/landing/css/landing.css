@@ -262,14 +262,23 @@
   text-align: center;
 }
 
+.testimonials__cards-wrap {
+  overflow: hidden;
+}
+
 .testimonials__cards {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   padding-bottom: 21px;
 }
 
 .testimonials__list-item {
-  width: 23.103448275862068%;
+  width: 23%;
+  flex-shrink: 0;
+}
+
+.testimonials__list-item {
+  /* width: 23.103448275862068%; */
 }
 
 .testimonials__list-item:not(:first-child) {
@@ -277,6 +286,8 @@
 }
 
 .testimonials__card {
+  /* width: 23.103448275862068%; */
+
   position: relative;
   border-radius: inherit;
 }

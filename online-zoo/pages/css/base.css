@@ -46,6 +46,10 @@ input {
 }
 
 /* #region utility */
+.no-transition {
+  transition: none;
+}
+
 .button-arrow {
   width: 62px;
   height: 62px;
