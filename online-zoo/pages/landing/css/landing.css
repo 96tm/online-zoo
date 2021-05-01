@@ -340,31 +340,92 @@
   font-weight: 300;
 }
 
-.testimonials__scroll {
+/* #region scroll */
+.testimonials__scroll-wrap {
   height: 8px;
-  width: 600px;
+  width: 51.63793103448275%;
   margin: 0 auto 31px auto;
-  background-color: #f5f7f6;
+  padding: 1px;
+  background: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
   border-radius: 5px;
 }
 
-.testimonials__scroll:hover {
-  transform: scaleY(1.5);
-}
-
-.testimonials-scroll__active {
+.testimonials__scroll-input {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 0;
+  border-radius: 5px;
+  height: 8px;
   position: absolute;
-  display: inline-block;
-  width: 22%;
-  height: 100%;
+  top: 0;
+  width: 99.6661101836394%;
+} 
+
+.testimonials__scroll-input::-webkit-outer-spin-button,
+.testimonials__scroll-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.testimonials__scroll-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  width: 115.19px;
+  background: var(--orange);
+  border-top: 1px solid #f5f7f6;
+  border-bottom: 1px solid #f5f7f6;
+
   border-radius: 5px;
-  background-color: var(--orange);
   cursor: pointer;
 }
 
-.testimonials-scroll__active:hover {
-  transform: scaleY(1.5);
-  background-color: var(--green);
+.testimonials__scroll-input::-moz-range-thumb {
+  appearance: none;
+  height: 6px;
+  width: 115.19px;
+  background: var(--orange);
+  border: none;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.testimonials__scroll-input::-webkit-slider-runnable-track {
+  width: 100%;
+  cursor: pointer;
+  background: var(--gray-range-track);
+  padding: 0;
+  border-radius: 5px;
+
+}
+
+.testimonials__scroll-input:focus::-webkit-slider-runnable-track {
+  background: var(--gray-range-track);
+}
+
+.testimonials__scroll-input::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  background: var(--gray-range-track);
+  border-radius: 5px;
+}
+
+.testimonials__scroll-input:focus {
+  outline: none;
+}
+
+.testimonials__scroll-input::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
 }
 
 .testimonials__button-feedback {
