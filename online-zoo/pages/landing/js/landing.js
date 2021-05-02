@@ -33,13 +33,8 @@ class Slider {
       console.log(this.sliderIndex, this.scroll, this.getCardWidth(), this.gap, this.getCardWidth() + this.gap, (this.getCardWidth() + this.gap) * this.sliderStep)
     }
     else {
-      // if (this.sliderIndex < this.numberOfCards - this.numVisible) {
-      //   this.scroll -= (this.getCardWidth * this.gap) * this.sliderStep;
-      //   this.sliderIndex -= this.numberOfVisible;
-      // }
       const first = this.slider.firstElementChild;
       for (let i = this.numberOfCards - this.numberOfVisible; i < this.numberOfCards; i++) {
-        // this.slider.append(this.slider.children[i].cloneNode(true));
         first.before(this.slider.children[i]);
       }
       this.sliderContainer.scrollTo(this.scroll, 0);
@@ -68,7 +63,8 @@ class Slider {
   }
 
   padSlider() {
-    const off = this.numberOfCards % this.sliderStep;
+    const off = this.numberOfCards % this.numberOfVisible;
+    if (!off) return;
     console.log(off, this.numberOfVisible);
     for (let i = 0; i < this.numberOfVisible - off; i++) {
       const li = document.createElement("li");
