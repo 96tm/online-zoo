@@ -125,9 +125,8 @@ class Slider1 {
   }
   init() {
     this.rangeInput.addEventListener("input", this.handleRangeInput.bind(this));
-    this.slideShowHandle = setInterval(this.slideRight.bind(this), 1 * 1000);
+    this.slideShowHandle = setInterval(this.slideRight.bind(this), 10 * 1000);
     this.slider.addEventListener("click", event => {
-      console.log(event.currentTarget)
       if(event.target.closest(".testimonials__list-item") && this.slideShowHandle) {
         clearInterval(this.slideShowHandle);
         this.slideShowHandle = null;
