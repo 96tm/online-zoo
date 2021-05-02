@@ -225,6 +225,12 @@
   margin-bottom: 6px;
 }
 
+.friend-form__input-amount-number::-webkit-outer-spin-button,
+.friend-form__input-amount-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .friend-form__input-amount-number {
   -moz-appearance: textfield;
   appearance: textfield;

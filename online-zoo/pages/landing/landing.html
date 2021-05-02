@@ -6,6 +6,7 @@
     <title>Pet Story</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="./css/landing.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
           rel="stylesheet">
@@ -106,136 +107,241 @@
         </section>
       </div>
       <section class="pets relative">
-        <div class="pets__gallery wrap-guidelines">
-          <!-- <div class="wrap-guidelines"> -->
-            <div class="pets__grid">
-              <div class="pet-card pet-card--panda">
-                <div class="pet-card__image-wrap">
-                  <img src="../../assets/images/card-panda.png" 
-                      alt="Two pandas playing with a tyre"
-                      class="pet-card__image">
-                </div>
-                <div class="pet-card__footer pet-card-footer">
-                  <div class="pet-card-footer__wrap pet-card-footer__wrap-banana">
-                    <p class="pet-card__title">Giant Pandas</p>
-                    <p class="pet-card__text">Native to Southwest China</p>
+        <div class="pets__gallery-wrap wrap-guidelines relative">
+          <div class="pets__gallery">
+            <ul class="pets__list">
+              <li class="pets__list-item">
+                <div class="pet-card pet-card--panda">
+                  <div class="pet-card__image-wrap">
+                    <img src="../../assets/images/card-panda.png" 
+                        alt="Two pandas playing with a tyre"
+                        class="pet-card__image">
                   </div>
-                  <img src="../../assets/icons/banana-bamboo.svg"
-                       alt="Banana"
-                       class="pet-card-footer__animal-food">
-                </div>
-              </div>
-              <div class="pet-card pet-card--eagle">
-                <div class="pet-card__image-wrap">
-                  <img src="../../assets/images/card-eagle.png" 
-                       alt="Flying eagle"
-                       class="pet-card__image">
-                </div>
-                <div class="pet-card__footer pet-card-footer">
-                  <div class="pet-card-footer__wrap pet-card-footer__wrap-flesh">
-                    <p class="pet-card__title">Eagles</p>
-                    <p class="pet-card__text">Native to South America</p>
+                  <div class="pet-card__footer pet-card-footer">
+                    <div class="pet-card-footer__wrap pet-card-footer">
+                      <p class="pet-card__title">Giant Pandas</p>
+                      <p class="pet-card__text">Native to Southwest China</p>
+                    </div>
+                    <img src="../../assets/icons/banana-bamboo.svg"
+                          alt="Banana"
+                          class="pet-card-footer__animal-food">
                   </div>
-                  <img src="../../assets/icons/flesh.svg"
-                       alt="Piece of meat"
-                       class="pet-card-footer__animal-food">
                 </div>
-              </div>
-              <div class="pet-card pet-card--gorilla">
-                <div class="pet-card__image-wrap">
-                  <img src="../../assets/images/card-gorilla.png" 
-                       alt="Gorilla near a rock"
-                       class="pet-card__image">
-                </div>
-                <div class="pet-card__footer pet-card-footer">
-                  <div class="pet-card-footer__wrap pet-card-footer__wrap-banana">
-                    <p class="pet-card__title">Gorillas</p>
-                    <p class="pet-card__text">Native to Congo</p>
+              </li>
+              <li class="pets__list-item">
+                <div class="pet-card pet-card--eagle">
+                  <div class="pet-card__image-wrap">
+                    <img src="../../assets/images/card-eagle.png" 
+                          alt="Flying eagle"
+                          class="pet-card__image">
                   </div>
-                  <img src="../../assets/icons/banana-bamboo.svg"
-                       alt="Banana"
-                       class="pet-card-footer__animal-food">
-                </div>
-              </div>
-                <div class="pets__arrow-left-wrap">
-                  <button class="pets__arrow pets__arrow--left button-arrow">
-                  </button>
-                </div>
-                <div class="pets__arrow-right-wrap">
-                  <button class="pets__arrow pets__arrow--right button-arrow">
-                  </button>
-                </div>
-              <div class="pet-card pet-card--sloth">
-                <div class="pet-card__image-wrap">
-                  <img src="../../assets/images/card-sloth.png" 
-                      alt="Sloth on a tree"
-                      class="pet-card__image">
-                </div>
-                <div class="pet-card__footer pet-card-footer">
-                  <div class="pet-card-footer__wrap pet-card-footer__wrap-banana">
-                    <p class="pet-card__title">Two-Toed Sloth</p>
-                    <p class="pet-card__text">Mesoamerica, South America</p>
+                  <div class="pet-card__footer pet-card-footer">
+                    <div class="pet-card-footer__wrap pet-card-footer">
+                      <p class="pet-card__title">Eagles</p>
+                      <p class="pet-card__text">Native to South America</p>
+                    </div>
+                    <img src="../../assets/icons/flesh.svg"
+                          alt="Piece of meat"
+                          class="pet-card-footer__animal-food">
                   </div>
-                  <img src="../../assets/icons/banana-bamboo.svg"
-                       alt="Banana"
-                       class="pet-card-footer__animal-food">
                 </div>
-              </div>
-              <div class="pet-card pet-card--cheetah">
-                <div class="pet-card__image-wrap">
-                  <img src="../../assets/images/card-cheetah.png" 
-                      alt="Grown-up cheetah and a cheetah cub"
-                      class="pet-card__image">
-                </div>
-                <div class="pet-card__footer pet-card-footer">
-                  <div class="pet-card-footer__wrap-flesh">
-                    <p class="pet-card__title">Cheetahs</p>
-                    <p class="pet-card__text">Native Africa</p>
+              </li>
+              <li class="pets__list-item">
+                <div class="pet-card pet-card--gorilla">
+                  <div class="pet-card__image-wrap">
+                    <img src="../../assets/images/card-gorilla.png" 
+                          alt="Gorilla near a rock"
+                          class="pet-card__image">
                   </div>
-                  <img src="../../assets/icons/flesh.svg"
-                       alt="Piece of meat"
-                       class="pet-card-footer__animal-food">
-                </div>
-              </div>
-              <div class="pet-card pet-card--penguin">
-                <div class="pet-card__image-wrap">
-                  <img src="../../assets/images/card-penguin.png" 
-                      alt="Penguin in the snow"
-                      class="pet-card__image">
-                </div>
-                <div class="pet-card__footer pet-card__footer">
-                  <div class="pet-card-footer__wrap pet-card-footer__wrap-flesh">
-                    <p class="pet-card__title">Penguins</p>
-                    <p class="pet-card__text">Native to Antarctica</p>
+                  <div class="pet-card__footer pet-card-footer">
+                    <div class="pet-card-footer__wrap pet-card-footer">
+                      <p class="pet-card__title">Gorillas</p>
+                      <p class="pet-card__text">Native to Congo</p>
+                    </div>
+                    <img src="../../assets/icons/banana-bamboo.svg"
+                          alt="Banana"
+                          class="pet-card-footer__animal-food">
                   </div>
-                  <img src="../../assets/icons/flesh.svg"
-                       alt="Piece of meat"
-                       class="pet-card-footer__animal-food">
                 </div>
-              </div>
-              <div class="pet-card pet-card--alligator">
-                <div class="pet-card__image-wrap">
-                  <img src="../../assets/images/card-alligator.png" 
-                      alt="Alligator photo"
-                      class="pet-card__image">
-                </div>
-                <div class="pet-card__footer pet-card__footer">
-                  <div class="pet-card-footer__wrap pet-card-footer__wrap-flesh">
-                    <p class="pet-card__title">Alligators</p>
-                    <p class="pet-card__text">Native to Southeastern U.S.</p>
+              </li>
+              <li class="pets__list-item">
+                <div class="pet-card pet-card--sloth">
+                  <div class="pet-card__image-wrap">
+                    <img src="../../assets/images/card-sloth.png" 
+                        alt="Sloth on a tree"
+                        class="pet-card__image">
                   </div>
-                  <img src="../../assets/icons/flesh.svg"
-                       alt="Piece of meat"
-                       class="pet-card-footer__animal-food">
+                  <div class="pet-card__footer pet-card-footer">
+                    <div class="pet-card-footer__wrap pet-card-footer">
+                      <p class="pet-card__title">Two-Toed Sloth</p>
+                      <p class="pet-card__text">Mesoamerica, South America</p>
+                    </div>
+                    <img src="../../assets/icons/banana-bamboo.svg"
+                          alt="Banana"
+                          class="pet-card-footer__animal-food">
+                  </div>
                 </div>
-              </div>
-            </div>
-          <!-- </div> -->
+              </li>
+              <li class="pets__list-item">
+                <div class="pet-card pet-card--cheetah">
+                  <div class="pet-card__image-wrap">
+                    <img src="../../assets/images/card-cheetah.png" 
+                        alt="Grown-up cheetah and a cheetah cub"
+                        class="pet-card__image">
+                  </div>
+                  <div class="pet-card__footer pet-card-footer">
+                    <div class="pet-card-footer">
+                      <p class="pet-card__title">Cheetahs</p>
+                      <p class="pet-card__text">Native Africa</p>
+                    </div>
+                    <img src="../../assets/icons/flesh.svg"
+                          alt="Piece of meat"
+                          class="pet-card-footer__animal-food">
+                  </div>
+                </div>
+              </li>
+              <li class="pets__list-item">
+                <div class="pet-card">
+                  <div class="pet-card__image-wrap">
+                    <img src="../../assets/images/card-penguin.png" 
+                        alt="Penguin in the snow"
+                        class="pet-card__image">
+                  </div>
+                  <div class="pet-card__footer pet-card__footer">
+                    <div class="pet-card-footer__wrap pet-card-footer">
+                      <p class="pet-card__title">Penguins</p>
+                      <p class="pet-card__text">Native to Antarctica</p>
+                    </div>
+                    <img src="../../assets/icons/flesh.svg"
+                          alt="Piece of meat"
+                          class="pet-card-footer__animal-food">
+                  </div>
+                </div>
+              </li>
+              <li class="pets__list-item">
+                <div class="pet-card">
+                  <div class="pet-card__image-wrap">
+                    <img src="../../assets/images/card-alligator.png" 
+                        alt="Alligator photo"
+                        class="pet-card__image">
+                  </div>
+                  <div class="pet-card__footer pet-card__footer">
+                    <div class="pet-card-footer__wrap pet-card-footer">
+                      <p class="pet-card__title">Alligators</p>
+                      <p class="pet-card__text">Native to Southeastern U.S.</p>
+                    </div>
+                    <img src="../../assets/icons/flesh.svg"
+                          alt="Piece of meat"
+                          class="pet-card-footer__animal-food">
+                  </div>
+                </div>
+              </li>
+              <li class="pets__list-item">
+                <div class="pet-card">
+                  <div class="pet-card__image-wrap">
+                    <img src="../../assets/images/card-rhino.jpeg" 
+                        alt="Rhino photo"
+                        class="pet-card__image">
+                  </div>
+                  <div class="pet-card__footer pet-card__footer">
+                    <div class="pet-card-footer__wrap pet-card-footer">
+                      <p class="pet-card__title">Rhinos</p>
+                      <p class="pet-card__text">Native to Africa</p>
+                    </div>
+                    <img src="../../assets/icons/banana-bamboo.svg"
+                          alt="Banana"
+                          class="pet-card-footer__animal-food">
+                  </div>
+                </div>
+              </li>
+              <li class="pets__list-item">
+                <div class="pet-card">
+                  <div class="pet-card__image-wrap">
+                    <img src="../../assets/images/card-hippo.jpg" 
+                        alt="Hippo photo"
+                        class="pet-card__image">
+                  </div>
+                  <div class="pet-card__footer pet-card__footer">
+                    <div class="pet-card-footer__wrap pet-card-footer">
+                      <p class="pet-card__title">Hippos</p>
+                      <p class="pet-card__text">Native to Africa</p>
+                    </div>
+                    <img src="../../assets/icons/banana-bamboo.svg"
+                          alt="Banana"
+                          class="pet-card-footer__animal-food">
+                  </div>
+                </div>
+              </li>
+              <li class="pets__list-item">
+                <div class="pet-card">
+                  <div class="pet-card__image-wrap">
+                    <img src="../../assets/images/card-giraffe.jpg" 
+                        alt="Giraffe photo"
+                        class="pet-card__image">
+                  </div>
+                  <div class="pet-card__footer pet-card__footer">
+                    <div class="pet-card-footer__wrap pet-card-footer">
+                      <p class="pet-card__title">Giraffes</p>
+                      <p class="pet-card__text">Native to Africa</p>
+                    </div>
+                    <img src="../../assets/icons/banana-bamboo.svg"
+                          alt="Banana"
+                          class="pet-card-footer__animal-food">
+                  </div>
+                </div>
+              </li>
+              <li class="pets__list-item">
+                <div class="pet-card">
+                  <div class="pet-card__image-wrap">
+                    <img src="../../assets/images/card-ostrich.jpg" 
+                        alt="Ostrich photo"
+                        class="pet-card__image">
+                  </div>
+                  <div class="pet-card__footer pet-card__footer">
+                    <div class="pet-card-footer__wrap pet-card-footer">
+                      <p class="pet-card__title">Ostriches</p>
+                      <p class="pet-card__text">Native to Australia</p>
+                    </div>
+                    <img src="../../assets/icons/banana-bamboo.svg"
+                          alt="Banana"
+                          class="pet-card-footer__animal-food">
+                  </div>
+                </div>
+              </li>
+              <li class="pets__list-item">
+                <div class="pet-card">
+                  <div class="pet-card__image-wrap">
+                    <img src="../../assets/images/card-emu.jpg" 
+                        alt="Emu photo"
+                        class="pet-card__image">
+                  </div>
+                  <div class="pet-card__footer pet-card__footer">
+                    <div class="pet-card-footer__wrap pet-card-footer">
+                      <p class="pet-card__title">Emus</p>
+                      <p class="pet-card__text">Native to Australia</p>
+                    </div>
+                    <img src="../../assets/icons/banana-bamboo.svg"
+                          alt="Banana"
+                          class="pet-card-footer__animal-food">
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="pets__arrow-wrap pets__arrow-wrap--left">
+            <button class="pets__arrow pets__arrow--left button-arrow">
+            </button>
+          </div>
+          <div class="pets__arrow-wrap pets__arrow-wrap--right">
+            <button class="pets__arrow pets__arrow--right button-arrow">
+            </button>
           </div>
         </div>
-        <div class="pets__link-wrap wrap-guidelines">
-          <a href="../map/map.html" class="pets__link link-button">Choose your favorite</a>
-        </div>
+
+      </div>
+      <div class="pets__link-wrap wrap-guidelines">
+        <a href="../map/map.html" class="pets__link link-button">Choose your favorite</a>
+      </div>
       </section>
       <section class="friend">
         <div class="friend__wrapper wrap-guidelines">
@@ -325,129 +431,362 @@
       <section class="testimonials">
         <div class="testimonials__wrap wrap-guidelines">
           <h3 class="testimonials__header">Testimonials</h3>
-          <div class="testimonials__cards">
-            <div class="testimonials__card testimonials-card">
-              <div class="testimonials__card-border">
-                <div class="testimonials__card-content">
-                  <div class="testimonials-card__header">
-                    <img src="../../assets/icons/user-icon.svg"
-                        alt="User picture"
-                        class="testimonials-card__avatar">
-                    <div class="testimonials-card__author">
-                      <p class="testimonials-card__name">Michael John</p>
-                      <p class="testimonials-card__location">
-                        Local Austria<span class="testimonials-card__time">Today</span>
-                      </p>
+          <div class="testimonials__cards-wrap">
+            <ul class="testimonials__cards">
+              <li class="testimonials__list-item">
+                <div class="testimonials__card testimonials-card">
+                  <div class="testimonials__card-border">
+                    <div class="testimonials__card-content">
+                      <div class="testimonials-card__header">
+                        <img src="../../assets/icons/user-icon.svg"
+                            alt="User picture"
+                            class="testimonials-card__avatar">
+                        <div class="testimonials-card__author">
+                          <p class="testimonials-card__name">Michael John</p>
+                          <p class="testimonials-card__location">
+                            Local Austria<span class="testimonials-card__time">Today</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="testimonials-card__text">
+                        <p class="testimonials-card__paragraph">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Aliquam sodales orci eget dui aliquet tempus.
+                          Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
+                          mauris odio commodo turpis, malesuada congue purus ligula id neque.
+                          Etiam accumsan urna velit, ut iaculis diam mattis id.
+                          Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
+                          Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
+                          Aliquam posuere, sem eget fermentum elementum...
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div class="testimonials-card__text">
-                    <p class="testimonials-card__paragraph">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Aliquam sodales orci eget dui aliquet tempus.
-                      Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
-                      mauris odio commodo turpis, malesuada congue purus ligula id neque.
-                      Etiam accumsan urna velit, ut iaculis diam mattis id.
-                      Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
-                      Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
-                      Aliquam posuere, sem eget fermentum elementum...
-                    </p>
-                  </div>
-                </div>
-              </div>
 
-            </div>
-            <div class="testimonials__card testimonials-card">
-              <div class="testimonials__card-border">
-                <div class="testimonials__card-content">
-                  <div class="testimonials-card__header">
-                    <img src="../../assets/icons/user-oscar.svg"
-                        alt="User picture"
-                        class="testimonials-card__avatar">
-                    <div class="testimonials-card__author">
-                      <p class="testimonials-card__name">Oskar Samborsky</p>
-                      <p class="testimonials-card__location">
-                        Local Austria <span class="testimonials-card__time">Yesterday</span>
-                      </p>
+                </div>
+              </li>
+              <li class="testimonials__list-item">
+                <div class="testimonials__card testimonials-card">
+                  <div class="testimonials__card-border">
+                    <div class="testimonials__card-content">
+                      <div class="testimonials-card__header">
+                        <img src="../../assets/icons/user-oscar.svg"
+                            alt="User picture"
+                            class="testimonials-card__avatar">
+                        <div class="testimonials-card__author">
+                          <p class="testimonials-card__name">Oskar Samborsky</p>
+                          <p class="testimonials-card__location">
+                            Local Austria <span class="testimonials-card__time">Yesterday</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="testimonials-card__text">
+                        <p class="testimonials-card__paragraph">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Aliquam sodales orci eget dui aliquet tempus.
+                          Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
+                          mauris odio commodo turpis, malesuada congue purus ligula id neque.
+                          Etiam accumsan urna velit, ut iaculis diam mattis id.
+                          Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
+                          Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
+                          Aliquam posuere, sem eget fermentum elementum...
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div class="testimonials-card__text">
-                    <p class="testimonials-card__paragraph">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Aliquam sodales orci eget dui aliquet tempus.
-                      Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
-                      mauris odio commodo turpis, malesuada congue purus ligula id neque.
-                      Etiam accumsan urna velit, ut iaculis diam mattis id.
-                      Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
-                      Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
-                      Aliquam posuere, sem eget fermentum elementum...
-                    </p>
-                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="testimonials__card testimonials-card">
-              <div class="testimonials__card-border">
-                <div class="testimonials__card-content">
-                  <div class="testimonials-card__header">
-                    <img src="../../assets/icons/user-fredericka.svg"
-                        alt="User picture"
-                        class="testimonials-card__avatar">
-                    <div class="testimonials-card__author">
-                      <p class="testimonials-card__name">Fredericka Michelin</p>
-                      <p class="testimonials-card__location">
-                        Local Austria
-                        <span class="testimonials-card__time">Yesterday</span>
-                      </p>
+              </li>
+              <li class="testimonials__list-item">
+                <div class="testimonials__card testimonials-card">
+                  <div class="testimonials__card-border">
+                    <div class="testimonials__card-content">
+                      <div class="testimonials-card__header">
+                        <img src="../../assets/icons/user-fredericka.svg"
+                            alt="User picture"
+                            class="testimonials-card__avatar">
+                        <div class="testimonials-card__author">
+                          <p class="testimonials-card__name">Fredericka Michelin</p>
+                          <p class="testimonials-card__location">
+                            Local Austria
+                            <span class="testimonials-card__time">Yesterday</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="testimonials-card__text">
+                        <p class="testimonials-card__paragraph">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Aliquam sodales orci eget dui aliquet tempus.
+                          Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
+                          mauris odio commodo turpis, malesuada congue purus ligula id neque.
+                          Etiam accumsan urna velit, ut iaculis diam mattis id.
+                          Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
+                          Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
+                          Aliquam posuere, sem eget fermentum elementum...
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div class="testimonials-card__text">
-                    <p class="testimonials-card__paragraph">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Aliquam sodales orci eget dui aliquet tempus.
-                      Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
-                      mauris odio commodo turpis, malesuada congue purus ligula id neque.
-                      Etiam accumsan urna velit, ut iaculis diam mattis id.
-                      Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
-                      Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
-                      Aliquam posuere, sem eget fermentum elementum...
-                    </p>
-                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="testimonials__card testimonials-card">
-              <div class="testimonials__card-border">
-                <div class="testimonials__card-content">
-                  <div class="testimonials-card__header">
-                    <img src="../../assets/icons/user-mila.svg"
-                        alt="User picture"
-                        class="testimonials-card__avatar">
-                    <div class="testimonials-card__author">
-                      <p class="testimonials-card__name">Mila Riksha</p>
-                      <p class="testimonials-card__location">
-                        Local Austria
-                        <span class="testimonials-card__time">Yesterday</span>
-                      </p>
+              </li>
+              <li class="testimonials__list-item">
+                <div class="testimonials__card testimonials-card">
+                  <div class="testimonials__card-border">
+                    <div class="testimonials__card-content">
+                      <div class="testimonials-card__header">
+                        <img src="../../assets/icons/user-mila.svg"
+                            alt="User picture"
+                            class="testimonials-card__avatar">
+                        <div class="testimonials-card__author">
+                          <p class="testimonials-card__name">Mila Riksha</p>
+                          <p class="testimonials-card__location">
+                            Local Austria
+                            <span class="testimonials-card__time">Yesterday</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="testimonials-card__text">
+                        <p class="testimonials-card__paragraph">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Aliquam sodales orci eget dui aliquet tempus.
+                          Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
+                          mauris odio commodo turpis, malesuada congue purus ligula id neque.
+                          Etiam accumsan urna velit, ut iaculis diam mattis id.
+                          Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
+                          Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
+                          Aliquam posuere, sem eget fermentum elementum...
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div class="testimonials-card__text">
-                    <p class="testimonials-card__paragraph">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Aliquam sodales orci eget dui aliquet tempus.
-                      Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
-                      mauris odio commodo turpis, malesuada congue purus ligula id neque.
-                      Etiam accumsan urna velit, ut iaculis diam mattis id.
-                      Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
-                      Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
-                      Aliquam posuere, sem eget fermentum elementum...
-                    </p>
+                </div>
+              </li>
+              <li class="testimonials__list-item">
+                <div class="testimonials__card testimonials-card">
+                  <div class="testimonials__card-border">
+                    <div class="testimonials__card-content">
+                      <div class="testimonials-card__header">
+                        <img src="../../assets/icons/user-mila.svg"
+                            alt="User picture"
+                            class="testimonials-card__avatar">
+                        <div class="testimonials-card__author">
+                          <p class="testimonials-card__name">Mila Riksha</p>
+                          <p class="testimonials-card__location">
+                            Local Austria
+                            <span class="testimonials-card__time">Yesterday</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="testimonials-card__text">
+                        <p class="testimonials-card__paragraph">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Aliquam sodales orci eget dui aliquet tempus.
+                          Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
+                          mauris odio commodo turpis, malesuada congue purus ligula id neque.
+                          Etiam accumsan urna velit, ut iaculis diam mattis id.
+                          Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
+                          Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
+                          Aliquam posuere, sem eget fermentum elementum...
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </li>
+              <li class="testimonials__list-item">
+                <div class="testimonials__card testimonials-card">
+                  <div class="testimonials__card-border">
+                    <div class="testimonials__card-content">
+                      <div class="testimonials-card__header">
+                        <img src="../../assets/icons/user-mila.svg"
+                            alt="User picture"
+                            class="testimonials-card__avatar">
+                        <div class="testimonials-card__author">
+                          <p class="testimonials-card__name">Mila Riksha</p>
+                          <p class="testimonials-card__location">
+                            Local Austria
+                            <span class="testimonials-card__time">Yesterday</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="testimonials-card__text">
+                        <p class="testimonials-card__paragraph">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Aliquam sodales orci eget dui aliquet tempus.
+                          Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
+                          mauris odio commodo turpis, malesuada congue purus ligula id neque.
+                          Etiam accumsan urna velit, ut iaculis diam mattis id.
+                          Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
+                          Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
+                          Aliquam posuere, sem eget fermentum elementum...
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="testimonials__list-item">
+                <div class="testimonials__card testimonials-card">
+                  <div class="testimonials__card-border">
+                    <div class="testimonials__card-content">
+                      <div class="testimonials-card__header">
+                        <img src="../../assets/icons/user-mila.svg"
+                            alt="User picture"
+                            class="testimonials-card__avatar">
+                        <div class="testimonials-card__author">
+                          <p class="testimonials-card__name">Mila Riksha</p>
+                          <p class="testimonials-card__location">
+                            Local Austria
+                            <span class="testimonials-card__time">Yesterday</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="testimonials-card__text">
+                        <p class="testimonials-card__paragraph">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Aliquam sodales orci eget dui aliquet tempus.
+                          Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
+                          mauris odio commodo turpis, malesuada congue purus ligula id neque.
+                          Etiam accumsan urna velit, ut iaculis diam mattis id.
+                          Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
+                          Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
+                          Aliquam posuere, sem eget fermentum elementum...
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="testimonials__list-item">
+                <div class="testimonials__card testimonials-card">
+                  <div class="testimonials__card-border">
+                    <div class="testimonials__card-content">
+                      <div class="testimonials-card__header">
+                        <img src="../../assets/icons/user-mila.svg"
+                            alt="User picture"
+                            class="testimonials-card__avatar">
+                        <div class="testimonials-card__author">
+                          <p class="testimonials-card__name">Mila Riksha</p>
+                          <p class="testimonials-card__location">
+                            Local Austria
+                            <span class="testimonials-card__time">Yesterday</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="testimonials-card__text">
+                        <p class="testimonials-card__paragraph">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Aliquam sodales orci eget dui aliquet tempus.
+                          Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
+                          mauris odio commodo turpis, malesuada congue purus ligula id neque.
+                          Etiam accumsan urna velit, ut iaculis diam mattis id.
+                          Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
+                          Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
+                          Aliquam posuere, sem eget fermentum elementum...
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="testimonials__list-item">
+                <div class="testimonials__card testimonials-card">
+                  <div class="testimonials__card-border">
+                    <div class="testimonials__card-content">
+                      <div class="testimonials-card__header">
+                        <img src="../../assets/icons/user-mila.svg"
+                            alt="User picture"
+                            class="testimonials-card__avatar">
+                        <div class="testimonials-card__author">
+                          <p class="testimonials-card__name">Mila Riksha</p>
+                          <p class="testimonials-card__location">
+                            Local Austria
+                            <span class="testimonials-card__time">Yesterday</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="testimonials-card__text">
+                        <p class="testimonials-card__paragraph">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Aliquam sodales orci eget dui aliquet tempus.
+                          Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
+                          mauris odio commodo turpis, malesuada congue purus ligula id neque.
+                          Etiam accumsan urna velit, ut iaculis diam mattis id.
+                          Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
+                          Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
+                          Aliquam posuere, sem eget fermentum elementum...
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="testimonials__list-item">
+                <div class="testimonials__card testimonials-card">
+                  <div class="testimonials__card-border">
+                    <div class="testimonials__card-content">
+                      <div class="testimonials-card__header">
+                        <img src="../../assets/icons/user-mila.svg"
+                            alt="User picture"
+                            class="testimonials-card__avatar">
+                        <div class="testimonials-card__author">
+                          <p class="testimonials-card__name">Mila Riksha</p>
+                          <p class="testimonials-card__location">
+                            Local Austria
+                            <span class="testimonials-card__time">Yesterday</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="testimonials-card__text">
+                        <p class="testimonials-card__paragraph">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Aliquam sodales orci eget dui aliquet tempus.
+                          Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
+                          mauris odio commodo turpis, malesuada congue purus ligula id neque.
+                          Etiam accumsan urna velit, ut iaculis diam mattis id.
+                          Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
+                          Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
+                          Aliquam posuere, sem eget fermentum elementum...
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="testimonials__list-item">
+                <div class="testimonials__card testimonials-card">
+                  <div class="testimonials__card-border">
+                    <div class="testimonials__card-content">
+                      <div class="testimonials-card__header">
+                        <img src="../../assets/icons/user-oscar.svg"
+                            alt="User picture"
+                            class="testimonials-card__avatar">
+                        <div class="testimonials-card__author">
+                          <p class="testimonials-card__name">Oskar Samborsky</p>
+                          <p class="testimonials-card__location">
+                            Local Austria <span class="testimonials-card__time">Yesterday</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="testimonials-card__text">
+                        <p class="testimonials-card__paragraph">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Aliquam sodales orci eget dui aliquet tempus.
+                          Aenean id consequat enim. Cras sodales, ipsum in condimentum maximus,
+                          mauris odio commodo turpis, malesuada congue purus ligula id neque.
+                          Etiam accumsan urna velit, ut iaculis diam mattis id.
+                          Fusce auctor sem quis dolor ultricies, vestibulum euismod lacus molestie.
+                          Phasellus ex magna, pellentesque condimentum malesuada eget, sodales at lacus.
+                          Aliquam posuere, sem eget fermentum elementum...
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
-          <div class="testimonials__scroll testimonials-scroll relative">
-            <span class="testimonials-scroll__active"></span>
+          <div class="testimonials__scroll-wrap testimonials-scroll relative">
+            <input type="range" value="0" max="7" step="1" class="testimonials__scroll-input">
           </div>
           <div class="testimonials__button-feedback-wrap">
             <button class="testimonials__button-feedback link-button">
@@ -572,5 +911,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/landing.js"></script>
   </body>
 </html>

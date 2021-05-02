@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation form</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="./css/donate.css">
+    <link rel="stylesheet" href="./css/donate-form.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+          rel="stylesheet"> 
+  </head>
+  <body>
+    <form action="" class="donation-form">
+      <div class="donation-form__donation-info donation-info info-section">
+        <h2 class="donation-info__heading heading">Donation Information</h2>
+        <fieldset class="donation-info__fieldset">
+          <div class="donation-info-line info-line info-line--amount">
+            <label for="donation-info-line__amount-input"
+                   class="donation-info-line__amount-label info-label">
+              Amount
+            </label>
+            <input type="number"
+                   name="amount-number-0"
+                   min="1"
+                   max="9999"
+                   id="payment-info__amount-input"
+                   id="donation-info-line__amount-input"
+                   class="donation-info-line__amount-input amount-input text-input">
+          </div>
+        </fieldset>
+      </div>
+      <div class="donation-form__additional-info additional-info info-section">
+        <h2 class="additional-info__heading heading">Additional Information</h2>
+        <fieldset class="additional-info__fieldset">
+          <div class="wrap">
+            <label for="additional-info__share-input"
+                   class="additional-info__share-label checkbox-label">
+              <input type="checkbox"
+                    id="additional-info__share-input"
+                    class="additional-info__share-input checkbox-input">
+              Share with your friends on social networks
+            </label>
+            <ul class="social-networks-list">
+              <li class="social-network-list__item social-network-list__item--facebook">
+                <img src="../../assets/icons/facebook-color.svg"
+                     alt="Facebook icon" class="list-item-icon list-item-icon--facebook">
+              </li>
+              <li class="social-network-list__item social-network-list__item--instagram">
+                <img src="../../assets/icons/instagram-color.svg"
+                     alt="Instagram icon" class="list-item-icon list-item-icon--instagram">
+              </li>
+              <li class="social-network-list__item social-network-list__item--twitter">
+                <img src="../../assets/icons/twitter-color.svg"
+                     alt="Twitter icon" class="list-item-icon list-item-icon--twitter">
+              </li>
+            </ul>
+            <label for="additional-info__is-corporate-input"
+                   class="additional-info__is-corporate-title info-label">Corporate</label>
+            <label for="additional-info__is-corporate-input"
+                   class="additional-info__is-corporate-label checkbox-label">
+                  <input type="checkbox"
+                        id="additional-info__is-corporate-input"
+                        class="additional-info__is-corporate-input checkbox-input">
+              This donation is on behalf of a company
+            </label>
+            <label for="additional-info__is-anonymous-input"
+                  class="additional-info__is-anomymous-title info-label">Anonymous</label>
+            <label for="additional-info__is-anonymous-input"
+                   class="additional-info__is-anomymous-label checkbox-label">
+                  <input type="checkbox"
+                        id="additional-info__is-anonymous-input"
+                        class="additional-info__is-anonymous-input checkbox-input">
+              I prefer to make this donation anonymously
+            </label>
+            <label for="additional-info__comment-input"
+                   class="additional-info__comment-title info-label">
+              Comments
+            </label>
+            <textarea id="additional-info__comment-input"
+                      class="additional-info__comment-input text-input"> </textarea>
+            </div>
+        </fieldset>
+      </div>
+      <div class="donation-form__payment-info payment-info info-section">
+        <h2 class="additional-info__heading heading">Payment Information</h2>
+        <fieldset class="payment-info__fieldset">
+          <div class="wrap">
+            <label for="payment-cardholder-input"
+                   class="payment-info__cardholder-title info-label info-label--required">Cardholder's name
+            </label>
+            <input id="payment-cardholder-input" class="payment-cardholder-input text-input">
+            <label for="payment-info__card-type-input"
+                   class="payment-info__card-type-title info-label info-label--required">Card Type
+            </label>
+            <input id="payment-info__card-type-input" class="payment-info__card-type-input text-input">
+            <label for="payment-info__card-number-input"
+                   class="payment-info__card-number-title info-label info-label--required">Credit Card Number
+            </label>
+            <input id="payment-info__card-number-input"
+                   class="payment-info__card-number-input text-input">
+            <label for="payment-info__card-expiration-day-input"
+                   class="payment-info__card-expiration-title info-label info-label--required">
+              Card Expiration
+            </label>
+            <select id="payment-info__card-expiration-day-input"
+                    class="payment-info__card-expiration-day-input select-input">
+            </select>
+            <select type="select" class="payment-info__card-expiration-month-input select-input"> </select>
+            <label for="payment-info__card-security-code-input"
+                   class="payment-info__card-security-code info-label info-label--required">Card Security Code
+            </label>
+            <input id="payment-info__card-security-code" class="payment-info__card-security-code-input text-input">
+            <label for="payment-info__amount-input"
+                   class="payment-info__amount-label info-label">
+              Amount
+            </label>
+            <input type="number"
+                   name="amount-number-1"
+                   min="1"
+                   max="9999"
+                   id="payment-info__amount-input"
+                   class="payment-info__amount-input amount-input text-input">
+          </div>
+        </fieldset>
+      </div>
+      <div class="donation-form__submit-wrap">
+        <submit class="donation-form__submit link-button"> Donate now </submit>
+      </div>
+    </form>
+    <script type="module" src="./js/donate-form.js"></script>
+  </body>
+</html>
