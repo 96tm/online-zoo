@@ -13,7 +13,10 @@
 .info__body.hidden-sections .info-body__section--long:nth-child(n+5) {
   opacity: 0;
 }
-.no-transitions {
+.transition {
+  transition: all 1s;
+}
+.no-transition {
   transition: none;
 }
 /* Utility end */
@@ -245,9 +248,7 @@
   /* width: 228.6206896551724%; */
   height: 100%;
   display: flex;
-  /* justify-content: space-between; */
-  
-  transition: all 1s;
+  /* transition: all 1s; */
 }
 
 .carousel__list-item {

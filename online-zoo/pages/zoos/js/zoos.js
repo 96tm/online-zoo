@@ -6,30 +6,12 @@ const generalInfoFirstParagraph = generalInfo.querySelector(".info-body-section_
 const overlay = document.querySelector(".text-overlay");
 const camera = document.querySelector(".pet-camera__iframe");
 
-const slider = document.querySelector(".carousel__list");
-const videoContainers = slider.querySelectorAll(".carousel__video-wrap");
+const sliderList = document.querySelector(".carousel__list");
+const videoContainers = sliderList.querySelectorAll(".carousel__video-wrap");
 const arrowRight = document.querySelector(".arrow-right");
 const arrowLeft = document.querySelector(".arrow-left");
 
 let folded = false;
-let sliderPage = localStorage.getItem("sliderPage") || 1;
-
-slider.addEventListener("click", event => {
-  console.log(event.target)
-  if (event.target.matches(".carousel__video-overlay")) {
-    const video = event.target.parentElement.querySelector(".carousel__video");
-    const videoSrc = video.src;
-    console.log(video, camera);
-    video.src = camera.src;
-    camera.src = videoSrc;
-  }
-});
-arrowRight.addEventListener("click", event => {
-  rotateSlider(slider, "right");
-});
-arrowLeft.addEventListener("click", event => {
-  rotateSlider(slider, "left");
-});
 
 foldButton.addEventListener("click", event => {
   infoBody.classList.toggle("hidden-sections");
@@ -49,22 +31,79 @@ foldButton.addEventListener("click", event => {
   folded = !folded;
 });
 
-function rotateSlider(slider, direction, numberOfElements = 1) {
-  console.log(sliderPage);
-  const margin = videoContainers[1].offsetLeft
-                 - videoContainers[0].offsetLeft
-                 - videoContainers[0].clientWidth;
-  const shiftWidth = videoContainers[0].clientWidth + margin;
-  const initialLeft = parseFloat(slider.style.left.replace("px", "")) || 0;
-  if (direction === "left" && sliderPage !== 1) {
-    slider.style.left = numberOfElements
-                        * (initialLeft + shiftWidth) + "px";
-    sliderPage--;
+class Slider {
+  constructor(slider, wrap, step, numberOfVisible,
+              arrowLeft, arrowRight, offset = 0) {
+    this.slider = slider;
+    this.wrap = wrap;
+    this.sliderStep = step;
+    this.numberOfVisible = numberOfVisible;
+    this.offset = offset;
+    this.arrowLeft = arrowLeft;
+    this.arrowRight = arrowRight;
+    this.index = 0;
+    this.numberOfElements = videoContainers.length;
+    this.init();
   }
-  else if (direction === "right" && videoContainers.length - 3 > sliderPage) {
-    slider.style.left = numberOfElements
-                        * (initialLeft - shiftWidth) + "px";
-    sliderPage++;
+  rotateLeft(event, step = this.sliderStep) {
+    this.index--;
+    const margin = videoContainers[1].offsetLeft
+        - videoContainers[0].offsetLeft
+        - videoContainers[0].clientWidth;
+    const shiftWidth = videoContainers[0].clientWidth + margin;
+    if (this.index < 0) {
+      this.index = 0;
+      setTimeout(event => {
+        for(let i = 0; i < step; i++) {
+          let item = this.slider.lastElementChild;
+          let temp = item.cloneNode(true);
+          this.slider.firstElementChild.before(temp);
+          item.remove();
+        };
+        this.offset = "0";
+        this.slider.style.transform = "none";
+      });
+    }
+    else {
+      this.offset += this.sliderStep * shiftWidth;
+      this.slider.style.transform = `translateX(${this.offset}px)`;
+    }
+  }
+  rotateRight(event, step = this.sliderStep) {
+    this.index++;
+    const margin = videoContainers[1].offsetLeft
+                    - videoContainers[0].offsetLeft
+                    - videoContainers[0].clientWidth;
+    const shiftWidth = videoContainers[0].clientWidth + margin;
+    if (this.numberOfElements - this.numberOfVisible < this.index) {
+      this.index--;
+      setTimeout(event => {
+        for(let i = 0; i < step; i++) {
+          let item = this.slider.firstElementChild;
+          let temp = item.cloneNode(true);
+          this.slider.append(temp);
+          item.remove();
+        };
+        this.offset -= this.sliderStep * shiftWidth;
+      });
+    }
+    else {
+      this.offset -= this.sliderStep * shiftWidth;
+      this.slider.style.transform = `translateX(${this.offset}px)`;
+    }
+  }
+  init() {
+    this.arrowLeft.addEventListener("click", this.rotateLeft.bind(this));
+    this.arrowRight.addEventListener("click", this.rotateRight.bind(this));
+    this.slider.addEventListener("click", event => {
+      if (event.target.matches(".carousel__video-overlay")) {
+        const video = event.target.parentElement.querySelector(".carousel__video");
+        const videoSrc = video.src;
+        console.log(video, camera);
+        video.src = camera.src;
+        camera.src = videoSrc;
+      }
+    });
   }
 }
 
@@ -84,3 +123,5 @@ function showOverlay() {
 function hideOverlay() {
   overlay.style.display = "none";
 }
+
+const slider = new Slider(sliderList, null, 1, 4, arrowLeft, arrowRight);
