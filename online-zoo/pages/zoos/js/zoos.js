@@ -7,7 +7,6 @@ const overlay = document.querySelector(".text-overlay");
 const camera = document.querySelector(".pet-camera__iframe");
 
 const sliderList = document.querySelector(".carousel__list");
-const videoContainers = sliderList.querySelectorAll(".carousel__video-wrap");
 const arrowRight = document.querySelector(".arrow-right");
 const arrowLeft = document.querySelector(".arrow-left");
 
@@ -42,56 +41,79 @@ class Slider {
     this.arrowLeft = arrowLeft;
     this.arrowRight = arrowRight;
     this.index = 0;
-    this.numberOfElements = videoContainers.length;
+    this.numberOfElements = this.slider.children.length;
     this.init();
   }
+
+  get cardWidth () {
+    return this.slider.firstElementChild.clientWidth;
+  }
+  get shiftValue() {
+    const margin = this.slider.children[1].offsetLeft
+                   - this.slider.firstElementChild.offsetLeft
+                   - this.slider.firstElementChild.clientWidth;
+    return this.slider.firstElementChild.clientWidth + margin;
+  }
+
   rotateLeft(event, step = this.sliderStep) {
     this.index--;
-    const margin = videoContainers[1].offsetLeft
-        - videoContainers[0].offsetLeft
-        - videoContainers[0].clientWidth;
-    const shiftWidth = videoContainers[0].clientWidth + margin;
-    if (this.index < 0) {
-      this.index = 0;
-      setTimeout(event => {
-        for(let i = 0; i < step; i++) {
-          let item = this.slider.lastElementChild;
-          let temp = item.cloneNode(true);
-          this.slider.firstElementChild.before(temp);
-          item.remove();
-        };
-        this.offset = "0";
-        this.slider.style.transform = "none";
-      });
-    }
-    else {
-      this.offset += this.sliderStep * shiftWidth;
-      this.slider.style.transform = `translateX(${this.offset}px)`;
-    }
+    setTimeout(event => {
+      for(let i = 0; i < step; i++) {
+        let item = this.slider.lastElementChild;
+        let temp = item.cloneNode(true);
+        this.slider.firstElementChild.before(temp);
+        item.remove();
+      };
+      this.offset = "0";
+      // this.slider.style.transform = "none";
+    });
+    // if (this.index < 0) {
+    //   this.index = 0;
+    //   setTimeout(event => {
+    //     for(let i = 0; i < step; i++) {
+    //       let item = this.slider.lastElementChild;
+    //       let temp = item.cloneNode(true);
+    //       this.slider.firstElementChild.before(temp);
+    //       item.remove();
+    //     };
+    //     this.offset = "0";
+    //     this.slider.style.transform = "none";
+    //   });
+    // }
+    // else {
+    //   this.offset += this.sliderStep * this.shiftValue;
+    //   this.slider.style.transform = `translateX(${this.offset}px)`;
+    // }
   }
   rotateRight(event, step = this.sliderStep) {
     this.index++;
-    const margin = videoContainers[1].offsetLeft
-                    - videoContainers[0].offsetLeft
-                    - videoContainers[0].clientWidth;
-    const shiftWidth = videoContainers[0].clientWidth + margin;
-    if (this.numberOfElements - this.numberOfVisible < this.index) {
-      this.index--;
-      setTimeout(event => {
-        for(let i = 0; i < step; i++) {
-          let item = this.slider.firstElementChild;
-          let temp = item.cloneNode(true);
-          this.slider.append(temp);
-          item.remove();
-        };
-        this.offset -= this.sliderStep * shiftWidth;
-      });
-    }
-    else {
-      this.offset -= this.sliderStep * shiftWidth;
-      this.slider.style.transform = `translateX(${this.offset}px)`;
-    }
+    setTimeout(event => {
+      for(let i = 0; i < step; i++) {
+        let item = this.slider.firstElementChild;
+        let temp = item.cloneNode(true);
+        this.slider.append(temp);
+        item.remove();
+      };
+      this.offset -= this.sliderStep * this.shiftValue;
+    });
+    // if (this.numberOfElements - this.numberOfVisible < this.index) {
+    //   this.index--;
+    //   setTimeout(event => {
+    //     for(let i = 0; i < step; i++) {
+    //       let item = this.slider.firstElementChild;
+    //       let temp = item.cloneNode(true);
+    //       this.slider.append(temp);
+    //       item.remove();
+    //     };
+    //     this.offset -= this.sliderStep * this.shiftValue;
+    //   });
+    // }
+    // else {
+    //   this.offset -= this.sliderStep * this.shiftValue;
+    //   this.slider.style.transform = `translateX(${this.offset}px)`;
+    // }
   }
+
   init() {
     this.arrowLeft.addEventListener("click", this.rotateLeft.bind(this));
     this.arrowRight.addEventListener("click", this.rotateRight.bind(this));
@@ -99,7 +121,6 @@ class Slider {
       if (event.target.matches(".carousel__video-overlay")) {
         const video = event.target.parentElement.querySelector(".carousel__video");
         const videoSrc = video.src;
-        console.log(video, camera);
         video.src = camera.src;
         camera.src = videoSrc;
       }
