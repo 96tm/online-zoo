@@ -12,23 +12,18 @@ const arrowLeft = document.querySelector(".arrow-left");
 
 let folded = false;
 
-foldButton.addEventListener("click", event => {
-  infoBody.classList.toggle("hidden-sections");
-  if (folded) {
-    infoBody.style.height = infoBody.scrollHeight + "px";
-    event.target.textContent = "Read less";
-    hideOverlay();
-  }
-  else {
-    paragraphRect = generalInfoFirstParagraph.getBoundingClientRect();
-    infoRect = infoBody.getBoundingClientRect();
-    infoBody.style.height = paragraphRect.y - infoRect.y + paragraphRect.height + "px";
-    event.target.textContent = "Read more";
-    showOverlay();
-    infoBody.scrollIntoView("top");
-  }
-  folded = !folded;
+document.addEventListener("DOMContentLoaded", event => {
+  foldButton.click();
 });
+
+window.addEventListener("resize", event => {
+  if (folded) {
+    resizeParagraph();
+    showOverlay();
+  }
+});
+
+foldButton.addEventListener("click", fold);
 
 class Slider {
   constructor(slider, wrap, step, numberOfVisible,
@@ -126,6 +121,30 @@ class Slider {
       }
     });
   }
+}
+
+function fold(event) {
+  infoBody.classList.toggle("hidden-sections");
+  if (folded) {
+    infoBody.style.height = infoBody.scrollHeight + "px";
+    event.target.textContent = "Read less";
+    hideOverlay();
+  }
+  else {
+    paragraphRect = generalInfoFirstParagraph.getBoundingClientRect();
+    infoRect = infoBody.getBoundingClientRect();
+    infoBody.style.height = paragraphRect.y - infoRect.y + paragraphRect.height + "px";
+    event.target.textContent = "Read more";
+    showOverlay();
+    infoBody.scrollIntoView("top");
+  }
+  folded = !folded;
+}
+
+function resizeParagraph() {
+  paragraphRect = generalInfoFirstParagraph.getBoundingClientRect();
+  infoRect = infoBody.getBoundingClientRect();
+  infoBody.style.height = paragraphRect.y - infoRect.y + paragraphRect.height + "px";
 }
 
 function showOverlay() {
