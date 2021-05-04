@@ -5,7 +5,6 @@
   --map-background: #eaf7fe;
 }
 
-
 .tooltip {
   z-index: 2;
   display: flex;
@@ -22,6 +21,10 @@
   border-radius: 5px;
   background-color: #fff;
   text-align: left;
+}
+
+.visible {
+  visibility: visible;
 }
 
 .tooltip-eagles {
@@ -113,7 +116,8 @@
   overflow: hidden;
 }
 
-.map__mark:hover {
+.map__mark:hover,
+.map__mark--color {
   fill: var(--orange);
   cursor: pointer;
 }
