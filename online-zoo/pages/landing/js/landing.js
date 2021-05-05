@@ -1,157 +1,228 @@
-const buttonLeft = document.querySelector(".pets__arrow--left");
-const buttonRight = document.querySelector(".pets__arrow--right");
+const arrowLeft = document.querySelector(".pets__arrow--left");
+const arrowRight = document.querySelector(".pets__arrow--right");
 const sliderContainer = document.querySelector(".pets__gallery");
 const sliderList = sliderContainer.querySelector(".pets__list");
 const testimonialsContainer = document.querySelector(".testimonials__cards-wrap");
 const testimonialsList = testimonialsContainer.querySelector(".testimonials__cards");
 const testimonialsRangeInput = document.querySelector(".testimonials__scroll-input");
+
 let gap = 30;
+let petsSlider = null;
+let testimonialsSlider = null;
 
-class Slider {
-  constructor(slider, sliderContainer, sliderIndex,
-              step, gap, numberOfVisible, scroll = 0) {
-    this.slider = slider;
-    this.sliderContainer = sliderContainer;
-    this.sliderIndex = sliderIndex;
-    this.sliderStep = step;
-    this.gap = gap;
-    this.numberOfVisible = numberOfVisible;
-    this.scroll = scroll;
-    this.numberOfCards = this.slider.children.length;
-    this.padSlider();
-  }
+document.addEventListener("DOMContentLoaded", event => {
+  const petsOptions = PetsSlider.getOptions();
+  const testimonialsOptions = TestimonialsSlider.getOptions();
 
-  getCardWidth() {
-    return this.slider.firstElementChild.offsetWidth;
-  }
-
-  scrollLeft() {
-    if (this.sliderIndex >= this.numberOfVisible) {
-      this.sliderIndex -= this.numberOfVisible;
-      this.scroll -= (this.getCardWidth() + this.gap) * this.sliderStep;
-      this.sliderContainer.scrollTo(this.scroll, 0);
-      console.log(this.sliderIndex, this.scroll, this.getCardWidth(), this.gap, this.getCardWidth() + this.gap, (this.getCardWidth() + this.gap) * this.sliderStep)
-    }
-    else {
-      const first = this.slider.firstElementChild;
-      for (let i = this.numberOfCards - this.numberOfVisible; i < this.numberOfCards; i++) {
-        first.before(this.slider.children[i]);
-      }
-      this.sliderContainer.scrollTo(this.scroll, 0);
-    }
-  }
-
-  scrollRight () {
-    if (this.sliderIndex + this.numberOfVisible < this.numberOfCards) {
-      this.sliderIndex += this.numberOfVisible;
-      this.scroll += (this.getCardWidth() + this.gap) * this.sliderStep;
-      this.sliderContainer.scrollTo(this.scroll, 0);
-      console.log(this.sliderIndex, this.scroll, this.getCardWidth(), this.gap, this.getCardWidth() + this.gap, (this.getCardWidth() + this.gap) * this.sliderStep)
-    }
-    else{
-      for (let i = 0; i < this.numberOfVisible; i++) {
-        // this.slider.append(this.slider.children[i].cloneNode(true));
-        this.slider.append(this.slider.firstElementChild);
-      }
-      if (this.sliderIndex > this.numVisible) {
-        this.scroll -= (this.getCardWidth * this.gap) * this.sliderStep;
-        this.sliderIndex -= this.numberOfVisible;
-
-      }
-      this.sliderContainer.scrollTo(this.scroll, 0);
-    }
-  }
-
-  padSlider() {
-    const off = this.numberOfCards % this.numberOfVisible;
-    if (!off) return;
-    console.log(off, this.numberOfVisible);
-    for (let i = 0; i < this.numberOfVisible - off; i++) {
-      const li = document.createElement("li");
-      li.classList.add("pets__list-item");
-      this.slider.append(li);
-    }
-    this.numberOfCards += this.numberOfVisible - off;
-  }
-}
-
-const slider = new Slider(sliderList, sliderContainer, 0, 3, gap, 6);
-
-buttonLeft.addEventListener("click", event => {
-  slider.scrollLeft();
+  petsSlider = new PetsSlider(sliderList, sliderContainer,
+                              petsOptions.sliderStep,
+                              petsOptions.numberOfVisible,
+                              arrowLeft, arrowRight);
+  testimonialsSlider = new TestimonialsSlider(testimonialsList,
+                                              testimonialsContainer,
+                                              testimonialsOptions.sliderStep,
+                                              testimonialsOptions.numberOfVisible,
+                                              testimonialsRangeInput);
+  testimonialsSlider.startSlideShow();
 });
 
-buttonRight.addEventListener("click", event => {
-  slider.scrollRight();
+window.addEventListener("resize", event => {
+  const petsOptions = PetsSlider.getOptions();  
+  petsSlider.sliderStep = petsOptions.sliderStep;
+  petsSlider.numberOfVisible = petsOptions.numberOfVisible;
+  sliderContainer.scroll(0, 0);
+
+  const testimonialsOptions = TestimonialsSlider.getOptions();
+  testimonialsSlider.reset();
+  testimonialsSlider.sliderStep = testimonialsOptions.sliderStep;
+  testimonialsSlider.numberOfVisible = testimonialsOptions.numberOfVisible;
 });
 
-class Slider1 {
-  constructor(slider, wrap, rangeInput, gap, step, numberOfVisible) {
+class PetsSlider {
+  constructor(slider, wrap, step, numberOfVisible,
+              arrowLeft, arrowRight, offset = 0) {
     this.slider = slider;
     this.wrap = wrap;
-    this.rangeInput = rangeInput;
-    this._gap = gap;
-    this.sliderStep = step;
-    this.numberOfVisible = numberOfVisible;
-    this.scroll = 0;
+    this._sliderStep = step;
+    this._numberOfVisible = numberOfVisible;
+    this.offset = offset;
+    this.arrowLeft = arrowLeft;
+    this.arrowRight = arrowRight;
     this.index = 0;
-    this.numberOfItems = this.slider.children.length;
-    this.slideShowHandle = null;
+    this.numberOfElements = this.slider.children.length;
     this.init();
   }
 
-  set gap(value) {
-    this._gap = value;
-  }
-  get gap() {
-    return this._gap;
+  // #region getters/setters
+  get shiftValue() {
+    const margin = this.slider.children[1].offsetLeft
+                   - this.slider.firstElementChild.offsetLeft
+                   - this.slider.firstElementChild.clientWidth;
+    return this.slider.firstElementChild.clientWidth + margin;
   }
 
-  slideRight() {
-    this.index = (this.index + this.sliderStep) % (this.numberOfItems - this.numberOfVisible + 1);
-    this.scroll = (this.getCardWidth() + this.gap) * this.index;
-    this.wrap.scrollTo(this.scroll, 0);
+  set numberOfVisible(value) {
+    this._numberOfVisible = value;
+  }
+
+  get numberOfVisible() {
+    return this._numberOfVisible;
+  }
+
+  set sliderStep(value) {
+    this._sliderStep = value;
+  }
+
+  get sliderStep() {
+    return this._sliderStep;
+  }
+  // #endregion getters/setters
+
+  rotateLeft(event, step = this.sliderStep) {
+    this.index--;
+    setTimeout(event => {
+      for(let i = 0; i < step; i++) {
+        let item = this.slider.lastElementChild;
+        let temp = item.cloneNode(true);
+        this.slider.firstElementChild.before(temp);
+        item.remove();
+      };
+      this.offset = "0";
+    });
+  }
+
+  rotateRight(event, step = this.sliderStep) {
+    this.index++;
+    setTimeout(event => {
+      for(let i = 0; i < step; i++) {
+        let item = this.slider.firstElementChild;
+        let temp = item.cloneNode(true);
+        this.slider.append(temp);
+        item.remove();
+      };
+      this.offset -= this.sliderStep * this.shiftValue;
+    });
+  }
+
+  init() {
+    this.arrowLeft.addEventListener("click", this.rotateLeft.bind(this));
+    this.arrowRight.addEventListener("click", this.rotateRight.bind(this));
+  }
+
+  static getOptions() {
+    const options = {numberOfVisible: 6, sliderStep: 6};
+    if (document.body.offsetWidth > 320 && document.body.offsetWidth <= 640) {
+      options.numberOfVisible = 4;
+      options.sliderStep = 4;
+    }
+    return options;
+  }
+}
+
+class TestimonialsSlider {
+  constructor(slider, wrap, step, numberOfVisible,
+              rangeInput) {
+    this.slider = slider;
+    this.wrap = wrap;
+    this.rangeInput = rangeInput;
+    this._sliderStep = step;
+    this._numberOfVisible = numberOfVisible;
+    this.scroll = 0;
+    this.index = 0;
+    this.slideShowHandle = null;
+    this.init();
+  }
+  get shiftValue() {
+    const margin = this.slider.children[1].getBoundingClientRect().x
+                   - this.slider.firstElementChild.getBoundingClientRect().x
+                   - this.slider.firstElementChild.getBoundingClientRect().width;
+    return this.slider.firstElementChild.getBoundingClientRect().width + margin;
+  }
+  set sliderStep(value) {
+    this._sliderStep = value;
+  }
+  get sliderStep() {
+    return this._sliderStep;
+  }
+  set numberOfVisible(value) {
+    this._numberOfVisible = value;
+  }
+  get numberOfVisible() {
+    return this._numberOfVisible;
+  }
+  get numberOfElements() {
+    return this.numberOfVisible + 7;
+  }
+
+  rotateRight() {
+    this.index = (this.index + this.sliderStep) % (this.numberOfElements - this.numberOfVisible + 1);
+    this.scroll = this.shiftValue * this.index;
+    this.slider.style.left = `${-this.scroll}px`
     this.rangeInput.value = this.index;
   }
-  slideLeft() {
+
+  rotateLeft() {
     this.index = Math.max(0, (this.index - this.sliderStep));
-    this.scroll = (this.getCardWidth() + this.gap) * this.index;
-    this.wrap.scrollTo(this.scroll, 0);
+    this.scroll = this.shiftValue * this.index;
+    this.slider.style.left = `${-this.scroll}px`
     this.rangeInput.value = this.index;
+  }
 
-  }
-  getCardWidth() {
-    return this.slider.firstElementChild.offsetWidth;
-  }
   init() {
     this.rangeInput.addEventListener("input", this.handleRangeInput.bind(this));
-    this.slideShowHandle = setInterval(this.slideRight.bind(this), 10 * 1000);
     this.slider.addEventListener("click", event => {
       if(event.target.closest(".testimonials__list-item") && this.slideShowHandle) {
-        clearInterval(this.slideShowHandle);
-        this.slideShowHandle = null;
-        setTimeout(() => {
-          this.slideShowHandle = setInterval(this.slideRight.bind(this), 10 * 1000);
-        }, 40 * 1000);
+        console.log('click resume')
+        this.stopSlideShow();
+        this.resumeSlideShow();
       }
     });
   }
+
   handleRangeInput(event) {
     const newValue = parseInt(event.target.value)
     const diff = newValue - this.index;
-    console.log('change', event.target.value, 'diff', diff);
     if (diff > 0) {
       for (let i = 0; i < diff; i++) {
-        this.slideRight();
+        this.rotateRight();
       }
     }
     else {
       for (let i = 0; i < -diff; i++) {
-        console.log(i, -diff)
-        this.slideLeft();
+        this.rotateLeft();
       }
     }
   }
-}
 
-const s = new Slider1(testimonialsList, testimonialsContainer, testimonialsRangeInput, 30, 1, 4);
+  resumeSlideShow() {
+    setTimeout(this.startSlideShow.bind(this), 30 * 1000);
+  }
+
+  startSlideShow() {
+    this.slideShowHandle = setInterval(this.rotateRight.bind(this), 10 * 1000);
+    console.log('started', this.slideShowHandle);
+  }
+
+  stopSlideShow() {
+    clearInterval(this.slideShowHandle);
+    this.slideShowHandle = null;
+  }
+
+  reset() {
+    this.stopSlideShow();
+    this.scroll = 0;
+    this.index = 0;
+    this.rangeInput.value = 0;
+    this.slider.style.left = "0";
+    this.startSlideShow();
+  }
+
+  static getOptions() {
+    const options = {numberOfVisible: 4, sliderStep: 1};
+    if (document.body.offsetWidth > 640 && document.body.offsetWidth <= 1000) {
+      options.numberOfVisible = 3;
+      options.sliderStep = 1;
+    }
+    return options;
+  }
+}

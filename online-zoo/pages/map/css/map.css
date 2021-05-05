@@ -5,7 +5,6 @@
   --map-background: #eaf7fe;
 }
 
-
 .tooltip {
   z-index: 2;
   display: flex;
@@ -22,6 +21,10 @@
   border-radius: 5px;
   background-color: #fff;
   text-align: left;
+}
+
+.visible {
+  visibility: visible;
 }
 
 .tooltip-eagles {
@@ -71,9 +74,9 @@
 }
 
 .tooltip__button {
-  text-align: center;
-  vertical-align: bottom;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 135px;
   height: 31px;
   background-color: var(--gray-light);
@@ -81,6 +84,8 @@
   border: none;
   margin-top: 11px;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .animal-figure {
@@ -113,7 +118,8 @@
   overflow: hidden;
 }
 
-.map__mark:hover {
+.map__mark:hover,
+.map__mark--color {
   fill: var(--orange);
   cursor: pointer;
 }

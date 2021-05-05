@@ -6,32 +6,124 @@ const generalInfoFirstParagraph = generalInfo.querySelector(".info-body-section_
 const overlay = document.querySelector(".text-overlay");
 const camera = document.querySelector(".pet-camera__iframe");
 
-const slider = document.querySelector(".carousel__list");
-const videoContainers = slider.querySelectorAll(".carousel__video-wrap");
+const sliderList = document.querySelector(".carousel__list");
 const arrowRight = document.querySelector(".arrow-right");
 const arrowLeft = document.querySelector(".arrow-left");
 
 let folded = false;
-let sliderPage = localStorage.getItem("sliderPage") || 1;
 
-slider.addEventListener("click", event => {
-  console.log(event.target)
-  if (event.target.matches(".carousel__video-overlay")) {
-    const video = event.target.parentElement.querySelector(".carousel__video");
-    const videoSrc = video.src;
-    console.log(video, camera);
-    video.src = camera.src;
-    camera.src = videoSrc;
+document.addEventListener("DOMContentLoaded", event => {
+  foldButton.click();
+});
+
+window.addEventListener("resize", event => {
+  if (folded) {
+    resizeParagraph();
+    showOverlay();
   }
 });
-arrowRight.addEventListener("click", event => {
-  rotateSlider(slider, "right");
-});
-arrowLeft.addEventListener("click", event => {
-  rotateSlider(slider, "left");
-});
 
-foldButton.addEventListener("click", event => {
+foldButton.addEventListener("click", fold);
+
+class Slider {
+  constructor(slider, wrap, step, numberOfVisible,
+              arrowLeft, arrowRight, offset = 0) {
+    this.slider = slider;
+    this.wrap = wrap;
+    this.sliderStep = step;
+    this.numberOfVisible = numberOfVisible;
+    this.offset = offset;
+    this.arrowLeft = arrowLeft;
+    this.arrowRight = arrowRight;
+    this.index = 0;
+    this.numberOfElements = this.slider.children.length;
+    this.init();
+  }
+
+  get cardWidth () {
+    return this.slider.firstElementChild.clientWidth;
+  }
+  get shiftValue() {
+    const margin = this.slider.children[1].offsetLeft
+                   - this.slider.firstElementChild.offsetLeft
+                   - this.slider.firstElementChild.clientWidth;
+    return this.slider.firstElementChild.clientWidth + margin;
+  }
+
+  rotateLeft(event, step = this.sliderStep) {
+    this.index--;
+    setTimeout(event => {
+      for(let i = 0; i < step; i++) {
+        let item = this.slider.lastElementChild;
+        let temp = item.cloneNode(true);
+        this.slider.firstElementChild.before(temp);
+        item.remove();
+      };
+      this.offset = "0";
+      // this.slider.style.transform = "none";
+    });
+    // if (this.index < 0) {
+    //   this.index = 0;
+    //   setTimeout(event => {
+    //     for(let i = 0; i < step; i++) {
+    //       let item = this.slider.lastElementChild;
+    //       let temp = item.cloneNode(true);
+    //       this.slider.firstElementChild.before(temp);
+    //       item.remove();
+    //     };
+    //     this.offset = "0";
+    //     this.slider.style.transform = "none";
+    //   });
+    // }
+    // else {
+    //   this.offset += this.sliderStep * this.shiftValue;
+    //   this.slider.style.transform = `translateX(${this.offset}px)`;
+    // }
+  }
+  rotateRight(event, step = this.sliderStep) {
+    this.index++;
+    setTimeout(event => {
+      for(let i = 0; i < step; i++) {
+        let item = this.slider.firstElementChild;
+        let temp = item.cloneNode(true);
+        this.slider.append(temp);
+        item.remove();
+      };
+      this.offset -= this.sliderStep * this.shiftValue;
+    });
+    // if (this.numberOfElements - this.numberOfVisible < this.index) {
+    //   this.index--;
+    //   setTimeout(event => {
+    //     for(let i = 0; i < step; i++) {
+    //       let item = this.slider.firstElementChild;
+    //       let temp = item.cloneNode(true);
+    //       this.slider.append(temp);
+    //       item.remove();
+    //     };
+    //     this.offset -= this.sliderStep * this.shiftValue;
+    //   });
+    // }
+    // else {
+    //   this.offset -= this.sliderStep * this.shiftValue;
+    //   this.slider.style.transform = `translateX(${this.offset}px)`;
+    // }
+  }
+
+  init() {
+    this.arrowLeft.addEventListener("click", this.rotateLeft.bind(this));
+    this.arrowRight.addEventListener("click", this.rotateRight.bind(this));
+    this.slider.addEventListener("click", event => {
+      if (event.target.matches(".carousel__video-overlay")) {
+        const video = event.target.parentElement.querySelector(".carousel__video");
+        const videoSrc = video.src;
+        video.src = camera.src;
+        camera.src = videoSrc;
+      }
+    });
+  }
+}
+
+function fold(event) {
   infoBody.classList.toggle("hidden-sections");
   if (folded) {
     infoBody.style.height = infoBody.scrollHeight + "px";
@@ -47,25 +139,12 @@ foldButton.addEventListener("click", event => {
     infoBody.scrollIntoView("top");
   }
   folded = !folded;
-});
+}
 
-function rotateSlider(slider, direction, numberOfElements = 1) {
-  console.log(sliderPage);
-  const margin = videoContainers[1].offsetLeft
-                 - videoContainers[0].offsetLeft
-                 - videoContainers[0].clientWidth;
-  const shiftWidth = videoContainers[0].clientWidth + margin;
-  const initialLeft = parseFloat(slider.style.left.replace("px", "")) || 0;
-  if (direction === "left" && sliderPage !== 1) {
-    slider.style.left = numberOfElements
-                        * (initialLeft + shiftWidth) + "px";
-    sliderPage--;
-  }
-  else if (direction === "right" && videoContainers.length - 3 > sliderPage) {
-    slider.style.left = numberOfElements
-                        * (initialLeft - shiftWidth) + "px";
-    sliderPage++;
-  }
+function resizeParagraph() {
+  paragraphRect = generalInfoFirstParagraph.getBoundingClientRect();
+  infoRect = infoBody.getBoundingClientRect();
+  infoBody.style.height = paragraphRect.y - infoRect.y + paragraphRect.height + "px";
 }
 
 function showOverlay() {
@@ -84,3 +163,5 @@ function showOverlay() {
 function hideOverlay() {
   overlay.style.display = "none";
 }
+
+const slider = new Slider(sliderList, null, 1, 4, arrowLeft, arrowRight);
