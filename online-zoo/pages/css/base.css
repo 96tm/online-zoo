@@ -670,6 +670,7 @@ input {
     padding-top: 100px;
   }
 
+  /* #region friend */
   .friend {
     padding: 30px 0 50px 0;
   }
@@ -703,6 +704,7 @@ input {
   .friend-donation__cards {
     padding-bottom: 70px;
   }
+  /* #endregion friend */
 
   .footer__wrap {
     width: var(--guidelines-width-1000);

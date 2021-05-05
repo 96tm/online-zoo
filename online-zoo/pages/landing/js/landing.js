@@ -11,8 +11,8 @@ let petsSlider = null;
 let testimonialsSlider = null;
 
 document.addEventListener("DOMContentLoaded", event => {
-  const petsOptions = getPetsOptions();
-  console.log('loaded', petsOptions)
+  const petsOptions = PetsSlider.getOptions();
+  const testimonialsOptions = TestimonialsSlider.getOptions();
 
   petsSlider = new PetsSlider(sliderList, sliderContainer,
                               petsOptions.sliderStep,
@@ -20,14 +20,22 @@ document.addEventListener("DOMContentLoaded", event => {
                               arrowLeft, arrowRight);
   testimonialsSlider = new TestimonialsSlider(testimonialsList,
                                               testimonialsContainer,
-                                              testimonialsRangeInput, 30, 1, 4);
+                                              testimonialsOptions.sliderStep,
+                                              testimonialsOptions.numberOfVisible,
+                                              testimonialsRangeInput);
+  // testimonialsSlider.startSlideShow();
 });
 
 window.addEventListener("resize", event => {
-  const petsOptions = getPetsOptions();
+  const petsOptions = PetsSlider.getOptions();  
   petsSlider.sliderStep = petsOptions.sliderStep;
   petsSlider.numberOfVisible = petsOptions.numberOfVisible;
   sliderContainer.scroll(0, 0);
+
+  const testimonialsOptions = TestimonialsSlider.getOptions();
+  testimonialsSlider.reset();
+  testimonialsSlider.sliderStep = testimonialsOptions.sliderStep;
+  testimonialsSlider.numberOfVisible = testimonialsOptions.numberOfVisible;
 });
 
 class PetsSlider {
@@ -45,27 +53,30 @@ class PetsSlider {
     this.init();
   }
 
-  get cardWidth () {
-    return this.slider.firstElementChild.clientWidth;
-  }
+  // #region getters/setters
   get shiftValue() {
     const margin = this.slider.children[1].offsetLeft
                    - this.slider.firstElementChild.offsetLeft
                    - this.slider.firstElementChild.clientWidth;
     return this.slider.firstElementChild.clientWidth + margin;
   }
+
   set numberOfVisible(value) {
     this._numberOfVisible = value;
   }
+
   get numberOfVisible() {
     return this._numberOfVisible;
   }
+
   set sliderStep(value) {
     this._sliderStep = value;
   }
+
   get sliderStep() {
     return this._sliderStep;
   }
+  // #endregion getters/setters
 
   rotateLeft(event, step = this.sliderStep) {
     this.index--;
@@ -79,6 +90,7 @@ class PetsSlider {
       this.offset = "0";
     });
   }
+
   rotateRight(event, step = this.sliderStep) {
     this.index++;
     setTimeout(event => {
@@ -96,81 +108,119 @@ class PetsSlider {
     this.arrowLeft.addEventListener("click", this.rotateLeft.bind(this));
     this.arrowRight.addEventListener("click", this.rotateRight.bind(this));
   }
+
+  static getOptions() {
+    const options = {numberOfVisible: 6, sliderStep: 6};
+    if (document.body.offsetWidth > 320 && document.body.offsetWidth <= 640) {
+      options.numberOfVisible = 4;
+      options.sliderStep = 4;
+    }
+    return options;
+  }
 }
 
 class TestimonialsSlider {
-  constructor(slider, wrap, rangeInput, gap, step, numberOfVisible) {
+  constructor(slider, wrap, step, numberOfVisible,
+              rangeInput) {
     this.slider = slider;
     this.wrap = wrap;
     this.rangeInput = rangeInput;
-    this._gap = gap;
-    this.sliderStep = step;
-    this.numberOfVisible = numberOfVisible;
+    this._sliderStep = step;
+    this._numberOfVisible = numberOfVisible;
     this.scroll = 0;
     this.index = 0;
-    this.numberOfItems = this.slider.children.length;
     this.slideShowHandle = null;
     this.init();
   }
-
-  set gap(value) {
-    this._gap = value;
+  get shiftValue() {
+    const margin = this.slider.children[1].getBoundingClientRect().x
+                   - this.slider.firstElementChild.getBoundingClientRect().x
+                   - this.slider.firstElementChild.getBoundingClientRect().width;
+    return this.slider.firstElementChild.getBoundingClientRect().width + margin;
   }
-  get gap() {
-    return this._gap;
+  set sliderStep(value) {
+    this._sliderStep = value;
+  }
+  get sliderStep() {
+    return this._sliderStep;
+  }
+  set numberOfVisible(value) {
+    this._numberOfVisible = value;
+  }
+  get numberOfVisible() {
+    return this._numberOfVisible;
+  }
+  get numberOfElements() {
+    return this.numberOfVisible + 7;
   }
 
-  slideRight() {
-    this.index = (this.index + this.sliderStep) % (this.numberOfItems - this.numberOfVisible + 1);
-    this.scroll = (this.getCardWidth() + this.gap) * this.index;
-    this.wrap.scrollTo(this.scroll, 0);
+  rotateRight() {
+    this.index = (this.index + this.sliderStep) % (this.numberOfElements - this.numberOfVisible + 1);
+    this.scroll = this.shiftValue * this.index;
+    this.slider.style.left = `${-this.scroll}px`
     this.rangeInput.value = this.index;
   }
-  slideLeft() {
+
+  rotateLeft() {
     this.index = Math.max(0, (this.index - this.sliderStep));
-    this.scroll = (this.getCardWidth() + this.gap) * this.index;
-    this.wrap.scrollTo(this.scroll, 0);
+    this.scroll = this.shiftValue * this.index;
+    this.slider.style.left = `${-this.scroll}px`
     this.rangeInput.value = this.index;
+  }
 
-  }
-  getCardWidth() {
-    return this.slider.firstElementChild.offsetWidth;
-  }
   init() {
     this.rangeInput.addEventListener("input", this.handleRangeInput.bind(this));
-    this.slideShowHandle = setInterval(this.slideRight.bind(this), 10 * 1000);
     this.slider.addEventListener("click", event => {
       if(event.target.closest(".testimonials__list-item") && this.slideShowHandle) {
-        clearInterval(this.slideShowHandle);
-        this.slideShowHandle = null;
-        setTimeout(() => {
-          this.slideShowHandle = setInterval(this.slideRight.bind(this), 10 * 1000);
-        }, 40 * 1000);
+        this.stopSlideShow();
+        this.resumeSlideShow();
       }
     });
   }
+
   handleRangeInput(event) {
     const newValue = parseInt(event.target.value)
     const diff = newValue - this.index;
     if (diff > 0) {
       for (let i = 0; i < diff; i++) {
-        this.slideRight();
+        this.rotateRight();
       }
     }
     else {
       for (let i = 0; i < -diff; i++) {
-        console.log(i, -diff)
-        this.slideLeft();
+        this.rotateLeft();
       }
     }
   }
-}
 
-function getPetsOptions() {
-  const petsOptions = {numberOfVisible: 6, sliderStep: 6};
-  if (document.body.offsetWidth > 320 && document.body.offsetWidth <= 640) {
-    petsOptions.numberOfVisible = 4;
-    petsOptions.sliderStep = 4;
+  resumeSlideShow() {
+    setTimeout(() => this.startSlideShow, 40 * 1000);
   }
-  return petsOptions;
+
+  startSlideShow() {
+    this.slideShowHandle = setInterval(this.rotateRight.bind(this), 10 * 1000);
+  }
+
+  stopSlideShow() {
+    clearInterval(this.slideShowHandle);
+    this.slideShowHandle = null;
+  }
+
+  reset() {
+    this.stopSlideShow();
+    this.scroll = 0;
+    this.index = 0;
+    this.rangeInput.value = 0;
+    this.slider.style.left = "0";
+    this.startSlideShow();
+  }
+
+  static getOptions() {
+    const options = {numberOfVisible: 4, sliderStep: 1};
+    if (document.body.offsetWidth > 640 && document.body.offsetWidth <= 1000) {
+      options.numberOfVisible = 3;
+      options.sliderStep = 1;
+    }
+    return options;
+  }
 }
