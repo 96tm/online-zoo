@@ -1,91 +1,104 @@
-const buttonLeft = document.querySelector(".pets__arrow--left");
-const buttonRight = document.querySelector(".pets__arrow--right");
+const arrowLeft = document.querySelector(".pets__arrow--left");
+const arrowRight = document.querySelector(".pets__arrow--right");
 const sliderContainer = document.querySelector(".pets__gallery");
 const sliderList = sliderContainer.querySelector(".pets__list");
 const testimonialsContainer = document.querySelector(".testimonials__cards-wrap");
 const testimonialsList = testimonialsContainer.querySelector(".testimonials__cards");
 const testimonialsRangeInput = document.querySelector(".testimonials__scroll-input");
+
 let gap = 30;
+let petsSlider = null;
+let testimonialsSlider = null;
 
-class Slider {
-  constructor(slider, sliderContainer, sliderIndex,
-              step, gap, numberOfVisible, scroll = 0) {
+document.addEventListener("DOMContentLoaded", event => {
+  const petsOptions = getPetsOptions();
+  console.log('loaded', petsOptions)
+
+  petsSlider = new PetsSlider(sliderList, sliderContainer,
+                              petsOptions.sliderStep,
+                              petsOptions.numberOfVisible,
+                              arrowLeft, arrowRight);
+  testimonialsSlider = new TestimonialsSlider(testimonialsList,
+                                              testimonialsContainer,
+                                              testimonialsRangeInput, 30, 1, 4);
+});
+
+window.addEventListener("resize", event => {
+  const petsOptions = getPetsOptions();
+  petsSlider.sliderStep = petsOptions.sliderStep;
+  petsSlider.numberOfVisible = petsOptions.numberOfVisible;
+  sliderContainer.scroll(0, 0);
+});
+
+class PetsSlider {
+  constructor(slider, wrap, step, numberOfVisible,
+              arrowLeft, arrowRight, offset = 0) {
     this.slider = slider;
-    this.sliderContainer = sliderContainer;
-    this.sliderIndex = sliderIndex;
-    this.sliderStep = step;
-    this.gap = gap;
-    this.numberOfVisible = numberOfVisible;
-    this.scroll = scroll;
-    this.numberOfCards = this.slider.children.length;
-    this.padSlider();
+    this.wrap = wrap;
+    this._sliderStep = step;
+    this._numberOfVisible = numberOfVisible;
+    this.offset = offset;
+    this.arrowLeft = arrowLeft;
+    this.arrowRight = arrowRight;
+    this.index = 0;
+    this.numberOfElements = this.slider.children.length;
+    this.init();
   }
 
-  getCardWidth() {
-    return this.slider.firstElementChild.offsetWidth;
+  get cardWidth () {
+    return this.slider.firstElementChild.clientWidth;
+  }
+  get shiftValue() {
+    const margin = this.slider.children[1].offsetLeft
+                   - this.slider.firstElementChild.offsetLeft
+                   - this.slider.firstElementChild.clientWidth;
+    return this.slider.firstElementChild.clientWidth + margin;
+  }
+  set numberOfVisible(value) {
+    this._numberOfVisible = value;
+  }
+  get numberOfVisible() {
+    return this._numberOfVisible;
+  }
+  set sliderStep(value) {
+    this._sliderStep = value;
+  }
+  get sliderStep() {
+    return this._sliderStep;
   }
 
-  scrollLeft() {
-    if (this.sliderIndex >= this.numberOfVisible) {
-      this.sliderIndex -= this.numberOfVisible;
-      this.scroll -= (this.getCardWidth() + this.gap) * this.sliderStep;
-      this.sliderContainer.scrollTo(this.scroll, 0);
-      console.log(this.sliderIndex, this.scroll, this.getCardWidth(), this.gap, this.getCardWidth() + this.gap, (this.getCardWidth() + this.gap) * this.sliderStep)
-    }
-    else {
-      const first = this.slider.firstElementChild;
-      for (let i = this.numberOfCards - this.numberOfVisible; i < this.numberOfCards; i++) {
-        first.before(this.slider.children[i]);
-      }
-      this.sliderContainer.scrollTo(this.scroll, 0);
-    }
+  rotateLeft(event, step = this.sliderStep) {
+    this.index--;
+    setTimeout(event => {
+      for(let i = 0; i < step; i++) {
+        let item = this.slider.lastElementChild;
+        let temp = item.cloneNode(true);
+        this.slider.firstElementChild.before(temp);
+        item.remove();
+      };
+      this.offset = "0";
+    });
+  }
+  rotateRight(event, step = this.sliderStep) {
+    this.index++;
+    setTimeout(event => {
+      for(let i = 0; i < step; i++) {
+        let item = this.slider.firstElementChild;
+        let temp = item.cloneNode(true);
+        this.slider.append(temp);
+        item.remove();
+      };
+      this.offset -= this.sliderStep * this.shiftValue;
+    });
   }
 
-  scrollRight () {
-    if (this.sliderIndex + this.numberOfVisible < this.numberOfCards) {
-      this.sliderIndex += this.numberOfVisible;
-      this.scroll += (this.getCardWidth() + this.gap) * this.sliderStep;
-      this.sliderContainer.scrollTo(this.scroll, 0);
-      console.log(this.sliderIndex, this.scroll, this.getCardWidth(), this.gap, this.getCardWidth() + this.gap, (this.getCardWidth() + this.gap) * this.sliderStep)
-    }
-    else{
-      for (let i = 0; i < this.numberOfVisible; i++) {
-        // this.slider.append(this.slider.children[i].cloneNode(true));
-        this.slider.append(this.slider.firstElementChild);
-      }
-      if (this.sliderIndex > this.numVisible) {
-        this.scroll -= (this.getCardWidth * this.gap) * this.sliderStep;
-        this.sliderIndex -= this.numberOfVisible;
-
-      }
-      this.sliderContainer.scrollTo(this.scroll, 0);
-    }
-  }
-
-  padSlider() {
-    const off = this.numberOfCards % this.numberOfVisible;
-    if (!off) return;
-    console.log(off, this.numberOfVisible);
-    for (let i = 0; i < this.numberOfVisible - off; i++) {
-      const li = document.createElement("li");
-      li.classList.add("pets__list-item");
-      this.slider.append(li);
-    }
-    this.numberOfCards += this.numberOfVisible - off;
+  init() {
+    this.arrowLeft.addEventListener("click", this.rotateLeft.bind(this));
+    this.arrowRight.addEventListener("click", this.rotateRight.bind(this));
   }
 }
 
-const slider = new Slider(sliderList, sliderContainer, 0, 3, gap, 6);
-
-buttonLeft.addEventListener("click", event => {
-  slider.scrollLeft();
-});
-
-buttonRight.addEventListener("click", event => {
-  slider.scrollRight();
-});
-
-class Slider1 {
+class TestimonialsSlider {
   constructor(slider, wrap, rangeInput, gap, step, numberOfVisible) {
     this.slider = slider;
     this.wrap = wrap;
@@ -139,7 +152,6 @@ class Slider1 {
   handleRangeInput(event) {
     const newValue = parseInt(event.target.value)
     const diff = newValue - this.index;
-    console.log('change', event.target.value, 'diff', diff);
     if (diff > 0) {
       for (let i = 0; i < diff; i++) {
         this.slideRight();
@@ -154,4 +166,11 @@ class Slider1 {
   }
 }
 
-const s = new Slider1(testimonialsList, testimonialsContainer, testimonialsRangeInput, 30, 1, 4);
+function getPetsOptions() {
+  const petsOptions = {numberOfVisible: 6, sliderStep: 6};
+  if (document.body.offsetWidth > 320 && document.body.offsetWidth <= 640) {
+    petsOptions.numberOfVisible = 4;
+    petsOptions.sliderStep = 4;
+  }
+  return petsOptions;
+}

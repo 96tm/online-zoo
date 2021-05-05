@@ -656,10 +656,6 @@ input {
     --guidelines-width: var(--guidelines-width-1000);
   }
 
-  /* .header__wrap {
-    margin-left: var(--content-margin-1000);
-  } */
-
   .wrap-guidelines {
     width: var(--guidelines-width-1000);
     margin-left: var(--content-margin-1000);
@@ -669,79 +665,9 @@ input {
     width: 486px;
   }
 
-  .watch-online {
-    background: url("../../assets/images/panda-bg-1000.png") no-repeat center;
-    background-size: cover;
-    min-height: 504px;
-    max-height: 504px;
-  }
-
-  .watch-online__wrap {
-    padding-top: 42.8px;
-    padding-right: 55.75px;
-    grid-template-columns: auto 400.25px;
-  }
-
-  .watch-online__image {
-    max-width: 367px;
-    top: -53.8px;
-    left: -58px;
-  }
-
-  .watch-online__text {
-    font-size: 85px;
-    padding-bottom: 40px;
-    width: 400px;
-  }
-
   .main__wrap {
     background-image: none;
     padding-top: 100px;
-  }
-
-  .backstage {
-    flex-direction: row;
-  }
-
-  .backstage__col-1,
-  .backstage__col-2 {
-    width: 48.404255319148937%;
-    max-width: initial;
-  }
-
-  .pets {
-    background: url("../../assets/images/palm-1000.png") no-repeat, url("../../assets/images/strelitzia-1000.png") no-repeat;
-    background-position: bottom left, bottom right;
-    padding-bottom: 140px;
-  }
-
-  .pets__list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "pet-card--panda pet-card--panda pet-card--eagle pet-card--eagle pet-card--cheetah pet-card--cheetah"
-    ". . pets__arrow--left pets__arrow--right . ." 
-    "pet-card--gorilla pet-card--gorilla pet-card--alligator pet-card--alligator pet-card--penguin pet-card--penguin";
-    column-gap: 29px;
-    row-gap: 15px;
-  }
-
-  .pet-card {
-    max-width: 294px;
-    width: 100%;
-  }
-
-  .pet-card--alligator {
-    display: block;
-    position: relative;
-  }
-
-  .pet-card--sloth {
-    display: none;
-    position: absolute;
-  }
-
-  .pets__arrow {
-    position: initial;
   }
 
   .friend {
@@ -778,28 +704,6 @@ input {
     padding-bottom: 70px;
   }
 
-  .testimonials {
-    padding: 100px 0 140px;
-    background: url("../../assets/images/leaf-1000.png") no-repeat bottom -90px right;
-  }
-
-  .testimonials__header {
-    padding-bottom: 30px;
-  }
-
-  .testimonials__card {
-    width: 31.170212765957445%;
-  }
-
-  .testimonials__card:last-child {
-    display: none;
-  }
-
-  .testimonials__scroll {
-    width: 390px;
-    margin-bottom: 52px;
-  }
-
   .footer__wrap {
     width: var(--guidelines-width-1000);
     margin-left: var(--content-margin-1000);
@@ -828,7 +732,6 @@ input {
     grid-template-columns: 24% 36% 40%;
   }
 }
-
 
 @media screen and (max-width: 640px) {
 
@@ -871,37 +774,6 @@ input {
     display: flex;
   }
 
-  .watch-online {
-    min-height: 339px;
-    max-height: 339px;
-  }
-
-  .watch-online__wrap {
-    padding: 48px 0 0;
-    grid-template-columns: 298px 42.606666666666665%;
-    grid-template-areas: ". watch-online__content-wrap" "watch-online__link-wrap .";
-  }
-
-  .watch-online__link-wrap {
-    justify-self: left;
-    transform: translateY(-2.83px);
-    position: relative;
-    z-index: 2;
-  }
-
-  .watch-online__image {
-    display: block;
-    width: 237.6px;
-    top: -37.8px;
-    left: -37.3px;
-  }
-
-  .watch-online__text {
-    max-width: 255.64px;
-    font-size: 54.29px;
-    padding-bottom: 0;
-  }
-
   .main__wrap {
     background: url("../../assets/images/flower-640.png") no-repeat;
     background-position: top 12px right;
@@ -916,56 +788,7 @@ input {
     padding-bottom: 20px;
   }
 
-  .backstage__col-1 {
-    display: none;
-  }
-
-  .backstage__col-2 {
-    width: 82.5%;
-  }
-
-  .pets {
-    background: url("../../assets/images/palm-640.png") no-repeat, url("../../assets/images/strelitzia-640.png") no-repeat;
-    background-position: bottom left, bottom right;
-    padding-bottom: 100px;
-  }
-
-  .pets__gallery {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 80px;
-  }
-
-  .pets__list {
-    /* grid-template-columns: 285.24px 285.24px; */
-    grid-template-columns: 1fr 1fr;
-    
-    grid-template-areas: "pet-card--panda pet-card--eagle"
-                         "pets__arrow--left pets__arrow--right"
-                         "pet-card--gorilla pet-card--alligator";
-    column-gap: 30px;
-    row-gap: 11px;
-  }
-
-  .pets__arrow {
-    margin-bottom: 9px;
-  }
-
-  .pets__arrow--left {
-    justify-self: right;
-  }
-
-  .pets__arrow--right {
-    justify-self: left;
-  }
-
-  .pet-card--sloth,
-  .pet-card--cheetah,
-  .pet-card--penguin {
-    display: none;
-  }
-
+  /* #region friend */
   .friend {
     padding: 20px 0;
   }
@@ -1029,47 +852,9 @@ input {
   .friend__pick {
     padding-bottom: 60px;
   }
+  /* #endregion friend */
 
-  .testimonials {
-    padding: 60px 0 80px;
-    background: url("../../assets/images/leaf-640.png") no-repeat bottom -68px right;
-  }
-
-  .testimonials__cards {
-    flex-direction: column;
-    padding-bottom: 40px;
-  }
-
-  .testimonials__card {
-    width: 100%;
-  }
-
-  .testimonials__card:not(:first-child) {
-    margin-top: 15px;
-  }
-
-  .testimonials__card-border {
-    width: 100%;
-    padding: 2px;
-    height: 109px;
-  }
-
-  .testimonials__card-text {
-    max-height: 109px;
-  }
-
-  .testimonials__scroll {
-    display: none;
-  }
-
-  .testimonials__button-feedback-wrap {
-    text-align: center;
-  }
-
-  .testimonials__button-feedback {
-    width: 240px;
-  }
-
+  /* #region footer */
   .footer {
     padding: 12px 0 12px 3.125%;
   }
@@ -1115,96 +900,12 @@ input {
   .footer__social-media-title {
     display: none;
   }
-}
-
-@media screen and (max-width: 555px) {
-  .watch-online__wrap {
-    grid-template-columns: 55% 42.606666666666665%;
-  }
+  /* #endregion footer */
 }
 
 @media screen and (max-width: 510px) {
 
-  .watch-online {
-    min-height: 187px;
-    max-height: 187px;
-  }
-
-  .friend__donation-card {
-    width: 168px;
-  }
-
-  .watch-online__wrap {
-    padding: 41.12px 0 0;
-    grid-template-columns: auto 128.13px;
-    grid-template-areas: ". watch-online__content-wrap"
-                         "watch-online__link-wrap watch-online__link-wrap";
-  }
-
-  .watch-online__content-wrap {
-    padding-bottom: 63.43px;
-  }
-
-  .watch-online__image {
-    max-width: 119.09px;
-    top: -18.95px;
-    left: -18.7px;
-  }
-
-  .watch-online__text {
-    max-width: 128.13px;
-    font-size: 27.2px;
-    padding-bottom: 0;
-  }
-
-  .backstage__col-1 {
-    display: none;
-  }
-
-  .description__header {
-    font-size: 24px;
-    padding-bottom: 10px;
-  }
-
-  .description__short {
-    padding-bottom: 20px;
-  }
-
-  .description__subheader {
-    padding-bottom: 10px;
-  }
-
-  .main__wrap {
-    background: url("../../assets/images/flower-320.png") no-repeat;
-    background-position: top 38px right;
-    padding: 104px 0 40px;
-  }
-
-  .pets {
-    background: url("../../assets/images/palm-320.png") no-repeat, url("../../assets/images/strelitzia-320.png") no-repeat;
-    background-position: bottom left, bottom right;
-    padding-bottom: 60px;
-  }
-
-  .pets__list {
-    column-gap: 30px;
-    row-gap: 20px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "pet-card--panda pet-card--panda"
-                         "pet-card--eagle pet-card--eagle"
-                         "pet-card--gorilla pet-card--gorilla"
-                         "pet-card--alligator pet-card--alligator"
-                         "pets__arrow--left pets__arrow--right";
-  }
-
-  .pet-card {
-    max-width: initial;
-  }
-
-  .pets-arrow--left {
-    justify-self: flex-start;
-  }
-
+  /* #region friend */
   .friend__wrapper {
     width: var(--guidelines-width);
     margin-left: var(--content-margin-640);
@@ -1268,25 +969,9 @@ input {
     padding-top: 10px;
     position: absolute;
   }
+  /* #endregion friend */
 
-  .testimonials {
-    padding: 30px 0 60px;
-    background: url("../../assets/images/leaf-320.png") no-repeat bottom -30px right;
-  }
-
-  .testimonials__header {
-    padding-bottom: 20px;
-    font-size: 24px;
-  }
-
-  .testimonials__cards {
-    padding-bottom: 30px;
-  }
-
-  .testimonials__button-feedback {
-    width: 240px;
-  }
-
+  /* #region footer */
   .footer .footer__donate-link {
     width: 215px;
   }
@@ -1303,18 +988,10 @@ input {
     "footer__copyright footer__copyright"
     "footer__nav footer__nav";
   }
-
+  /* #endregion footer */
 }
 
 @media screen and (max-width: 320px) {
-  
-  /* .wrap-guidelines {
-    max-width: var(--max-width-320);
-  } */
-
-  .pets__arrow {
-    display: none;
-  }
 
   .backstage__col-2 {
     width: 99%;
