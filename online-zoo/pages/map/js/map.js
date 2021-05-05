@@ -19,8 +19,6 @@ let zoom = 1;
 
 document.addEventListener("DOMContentLoaded", event => {
   offsetY = map.getBoundingClientRect().y;
-  offsetYTemp = offsetY;
-  console.log('offsetY', offsetY)
 });
 
 map.addEventListener("mouseover", event => {
@@ -35,7 +33,9 @@ map.addEventListener("mouseover", event => {
   }
 });
 
-map.addEventListener("mouseout", event => {
+document.querySelector(".main").addEventListener("pointerout", event => {
+  // isDragActivated = false;
+  console.log('OUT')
   if (event.target.classList.contains("animal-figure")
       || event.target.classList.contains("map__mark")) {
   //   const animal = event.target.dataset.animal.toLowerCase();
@@ -45,31 +45,35 @@ map.addEventListener("mouseout", event => {
 });
 
 zoomButtonIn.addEventListener("mousedown", event => {
-  console.log('zoom in')
   if (zoom < 4) {
     map.style.transform = `scale(${zoom + 0.25})`;
     zoom += 0.25;
+    if (currentTooltip) {
+      moveTooltip(currentTooltip);
+    }
   }
 });
 
 zoomButtonOut.addEventListener("mousedown", event => {
-  console.log('zoom out')
   if (zoom > 1) {
     map.style.transform = `scale(${zoom - 0.25})`;
     zoom -= 0.25;
+    if (currentTooltip) {
+      moveTooltip(currentTooltip);
+    }
   }
 });
 
 mapWrap.addEventListener("pointerdown", event => {
+  if (event.which === 1) {
     [startX, startY] = [event.clientX, event.clientY - offsetY];
     console.log('down', startX, startY);
     isDragActivated = true;
     if (currentTooltip) {
       console.log("===DOWN===");
       console.log(`tooltip offset x=${tooltipInitialPosition.left}, y=${tooltipInitialPosition.top}`);
-      // tooltipInitialPosition.left = currentTooltip.style.left.replace("px", "");
-      // tooltipInitialPosition.top = currentTooltip.style.top.replace("px", "");
     }
+  }
 });
 
 mapWrap.addEventListener("pointerup", event => {
@@ -90,23 +94,31 @@ mapWrap.addEventListener("pointermove", event => {
   {
     const xDistance = event.x - startX;
     const yDistance = event.y - startY;
-    map.style.left = offset.left + xDistance + "px";
-    map.style.top = offset.top + yDistance - offsetY + "px";
+    const newMapOffsetX = offset.left + xDistance;
+    const newMapOffsetY = offset.top + yDistance - offsetY;
+    const mapRect = map.getBoundingClientRect();
+    console.log(`new offset: x=${newMapOffsetX}, y=${newMapOffsetY}, maprect.width/2=${mapRect.width/2}, maprect.height/2=${mapRect.width/2}`);
+    if (Math.min(1.75, zoom) * Math.abs(newMapOffsetX) > mapRect.width / 2 
+        || Math.min(1.75, zoom) * Math.abs(newMapOffsetY) > mapRect.height / 2) {
+      return;
+    }
 
+    map.style.left = `${newMapOffsetX}px`;
+    map.style.top =  `${newMapOffsetY}px`;
     if (currentTooltip) {
-      console.log("===moving tooltip===");
-      console.log(`map offsetY=${map.style.top}, offsetX=${map.style.left}`);
+      // console.log("===moving tooltip===");
+      // console.log(`map offsetY=${map.style.top}, offsetX=${map.style.left}`);
 
-      console.log(`offsetY=${offsetY}`);
-      console.log(`difference: x=${xDistance}, y=${yDistance - offsetY}`);
-      console.log(`old tooltip offset: x=${currentTooltip.style.left}, y=${currentTooltip.style.top}`);
-      console.log(`old initial offset: x=${tooltipInitialPosition.left}, y=${tooltipInitialPosition.top}`);
+      // console.log(`offsetY=${offsetY}`);
+      // console.log(`difference: x=${xDistance}, y=${yDistance - offsetY}`);
+      // console.log(`old tooltip offset: x=${currentTooltip.style.left}, y=${currentTooltip.style.top}`);
+      // console.log(`old initial offset: x=${tooltipInitialPosition.left}, y=${tooltipInitialPosition.top}`);
       moveTooltip(currentTooltip);
-      console.log(`new tooltip offset: x=${currentTooltip.style.left}, y=${currentTooltip.style.top}`);
-      console.log("======");
     }
   }
 });
+
+// #region functions
 
 function showTooltip(tooltip) {
   const tooltips = Array.from(document.querySelectorAll(".tooltip"));
@@ -147,3 +159,5 @@ function colorMarks(marks) {
     v.classList.add("map__mark--color");
   });
 }
+
+// #endregion functions
