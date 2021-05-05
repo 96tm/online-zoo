@@ -55,7 +55,7 @@ mapWrap.addEventListener("mousedown", event => {
           colorMarks(marks);
           showTooltip(tooltip);
     }
-    else {
+    else if (!event.target.matches(".tooltip__button")) {
       colorMarks();
       hideTooltips();
       [startX, startY] = [event.clientX, event.clientY - offsetY];
