@@ -110,6 +110,7 @@
   overflow: hidden;
   scroll-behavior: smooth;
   align-items: center;
+  width: calc(100% + min(28px, calc(100vw * .01875)));
 }
 
 .pets__arrow-wrap {
@@ -260,7 +261,7 @@
 
 .testimonials__cards-wrap {
   overflow: hidden;
-  width: calc(100% + 5px);
+  width: calc(100% + min(30px, calc(100vw * 0.01875)));
   position: relative;
   height: 391px;
 }
