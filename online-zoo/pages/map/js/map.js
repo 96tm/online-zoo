@@ -13,12 +13,13 @@ let tooltipInitialPosition = {top: 0, left: 0};
 let shown = false;
 let isDragActivated = false;
 let offset = {top: 0, left: 0};
-let offsetY = 0;
+let offsetY = 0, offsetYTemp = 0;;
 let startX, startY;
 let zoom = 1;
 
 document.addEventListener("DOMContentLoaded", event => {
   offsetY = map.getBoundingClientRect().y;
+  offsetYTemp = offsetY;
   console.log('offsetY', offsetY)
 });
 
@@ -61,8 +62,14 @@ zoomButtonOut.addEventListener("mousedown", event => {
 
 mapWrap.addEventListener("pointerdown", event => {
     [startX, startY] = [event.clientX, event.clientY - offsetY];
-    console.log('down', startX, startY)
+    console.log('down', startX, startY);
     isDragActivated = true;
+    if (currentTooltip) {
+      console.log("===DOWN===");
+      console.log(`tooltip offset x=${tooltipInitialPosition.left}, y=${tooltipInitialPosition.top}`);
+      // tooltipInitialPosition.left = currentTooltip.style.left.replace("px", "");
+      // tooltipInitialPosition.top = currentTooltip.style.top.replace("px", "");
+    }
 });
 
 mapWrap.addEventListener("pointerup", event => {
@@ -73,6 +80,8 @@ mapWrap.addEventListener("pointerup", event => {
   if (currentTooltip) {
     tooltipInitialPosition.left = currentTooltip.style.left.replace("px", "");
     tooltipInitialPosition.top = currentTooltip.style.top.replace("px", "");
+    offsetYTemp = 0;
+
   }
 });
 
@@ -83,17 +92,16 @@ mapWrap.addEventListener("pointermove", event => {
     const yDistance = event.y - startY;
     map.style.left = offset.left + xDistance + "px";
     map.style.top = offset.top + yDistance - offsetY + "px";
+
     if (currentTooltip) {
       console.log("===moving tooltip===");
       console.log(`map offsetY=${map.style.top}, offsetX=${map.style.left}`);
 
       console.log(`offsetY=${offsetY}`);
-      console.log(`difference: x=${xDistance}, y=${yDistance}`);
+      console.log(`difference: x=${xDistance}, y=${yDistance - offsetY}`);
       console.log(`old tooltip offset: x=${currentTooltip.style.left}, y=${currentTooltip.style.top}`);
       console.log(`old initial offset: x=${tooltipInitialPosition.left}, y=${tooltipInitialPosition.top}`);
-
-      currentTooltip.style.left = tooltipInitialPosition.left + xDistance + "px";
-      currentTooltip.style.top = tooltipInitialPosition.top + yDistance - offsetY + "px";
+      moveTooltip(currentTooltip);
       console.log(`new tooltip offset: x=${currentTooltip.style.left}, y=${currentTooltip.style.top}`);
       console.log("======");
     }
@@ -101,12 +109,24 @@ mapWrap.addEventListener("pointermove", event => {
 });
 
 function showTooltip(tooltip) {
-  const animal = tooltip.dataset.animal;
   const tooltips = Array.from(document.querySelectorAll(".tooltip"));
+  moveTooltip(tooltip);
   tooltips.forEach(v => {
     v.classList.remove("visible");
   });
   tooltip.classList.add("visible");
+  currentTooltip = tooltip;
+  console.log("===showing tooltip===");
+  console.log(`tooltip position: top=${tooltipInitialPosition.top}, left=${tooltipInitialPosition.left}`);
+  console.log(`tooltip style: top=${currentTooltip.style.top}, left=${currentTooltip.style.left}`);
+  console.log(`offset: top=${offset.top}, left=${offset.left}`);
+  console.log(`header offset: ${headerOffset}`);
+  console.log(`page offset: ${pageYOffset}`);
+  console.log("==========");
+}
+
+function moveTooltip(tooltip) {
+  const animal = tooltip.dataset.animal;
   const animalImage = [...map.querySelectorAll(`.animal-figure[data-animal=${animal}]`)].slice(-1)[0];
   const imageRect = animalImage.getBoundingClientRect();
   tooltipInitialPosition = 
@@ -116,15 +136,6 @@ function showTooltip(tooltip) {
   };
   tooltip.style.left = `${tooltipInitialPosition.left}px`;
   tooltip.style.top = `${tooltipInitialPosition.top}px`;
-  currentTooltip = tooltip;
-  console.log("===showing tooltip===");
-  console.log(`tooltip position: top=${tooltipInitialPosition.top}, left=${tooltipInitialPosition.left}`);
-  console.log(`image rect: y=${imageRect.y}, x=${imageRect.x}`);
-  console.log(`offset: top=${offset.top}, left=${offset.left}`);
-  console.log(`header offset: ${headerOffset}`);
-  console.log(`page offset: ${pageYOffset}`);
-  console.log("==========");
-
 }
 
 function colorMarks(marks) {
