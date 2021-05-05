@@ -2,12 +2,11 @@ const mapWrap = document.querySelector(".map-wrap");
 const map = mapWrap.querySelector(".map");
 const tooltip = document.querySelector(".tooltip");
 const header = document.querySelector(".header");
-const headerOffset = -header.getBoundingClientRect().height;
 const mapMarks = new Set(document.querySelectorAll(".map__mark"));
 const zoomButtonIn = document.querySelector(".zoom__button-in");
 const zoomButtonOut = document.querySelector(".zoom__button-out");
 
-const animalLinks = {Gorillas: 1};
+const animalLinks = {Gorillas: "/online-zoo/pages/zoos/cam-gorilla-online.html"};
 let currentTooltip = null;
 let tooltipInitialPosition = {top: 0, left: 0};
 let shown = false;
@@ -16,9 +15,31 @@ let offset = {top: 0, left: 0};
 let offsetY = 0, offsetYTemp = 0;;
 let startX, startY;
 let zoom = 1;
+let resolutionOffsetX = 0;
+let headerOffset = -header.getBoundingClientRect().height;
 
 document.addEventListener("DOMContentLoaded", event => {
   offsetY = map.getBoundingClientRect().y;
+  if (window.screen.availWidth < 1600) {
+    const ratio = 1600 / window.screen.availWidth;
+    resolutionOffsetX
+  }
+  else {
+    resolutionOffsetX = 0;
+  }
+  const tooltip = document.querySelector(".tooltip-alligators");
+  const animal = tooltip.dataset.animal;
+  const marks = Array.from(document.querySelectorAll(`.map__mark[data-animal=${animal}]`));
+  colorMarks(marks);
+  showTooltip(tooltip);
+});
+
+window.addEventListener("resize", event => {
+  if (currentTooltip) {
+    moveTooltip(currentTooltip);
+  }
+  offsetY = map.getBoundingClientRect().y;
+  headerOffset = -header.getBoundingClientRect().height;
 });
 
 map.addEventListener("mouseover", event => {
@@ -38,9 +59,6 @@ document.querySelector(".main").addEventListener("pointerout", event => {
   console.log('OUT')
   if (event.target.classList.contains("animal-figure")
       || event.target.classList.contains("map__mark")) {
-  //   const animal = event.target.dataset.animal.toLowerCase();
-  //   const tooltip = document.querySelector(".tooltip-" + animal);
-  //   tooltip.style.visibility = "hidden";
   }
 });
 
@@ -119,7 +137,6 @@ mapWrap.addEventListener("pointermove", event => {
 });
 
 // #region functions
-
 function showTooltip(tooltip) {
   const tooltips = Array.from(document.querySelectorAll(".tooltip"));
   moveTooltip(tooltip);
@@ -141,9 +158,10 @@ function moveTooltip(tooltip) {
   const animal = tooltip.dataset.animal;
   const animalImage = [...map.querySelectorAll(`.animal-figure[data-animal=${animal}]`)].slice(-1)[0];
   const imageRect = animalImage.getBoundingClientRect();
+  const tooltipArrowOffset = tooltip.getBoundingClientRect().width / 2.8;
   tooltipInitialPosition = 
   {
-    left: imageRect.x,
+    left: imageRect.x - tooltipArrowOffset + imageRect.width / 2,
     top: imageRect.y + imageRect.height + pageYOffset + headerOffset
   };
   tooltip.style.left = `${tooltipInitialPosition.left}px`;
@@ -159,5 +177,4 @@ function colorMarks(marks) {
     v.classList.add("map__mark--color");
   });
 }
-
 // #endregion functions
