@@ -14,6 +14,7 @@ const zoomStep = 0.25;
 let currentTooltip = null;
 let tooltipInitialPosition = {top: 0, left: 0};
 let isDragActivated = false;
+// let isCurrentTooltipHidden = false;
 let offset = {top: 0, left: 0};
 let offsetY = 0;
 let startX, startY;
@@ -40,28 +41,31 @@ window.addEventListener("resize", event => {
   }
 });
 
-map.addEventListener("mouseover", event => {
-  if (event.target.classList.contains("animal-figure")
-      || event.target.classList.contains("map__mark")) {
-    const animal = event.target.dataset.animal;
-    const tooltip = document.querySelector(`.tooltip-${animal.toLowerCase()}`);
-    const marks = Array.from(document.querySelectorAll(`.map__mark[data-animal=${animal}]`));
-    colorMarks(marks);
-    showTooltip(tooltip);
-  }
-});
-
+// map.addEventListener("mouseover", handleMouseOverAnimal);
 zoomButtonIn.addEventListener("mousedown", zoomIn);
 zoomButtonOut.addEventListener("mousedown", zoomOut);
 
 mapWrap.addEventListener("mousedown", event => {
   if (event.which === 1) {
-    [startX, startY] = [event.clientX, event.clientY - offsetY];
-    isDragActivated = true;
+    if (event.target.classList.contains("animal-figure")
+        || event.target.classList.contains("map__mark")) {
+          const animal = event.target.dataset.animal;
+          const tooltip = document.querySelector(`.tooltip-${animal.toLowerCase()}`);
+          const marks = Array.from(document.querySelectorAll(`.map__mark[data-animal=${animal}]`));
+          colorMarks(marks);
+          showTooltip(tooltip);
+    }
+    else {
+      colorMarks();
+      hideTooltips();
+      [startX, startY] = [event.clientX, event.clientY - offsetY];
+      isDragActivated = true;
+    }
   }
 });
 
 mapWrap.addEventListener("mouseup", handleMouseUp);
+
 document.addEventListener("mousemove", handleMouseMove);
 
 // #region functions
@@ -83,17 +87,23 @@ function zoomOut(event) {
     }
   }
 }
+
 function zoom(value) {
   map.style.transform = `scale(${value})`;
 }
+
 function showTooltip(tooltip) {
-  const tooltips = Array.from(document.querySelectorAll(".tooltip"));
   moveTooltip(tooltip);
+  hideTooltips();
+  tooltip.classList.add("visible");
+  currentTooltip = tooltip;
+}
+
+function hideTooltips() {
+  const tooltips = Array.from(document.querySelectorAll(".tooltip"));
   tooltips.forEach(v => {
     v.classList.remove("visible");
   });
-  tooltip.classList.add("visible");
-  currentTooltip = tooltip;
 }
 
 function moveTooltip(tooltip) {
@@ -111,6 +121,7 @@ function moveTooltip(tooltip) {
 }
 
 function colorMarks(marks) {
+  marks = marks || [];
   const inactiveMarks = Array.from(document.querySelectorAll(".map__mark"));
   inactiveMarks.forEach(v => {
     v.classList.remove("map__mark--color");
@@ -140,7 +151,8 @@ function handleMouseMove(event) {
     const xDistance = event.x - startX;
     const yDistance = event.y - startY;
     moveMap(xDistance, yDistance);
-    if (currentTooltip) moveTooltip(currentTooltip);
+    // isCurrentTooltipHidden = true;
+    // if (currentTooltip) moveTooltip(currentTooltip);
   }
 }
 
@@ -151,7 +163,24 @@ function handleMouseUp(event) {
   if (currentTooltip) {
     tooltipInitialPosition.left = currentTooltip.style.left.replace("px", "");
     tooltipInitialPosition.top = currentTooltip.style.top.replace("px", "");
-    offsetYTemp = 0;
+    // if (currentTooltip && isCurrentTooltipHidden) {
+    //   console.log('show', currentTooltip)
+    //   moveTooltip(currentTooltip);
+    //   currentTooltip.classList.add("visible");
+    //   console.log(currentTooltip.classList)
+    //   showTooltip(currentTooltip);
+    // }
+  }
+}
+
+function handleMouseOverAnimal(event) {
+  if (event.target.classList.contains("animal-figure")
+      || event.target.classList.contains("map__mark")) {
+    const animal = event.target.dataset.animal;
+    const tooltip = document.querySelector(`.tooltip-${animal.toLowerCase()}`);
+    const marks = Array.from(document.querySelectorAll(`.map__mark[data-animal=${animal}]`));
+    colorMarks(marks);
+    showTooltip(tooltip);
   }
 }
 // #endregion functions
