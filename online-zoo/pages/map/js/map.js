@@ -6,10 +6,10 @@ const mapMarks = new Set(document.querySelectorAll(".map__mark"));
 const zoomButtonIn = document.querySelector(".zoom__button-in");
 const zoomButtonOut = document.querySelector(".zoom__button-out");
 
-const animalLinks = {Gorillas: "/online-zoo/pages/zoos/cam-gorilla-online.html",
-                     Alligators: "/online-zoo/pages/zoos/cam-alligator-online.html",
-                     Eagles: "/online-zoo/pages/zoos/cam-eagle-online.html",
-                     Pandas: "/online-zoo/pages/zoos/cam-panda-online.html"};
+const animalLinks = {Gorillas: "../../pages/zoos/cam-gorilla-online.html",
+                     Alligators: "../../pages/zoos/cam-alligator-online.html",
+                     Eagles: "../../pages/zoos/cam-eagle-online.html",
+                     Pandas: "../../pages/zoos/cam-panda-online.html"};
 const zoomStep = 0.25;
 let currentTooltip = null;
 let tooltipInitialPosition = {top: 0, left: 0};
