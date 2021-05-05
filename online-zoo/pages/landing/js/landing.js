@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", event => {
                                               testimonialsOptions.sliderStep,
                                               testimonialsOptions.numberOfVisible,
                                               testimonialsRangeInput);
-  // testimonialsSlider.startSlideShow();
+  testimonialsSlider.startSlideShow();
 });
 
 window.addEventListener("resize", event => {
@@ -172,6 +172,7 @@ class TestimonialsSlider {
     this.rangeInput.addEventListener("input", this.handleRangeInput.bind(this));
     this.slider.addEventListener("click", event => {
       if(event.target.closest(".testimonials__list-item") && this.slideShowHandle) {
+        console.log('click resume')
         this.stopSlideShow();
         this.resumeSlideShow();
       }
@@ -194,11 +195,12 @@ class TestimonialsSlider {
   }
 
   resumeSlideShow() {
-    setTimeout(() => this.startSlideShow, 40 * 1000);
+    setTimeout(this.startSlideShow.bind(this), 30 * 1000);
   }
 
   startSlideShow() {
     this.slideShowHandle = setInterval(this.rotateRight.bind(this), 10 * 1000);
+    console.log('started', this.slideShowHandle);
   }
 
   stopSlideShow() {
