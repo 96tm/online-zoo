@@ -54,43 +54,15 @@ map.addEventListener("mouseover", event => {
 zoomButtonIn.addEventListener("mousedown", zoomIn);
 zoomButtonOut.addEventListener("mousedown", zoomOut);
 
-mapWrap.addEventListener("pointerdown", event => {
+mapWrap.addEventListener("mousedown", event => {
   if (event.which === 1) {
     [startX, startY] = [event.clientX, event.clientY - offsetY];
     isDragActivated = true;
   }
 });
 
-mapWrap.addEventListener("pointerup", event => {
-  isDragActivated  = false;
-  offset.left = parseInt(map.style.left.replace("px", "")) || 0;
-  offset.top = parseInt(map.style.top.replace("px", "")) || 0;
-  if (currentTooltip) {
-    tooltipInitialPosition.left = currentTooltip.style.left.replace("px", "");
-    tooltipInitialPosition.top = currentTooltip.style.top.replace("px", "");
-    offsetYTemp = 0;
-
-  }
-});
-
-mapWrap.addEventListener("pointermove", event => {
-  if (isDragActivated)
-  {
-    const xDistance = event.x - startX;
-    const yDistance = event.y - startY;
-    const newMapOffsetX = offset.left + xDistance;
-    const newMapOffsetY = offset.top + yDistance - offsetY;
-    const mapRect = map.getBoundingClientRect();
-    if (Math.min(1.75, zoomValue) * Math.abs(newMapOffsetX) > mapRect.width / 2 
-        || Math.min(1.75, zoomValue) * Math.abs(newMapOffsetY) > mapRect.height / 2) {
-      return;
-    }
-    map.style.left = `${newMapOffsetX}px`;
-    map.style.top =  `${newMapOffsetY}px`;
-
-    if (currentTooltip) moveTooltip(currentTooltip);
-  }
-});
+mapWrap.addEventListener("mouseup", handleMouseUp);
+document.addEventListener("mousemove", handleMouseMove);
 
 // #region functions
 function zoomIn(event) {
@@ -146,5 +118,40 @@ function colorMarks(marks) {
   marks.forEach(v => {
     v.classList.add("map__mark--color");
   });
+}
+
+function moveMap(xDistance, yDistance) {
+  const mapRect = map.getBoundingClientRect();
+  const newMapOffsetX = offset.left + xDistance;
+  const newMapOffsetY = offset.top + yDistance - offsetY;
+
+  if (Math.min(1.75, zoomValue) * Math.abs(newMapOffsetX) > mapRect.width / 2 
+      || Math.min(1.75, zoomValue) * Math.abs(newMapOffsetY) > mapRect.height / 2) {
+          return;
+  }
+
+  map.style.left = `${newMapOffsetX}px`;
+  map.style.top =  `${newMapOffsetY}px`;
+}
+
+function handleMouseMove(event) {
+  if (isDragActivated)
+  {
+    const xDistance = event.x - startX;
+    const yDistance = event.y - startY;
+    moveMap(xDistance, yDistance);
+    if (currentTooltip) moveTooltip(currentTooltip);
+  }
+}
+
+function handleMouseUp(event) {
+  isDragActivated  = false;
+  offset.left = parseInt(map.style.left.replace("px", "")) || 0;
+  offset.top = parseInt(map.style.top.replace("px", "")) || 0;
+  if (currentTooltip) {
+    tooltipInitialPosition.left = currentTooltip.style.left.replace("px", "");
+    tooltipInitialPosition.top = currentTooltip.style.top.replace("px", "");
+    offsetYTemp = 0;
+  }
 }
 // #endregion functions
