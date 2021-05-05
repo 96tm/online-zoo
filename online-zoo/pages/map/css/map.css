@@ -74,9 +74,9 @@
 }
 
 .tooltip__button {
-  text-align: center;
-  vertical-align: bottom;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 135px;
   height: 31px;
   background-color: var(--gray-light);
@@ -84,6 +84,8 @@
   border: none;
   margin-top: 11px;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .animal-figure {

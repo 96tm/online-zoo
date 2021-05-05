@@ -6,7 +6,10 @@ const mapMarks = new Set(document.querySelectorAll(".map__mark"));
 const zoomButtonIn = document.querySelector(".zoom__button-in");
 const zoomButtonOut = document.querySelector(".zoom__button-out");
 
-const animalLinks = {Gorillas: "/online-zoo/pages/zoos/cam-gorilla-online.html"};
+const animalLinks = {Gorillas: "/online-zoo/pages/zoos/cam-gorilla-online.html",
+                     Alligators: "/online-zoo/pages/zoos/cam-alligator-online.html",
+                     Eagles: "/online-zoo/pages/zoos/cam-eagle-online.html",
+                     Pandas: "/online-zoo/pages/zoos/cam-panda-online.html"};
 let currentTooltip = null;
 let tooltipInitialPosition = {top: 0, left: 0};
 let shown = false;
@@ -19,6 +22,13 @@ let resolutionOffsetX = 0;
 let headerOffset = -header.getBoundingClientRect().height;
 
 document.addEventListener("DOMContentLoaded", event => {
+  Array.from(document.querySelectorAll(".tooltip__button")).forEach(v => {
+    console.log('button', v.dataset.animal)
+    const tooltip = v.closest(".tooltip");
+    v.href = animalLinks[tooltip.dataset.animal];
+    console.log(v.href, animalLinks[tooltip.dataset.animal])
+  });
+
   offsetY = map.getBoundingClientRect().y;
   if (window.screen.availWidth < 1600) {
     const ratio = 1600 / window.screen.availWidth;
