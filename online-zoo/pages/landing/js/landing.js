@@ -130,6 +130,7 @@ class TestimonialsSlider {
     this.scroll = 0;
     this.index = 0;
     this.slideShowHandle = null;
+    this.slideShowTimeoutHandle = null;
     this.init();
   }
   get shiftValue() {
@@ -171,8 +172,7 @@ class TestimonialsSlider {
   init() {
     this.rangeInput.addEventListener("input", this.handleRangeInput.bind(this));
     this.slider.addEventListener("click", event => {
-      if(event.target.closest(".testimonials__list-item") && this.slideShowHandle) {
-        console.log('click resume')
+      if(event.target.closest(".testimonials__list-item")) {
         this.stopSlideShow();
         this.resumeSlideShow();
       }
@@ -195,12 +195,12 @@ class TestimonialsSlider {
   }
 
   resumeSlideShow() {
-    setTimeout(this.startSlideShow.bind(this), 30 * 1000);
+    clearTimeout(this.slideShowTimeoutHandle);
+    this.slideShowTimeoutHandle = setTimeout(this.startSlideShow.bind(this), 30 * 1000);
   }
 
   startSlideShow() {
     this.slideShowHandle = setInterval(this.rotateRight.bind(this), 10 * 1000);
-    console.log('started', this.slideShowHandle);
   }
 
   stopSlideShow() {

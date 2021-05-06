@@ -1,4 +1,6 @@
 const foldButton = document.querySelector(".info-body__button");
+const footer = document.querySelector(".footer");
+const sidebarButton = document.querySelector(".sidebar__button");
 const infoBody = document.querySelector(".info__body");
 const generalInfo = document.querySelector(".info-body-section--general-info");
 const generalInfoHeading = document.querySelector(".info-body-section__title");
@@ -12,10 +14,6 @@ const arrowLeft = document.querySelector(".arrow-left");
 
 let folded = false;
 
-document.addEventListener("DOMContentLoaded", event => {
-  foldButton.click();
-});
-
 window.addEventListener("resize", event => {
   if (folded) {
     resizeParagraph();
@@ -23,7 +21,11 @@ window.addEventListener("resize", event => {
   }
 });
 
-foldButton.addEventListener("click", fold);
+sidebarButton.addEventListener("click", event => {
+  foldButton.scrollIntoView();
+});
+
+foldButton.addEventListener("click", handleFoldButton);
 
 class Slider {
   constructor(slider, wrap, step, numberOfVisible,
@@ -123,20 +125,24 @@ class Slider {
   }
 }
 
-function fold(event) {
+function handleFoldButton(event) {
+  foldInfo();
+  infoBody.scrollIntoView("top");
+}
+
+function foldInfo() {
   infoBody.classList.toggle("hidden-sections");
   if (folded) {
     infoBody.style.height = infoBody.scrollHeight + "px";
-    event.target.textContent = "Read less";
+    foldButton.textContent = "Read less";
     hideOverlay();
   }
   else {
     paragraphRect = generalInfoFirstParagraph.getBoundingClientRect();
     infoRect = infoBody.getBoundingClientRect();
     infoBody.style.height = paragraphRect.y - infoRect.y + paragraphRect.height + "px";
-    event.target.textContent = "Read more";
+    foldButton.textContent = "Read more";
     showOverlay();
-    infoBody.scrollIntoView("top");
   }
   folded = !folded;
 }
